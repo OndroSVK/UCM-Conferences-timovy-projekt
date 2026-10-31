@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Web konferencie · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../website-editor.css" />
+  </head>
+  <body data-screen="website">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin" selected>Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="conferences.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">SPRÁVA SYSTÉMU</div>
+            <a href="conferences.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h18v5H3zM5 8v13h14V8M10 12h4" />
+              </svg>
+              Konferencie a ročníky
+            </a>
+            <a href="settings.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1z"
+                />
+              </svg>
+              Nastavenia ročníka
+            </a>
+            <a href="users.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Pracovníci a oprávnenia
+            </a>
+            <a href="audit.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 7v5l3 2" />
+              </svg>
+              Záznam operácií
+            </a>
+            <a href="website.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18"
+                />
+              </svg>
+              Web konferencie
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">JK</span>
+              <div>
+                Jana Kováčová
+                <small>Superadministrátor</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">JK</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading web-page-heading">
+                <div>
+                  <div class="eyebrow">ANS 2027 / VEREJNÝ WEB</div>
+                  <h1>Web konferencie</h1>
+                  <p>Obsah, šablóna a obrázky vášho ročníka na jednom mieste.</p>
+                </div>
+                <a class="link" href="settings.html">Nastavenia ročníka ↗</a>
+              </div>
+              <div class="web-demo-banner">
+                <span class="dot"></span>
+                <p>
+                  Frontendová ukážka. Koncepty aj obrázky zostávajú v tomto prehliadači.
+                  Publikovanie mení iba lokálny náhľad.
+                </p>
+              </div>
+              <div class="web-action-bar">
+                <div class="web-save-summary">
+                  <span class="pill" id="web-save-state">Načítava sa…</span>
+                  <small id="web-saved-at">ANS 2027</small>
+                </div>
+                <div class="actions">
+                  <button class="btn small flat" data-web-action="history" disabled>
+                    História verzií
+                  </button>
+                  <button class="btn small flat" data-web-action="open-preview" disabled>
+                    Otvoriť náhľad ↗
+                  </button>
+                  <button class="btn small" data-web-action="save" disabled>Uložiť koncept</button>
+                  <button class="btn small primary" data-web-action="publish" disabled>
+                    Publikovať ukážku ↗
+                  </button>
+                </div>
+              </div>
+              <p class="web-message" id="web-message" role="status" aria-live="polite"></p>
+              <div class="web-mobile-switch" role="group" aria-label="Zobrazenie editora">
+                <button class="active" data-web-view="edit" aria-pressed="true">Upravovať</button>
+                <button data-web-view="preview" aria-pressed="false">Náhľad webu</button>
+              </div>
+              <div class="web-editor-layout" data-mobile-view="edit" id="web-editor-layout">
+                <section class="panel web-edit-panel" aria-label="Úprava webu konferencie">
+                  <div class="tabs web-tabs" role="tablist" aria-label="Časti webu">
+                    <button
+                      class="tab active"
+                      id="web-tab-content"
+                      data-web-tab="content"
+                      role="tab"
+                      aria-selected="true"
+                      aria-controls="web-panel-content"
+                    >
+                      Obsah a vzhľad
+                    </button>
+                    <button
+                      class="tab"
+                      id="web-tab-html"
+                      data-web-tab="html"
+                      role="tab"
+                      aria-selected="false"
+                      tabindex="-1"
+                      aria-controls="web-panel-html"
+                    >
+                      HTML
+                    </button>
+                    <button
+                      class="tab"
+                      id="web-tab-css"
+                      data-web-tab="css"
+                      role="tab"
+                      aria-selected="false"
+                      tabindex="-1"
+                      aria-controls="web-panel-css"
+                    >
+                      CSS
+                    </button>
+                    <button
+                      class="tab"
+                      id="web-tab-media"
+                      data-web-tab="media"
+                      role="tab"
+                      aria-selected="false"
+                      tabindex="-1"
+                      aria-controls="web-panel-media"
+                    >
+                      Obrázky
+                    </button>
+                  </div>
+                  <div
+                    id="web-panel-content"
+                    class="panel-body"
+                    role="tabpanel"
+                    aria-labelledby="web-tab-content"
+                  >
+                    <form id="web-content-form">
+                      <fieldset disabled id="web-fields">
+                        <legend class="sr-only">Obsah a vzhľad webu</legend>
+                        <section class="form-section">
+                          <div class="web-section-label">
+                            <span class="web-number">01</span>
+                            <div>
+                              <h2>Prvý dojem sa počíta.</h2>
+                              <p class="muted">Základné texty verejnej stránky.</p>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <label class="field full">
+                              Názov konferencie
+                              <input name="title" required maxlength="160" />
+                            </label>
+                            <label class="field">
+                              Označenie ročníka
+                              <input name="edition" required maxlength="50" />
+                            </label>
+                            <label class="field">
+                              Farba akcentu
+                              <span class="web-color-field">
+                                <input name="accent" type="color" aria-label="Farba akcentu" />
+                                <output id="web-accent-value">#dbf587</output>
+                              </span>
+                            </label>
+                            <label class="field full">
+                              Hlavný nadpis
+                              <input name="heading" required maxlength="160" />
+                            </label>
+                            <label class="field full">
+                              Úvodný popis
+                              <textarea
+                                name="description"
+                                rows="3"
+                                required
+                                maxlength="700"
+                              ></textarea>
+                            </label>
+                            <label class="field full">
+                              O konferencii
+                              <textarea name="about" rows="4" maxlength="3000"></textarea>
+                            </label>
+                          </div>
+                        </section>
+                        <section class="form-section">
+                          <div class="web-section-label">
+                            <span class="web-number">02</span>
+                            <div>
+                              <h2>Kedy a kde.</h2>
+                              <p class="muted">Vzorové údaje pre náhľad ročníka.</p>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <label class="field full">
+                              Termín
+                              <input name="date" maxlength="120" />
+                            </label>
+                            <label class="field full">
+                              Miesto konania
+                              <input name="venue" maxlength="160" />
+                            </label>
+                            <label class="field full">
+                              Kontaktný e-mail
+                              <input name="contact" type="email" maxlength="160" />
+                            </label>
+                          </div>
+                        </section>
+                        <section class="form-section">
+                          <div class="web-section-label">
+                            <span class="web-number">03</span>
+                            <div>
+                              <h2>Vlastná vizuálna stopa.</h2>
+                              <p class="muted">Obrázky vyberte z knižnice alebo pridajte nové.</p>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <label class="field full">
+                              Logo
+                              <select data-media-slot="logo" aria-label="Logo konferencie"></select>
+                            </label>
+                            <label class="field full">
+                              Úvodný obrázok
+                              <select data-media-slot="hero" aria-label="Úvodný obrázok"></select>
+                            </label>
+                            <label class="field full">
+                              Pozadie stránky
+                              <select
+                                data-media-slot="background"
+                                aria-label="Pozadie stránky"
+                              ></select>
+                            </label>
+                          </div>
+                          <button
+                            type="button"
+                            class="link web-text-button"
+                            data-web-action="show-media"
+                          >
+                            Otvoriť knižnicu obrázkov ↗
+                          </button>
+                        </section>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div
+                    id="web-panel-html"
+                    class="panel-body"
+                    role="tabpanel"
+                    aria-labelledby="web-tab-html"
+                    hidden
+                  >
+                    <div class="web-code-heading">
+                      <div>
+                        <h2>index.html</h2>
+                        <p>Štruktúra verejnej stránky konferencie.</p>
+                      </div>
+                      <button class="btn small flat" data-web-action="reset-template" disabled>
+                        Obnoviť šablónu
+                      </button>
+                    </div>
+                    <label class="sr-only" for="web-html-editor">HTML šablóna index.html</label>
+                    <div class="web-code-editor">
+                      <pre
+                        class="web-code-highlight"
+                        aria-hidden="true"
+                      ><code id="web-html-highlight"></code></pre>
+                      <textarea
+                        id="web-html-editor"
+                        data-code="html"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        autocomplete="off"
+                        wrap="off"
+                        disabled
+                      ></textarea>
+                    </div>
+                    <div class="web-code-meta">
+                      <span data-line-count="html">0 riadkov</span>
+                      <span>Tab = 2 medzery</span>
+                    </div>
+                    <details class="web-token-guide">
+                      <summary>Vkladacie značky</summary>
+                      <p>Kliknutím vložíte údaj na pozíciu kurzora v HTML.</p>
+                      <div class="web-tokens">
+                        <button data-insert-token="conference.title">Názov konferencie</button>
+                        <button data-insert-token="conference.heading">Hlavný nadpis</button>
+                        <button data-insert-token="conference.date">Termín</button>
+                        <button data-insert-token="conference.venue">Miesto</button>
+                        <button data-insert-token="media.logo">Logo</button>
+                        <button data-insert-token="media.hero">Úvodný obrázok</button>
+                        <button data-insert-token="registration.url">Adresa registrácie</button>
+                        <button data-insert-token="program.url">Adresa programu</button>
+                      </div>
+                      <p>
+                        Vlastný JavaScript a formuláre sa v náhľade nespúšťajú. Registračné tlačidlo
+                        môže odkazovať na registračnú stránku systému.
+                      </p>
+                    </details>
+                  </div>
+                  <div
+                    id="web-panel-css"
+                    class="panel-body"
+                    role="tabpanel"
+                    aria-labelledby="web-tab-css"
+                    hidden
+                  >
+                    <div class="web-code-heading">
+                      <div>
+                        <h2>custom.css</h2>
+                        <p>Farby, typografia a rozloženie verejného webu.</p>
+                      </div>
+                    </div>
+                    <label class="sr-only" for="web-css-editor">Vlastné CSS webu konferencie</label>
+                    <div class="web-code-editor">
+                      <pre
+                        class="web-code-highlight"
+                        aria-hidden="true"
+                      ><code id="web-css-highlight"></code></pre>
+                      <textarea
+                        id="web-css-editor"
+                        data-code="css"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        autocomplete="off"
+                        wrap="off"
+                        disabled
+                      ></textarea>
+                    </div>
+                    <div class="web-code-meta">
+                      <span data-line-count="css">0 riadkov</span>
+                      <span>Zmeny sa prejavia v náhľade</span>
+                    </div>
+                    <p class="web-help">
+                      Farbu zo záložky Obsah a vzhľad použijete značkou
+                      <code>{{conference.accent}}</code>
+                      . Pozadie z knižnice cez
+                      <code>url("{{media.background}}")</code>
+                      .
+                    </p>
+                  </div>
+                  <div
+                    id="web-panel-media"
+                    class="panel-body"
+                    role="tabpanel"
+                    aria-labelledby="web-tab-media"
+                    hidden
+                  >
+                    <div class="web-code-heading">
+                      <div>
+                        <h2>Knižnica obrázkov</h2>
+                        <p>Logo, úvodné fotky, pozadia a obrázky do textu.</p>
+                      </div>
+                      <span class="pill" id="web-media-count">2 obrázky</span>
+                    </div>
+                    <label class="web-upload" id="web-upload-zone">
+                      <input
+                        id="web-upload-input"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                        multiple
+                        disabled
+                      />
+                      <strong>Presuňte obrázky sem</strong>
+                      <span>alebo kliknite a vyberte súbory</span>
+                      <small>JPG, PNG, WebP · najviac 10 MB na obrázok</small>
+                    </label>
+                    <p class="web-help">
+                      Obrázky sa zmenšia na najviac 2400 px. Zostávajú iba v úložisku tohto
+                      prehliadača.
+                    </p>
+                    <div class="web-media-grid" id="web-media-grid"></div>
+                  </div>
+                </section>
+                <aside class="web-preview-panel panel" aria-label="Živý náhľad verejnej stránky">
+                  <div class="web-preview-heading">
+                    <div>
+                      <span class="eyebrow">ŽIVÝ NÁHĽAD</span>
+                      <h2>Takto vás uvidia.</h2>
+                    </div>
+                    <span class="pill blue">Koncept</span>
+                  </div>
+                  <div class="web-device-bar" role="group" aria-label="Šírka náhľadu">
+                    <button data-preview-width="1024" class="active" aria-pressed="true">
+                      Desktop
+                    </button>
+                    <button data-preview-width="768" aria-pressed="false">Tablet</button>
+                    <button data-preview-width="390" aria-pressed="false">Mobil</button>
+                    <span id="web-preview-width">1024 px</span>
+                  </div>
+                  <p id="web-preview-warning" class="web-preview-warning" role="status" hidden></p>
+                  <div class="web-preview-viewport" id="web-preview-viewport">
+                    <div class="web-preview-canvas" id="web-preview-canvas">
+                      <iframe
+                        id="web-preview-frame"
+                        title="Náhľad webu konferencie ANS 2027"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <div class="web-preview-footer">
+                    <span id="web-published-state">Zatiaľ bez publikovanej verzie</span>
+                    <button class="link web-text-button" data-web-action="open-published" disabled>
+                      Publikovaný náhľad ↗
+                    </button>
+                  </div>
+                </aside>
+              </div>
+              <dialog id="web-publish-dialog" aria-labelledby="web-publish-title">
+                <div class="map-head">
+                  <div>
+                    <div class="eyebrow">ANS 2027 / LOKÁLNA UKÁŽKA</div>
+                    <h2 id="web-publish-title">Pripravené na zverejnenie?</h2>
+                  </div>
+                  <button class="icon-btn" data-web-close="web-publish-dialog" aria-label="Zavrieť">
+                    ×
+                  </button>
+                </div>
+                <p>
+                  Vytvorí sa nová verzia webu v tomto prehliadači. Verejný web na internete sa
+                  nezmení.
+                </p>
+                <p class="web-help">Staršie publikované verzie zostanú dostupné v histórii.</p>
+                <div class="form-actions">
+                  <button class="btn flat" data-web-close="web-publish-dialog">Ešte upraviť</button>
+                  <button class="btn primary" data-web-action="confirm-publish">
+                    Publikovať lokálnu ukážku
+                  </button>
+                </div>
+              </dialog>
+              <dialog id="web-history-dialog" aria-labelledby="web-history-title">
+                <div class="map-head">
+                  <div>
+                    <div class="eyebrow">ANS 2027 / HISTÓRIA</div>
+                    <h2 id="web-history-title">Každá verzia má svoj príbeh.</h2>
+                  </div>
+                  <button class="icon-btn" data-web-close="web-history-dialog" aria-label="Zavrieť">
+                    ×
+                  </button>
+                </div>
+                <p class="web-help">
+                  Obnovením verzie sa zmení rozpracovaný koncept. Publikovaný náhľad zostane
+                  zachovaný, kým ho znovu nepublikujete.
+                </p>
+                <div id="web-history-list"></div>
+              </dialog>
+              <dialog id="web-reset-dialog" aria-labelledby="web-reset-title">
+                <div class="map-head">
+                  <h2 id="web-reset-title">Obnoviť predvolenú šablónu?</h2>
+                  <button class="icon-btn" data-web-close="web-reset-dialog" aria-label="Zavrieť">
+                    ×
+                  </button>
+                </div>
+                <p>
+                  Nahradí sa HTML a CSS rozpracovaného konceptu. Texty, vybrané obrázky a
+                  publikované verzie zostanú zachované.
+                </p>
+                <div class="form-actions">
+                  <button class="btn flat" data-web-close="web-reset-dialog">Zrušiť</button>
+                  <button class="btn primary" data-web-action="confirm-reset">
+                    Obnoviť HTML a CSS
+                  </button>
+                </div>
+              </dialog>
+              <template id="web-media-card">
+                <article class="web-media-card">
+                  <div class="web-media-image"><img alt="" loading="lazy" /></div>
+                  <div class="web-media-details">
+                    <label class="field">
+                      Názov
+                      <input data-asset-name maxlength="100" />
+                    </label>
+                    <label class="field">
+                      Alternatívny text
+                      <input data-asset-alt maxlength="180" />
+                    </label>
+                    <small data-asset-size></small>
+                    <p data-asset-usage class="web-help"></p>
+                    <label class="field">
+                      Použiť ako
+                      <select data-asset-slot>
+                        <option value="">Vyberte umiestnenie…</option>
+                        <option value="logo">Logo</option>
+                        <option value="hero">Úvodný obrázok</option>
+                        <option value="background">Pozadie stránky</option>
+                      </select>
+                    </label>
+                    <div class="web-media-actions">
+                      <button class="btn small flat" data-asset-insert>Vložiť do HTML</button>
+                      <button class="link web-text-button" data-asset-delete>Odstrániť</button>
+                    </div>
+                  </div>
+                </article>
+              </template>
+              <template id="web-history-item">
+                <article class="web-version">
+                  <div>
+                    <strong data-version-title></strong>
+                    <small data-version-date></small>
+                  </div>
+                  <button class="btn small flat" data-version-restore>Obnoviť do konceptu</button>
+                </article>
+              </template>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+    <script type="module" src="../website-editor.js"></script>
+  </body>
+</html>

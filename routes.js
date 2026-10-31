@@ -35,6 +35,7 @@ export const screens = [
   ["S02", "settings", "Nastavenia ročníka", "superadmin", "settings"],
   ["S03", "users", "Pracovníci a oprávnenia", "superadmin", "users"],
   ["S04", "audit", "Záznam operácií", "superadmin", "clock"],
+  ["S05", "website", "Web konferencie", "superadmin", "globe"],
 ];
 export const roles = {
   public: ["Verejnosť", "home", "Verejné rozhranie"],
@@ -81,6 +82,7 @@ export const pagePaths = {
   settings: "superadmin/settings.html",
   users: "superadmin/users.html",
   audit: "superadmin/audit.html",
+  website: "superadmin/website.html",
 };
 const appRoot = new URL("./", import.meta.url);
 export function routeHref(route) {

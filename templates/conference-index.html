@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{conference.title}}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="#home">
+        <img src="{{media.logo}}" alt="Logo konferencie" />
+        <span>
+          UCM
+          <br />
+          <small>CONFERENCES</small>
+        </span>
+      </a>
+      <nav aria-label="Navigácia konferencie">
+        <a href="#about">O konferencii</a>
+        <a href="{{program.url}}">Program ↗</a>
+        <a class="button" href="{{registration.url}}">Registrácia ↗</a>
+      </nav>
+    </header>
+    <main id="home">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">{{conference.edition}} / APPLIED NATURAL SCIENCES</p>
+          <h1>{{conference.heading}}</h1>
+          <p class="lead">{{conference.description}}</p>
+          <a class="button" href="{{registration.url}}">Chcem sa zúčastniť ↗</a>
+          <p class="meta">
+            {{conference.date}}
+            <br />
+            {{conference.venue}}
+          </p>
+        </div>
+        <img class="hero-image" src="{{media.hero}}" alt="{{media.heroAlt}}" />
+      </section>
+      <section class="about" id="about">
+        <p class="eyebrow">VEDA. ĽUDIA. NOVÉ SPOJENIA.</p>
+        <h2>{{conference.title}}</h2>
+        <p>{{conference.about}}</p>
+        <div class="cards">
+          <article>
+            <span>01 / STRETNUTIE</span>
+            <h3>Tri dni nových perspektív.</h3>
+            <p>Prednášky, postery a rozhovory naprieč prírodnými vedami.</p>
+          </article>
+          <article>
+            <span>02 / KOMUNITA</span>
+            <h3>Vaše miesto vo vede.</h3>
+            <p>Priestor pre skúsených vedcov aj mladých výskumníkov.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <strong>{{conference.edition}}</strong>
+      <span>{{conference.contact}}</span>
+      <small>Vzorový web konferencie · ilustračné údaje</small>
+    </footer>
+  </body>
+</html>

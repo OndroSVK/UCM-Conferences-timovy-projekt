@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Náhľad webu konferencie</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../website-editor.css" />
+  </head>
+  <body class="web-preview-page">
+    <header class="web-preview-page-header">
+      <div>
+        <strong id="web-preview-label">Náhľad webu konferencie</strong>
+        <p>Lokálna frontendová ukážka · údaje z tohto prehliadača</p>
+      </div>
+      <a href="../superadmin/website.html">Späť do editora ↗</a>
+    </header>
+    <section class="web-preview-empty" id="web-preview-empty">
+      <h1 id="web-preview-empty-title">Pripravujem náhľad…</h1>
+      <p id="web-preview-empty-description">
+        Načítavam koncept a obrázky uložené v tomto prehliadači.
+      </p>
+    </section>
+    <iframe
+      id="website-output"
+      title="Verejný web konferencie – lokálny náhľad"
+      sandbox="allow-popups allow-popups-to-escape-sandbox"
+      hidden
+    ></iframe>
+    <script type="module" src="../website-preview.js"></script>
+  </body>
+</html>

@@ -47,3 +47,9 @@ Opravené automatické minimálne šírky grid/flex detí, zalamovanie tlačidie
 V Safari prebehlo 306 kontrol: všetkých 35 stránok, varianty záložiek, dni programu, kroky registrácie, otvorená mapa a mobilné menu, pri šírkach rámca 320, 360, 390, 430, 768 a 1280 px. Po načítaní písma sa merala šírka dokumentu aj viditeľné deti; povolené vnútorné posúvanie tabuliek a záložiek sa vyhodnocovalo oddelene. Výsledok: 0 presahov dokumentu aj obsahu. Rámec v desktopovom Safari odpočítava pri zvislom scrollbare 17 px z dostupnej šírky; kontrola porovnáva prvky so skutočnou šírkou obsahu.
 
 Vizuálne skontrolovaný verejný úvod a organizátorský prehľad pri šírke 390 px. Ide o overenie v Safari s mobilnými rozmermi, nie test na fyzickom iPhone alebo Androide.
+
+## Správa webu konferencie / 31. 10. 2026
+
+Pridaná obrazovka S05 `superadmin/website.html`: obsah a vzhľad, editory HTML/CSS, knižnica obrázkov, izolovaný responzívny náhľad, lokálne koncepty a história publikovaných verzií. Celkom 36 hlavných HTML stránok; samostatný pomocný výstup je `public/website-preview.html`. Podrobnosti sú v [návode editora](editor-webu.md).
+
+Overenie: testy konceptu a publikovaných verzií, obnovy, dosadenia značiek, ochrany náhľadu, chýb úložiska a limitov vstupov; kontrola 36 stránok a 555 lokálnych odkazov. V Safari overené uloženie, publikovanie, nahratie PNG 3000 × 1000 px, jeho zmenšenie na 2400 × 800 px, priradenie do úvodu a zachovanie po obnovení. Všetky štyri záložky a mobilný režim náhľadu prešli 30 meraniami pri šírkach rámca 320, 360, 390, 430, 768 a 1280 px bez presahov dokumentu alebo obsahu.

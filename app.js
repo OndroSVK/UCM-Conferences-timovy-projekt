@@ -198,7 +198,7 @@ function closeModal() {
 }
 function map() {
   const d = document.querySelector("#screen-map");
-  d.innerHTML = `<div class="map-head"><div><div class="eyebrow">UCM CONFERENCES / DIZAJNOVÝ PROTOTYP</div><h2 id="map-title" style="margin-top:12px">Jedna konferencia. Všetky pohľady.</h2><p>33 obrazoviek podľa analýzy + 2 pomocné zoznamy. Vyberte si, kam sa chcete pozrieť.</p></div><button class="icon-btn" data-action="close-map" aria-label="Zavrieť mapu">${icon("close")}</button></div><div class="map-grid">${Object.entries(
+  d.innerHTML = `<div class="map-head"><div><div class="eyebrow">UCM CONFERENCES / DIZAJNOVÝ PROTOTYP</div><h2 id="map-title" style="margin-top:12px">Jedna konferencia. Všetky pohľady.</h2><p>${screens.length} obrazoviek a pomocných zoznamov vrátane správy webu konferencie. Vyberte si, kam sa chcete pozrieť.</p></div><button class="icon-btn" data-action="close-map" aria-label="Zavrieť mapu">${icon("close")}</button></div><div class="map-grid">${Object.entries(
     roles,
   )
     .map(

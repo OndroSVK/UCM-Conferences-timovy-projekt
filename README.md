@@ -24,7 +24,7 @@ Priame vstupy:
 - [Ekonomické oddelenie](http://localhost:8766/finance/payments.html)
 - [Správa systému](http://localhost:8766/superadmin/conferences.html)
 
-Horný prepínač mení rozhranie. **Mapa obrazoviek** otvorí všetkých 33 obrazoviek z analýzy a dva pomocné zoznamy. Každá obrazovka je samostatný HTML dokument s vlastnou adresou. Funguje späť/vpred aj priame otvorenie bez serverových rewrite pravidiel. Pôvodné odkazy `#/…` sa presmerujú na nové HTML adresy.
+Horný prepínač mení rozhranie. **Mapa obrazoviek** otvorí 33 pôvodných obrazoviek, dva pomocné zoznamy a správu webu konferencie. Každá obrazovka je samostatný HTML dokument s vlastnou adresou. Funguje späť/vpred aj priame otvorenie bez serverových rewrite pravidiel. Pôvodné odkazy `#/…` sa presmerujú na nové HTML adresy.
 
 ## Obsah a interakcie
 
@@ -36,9 +36,15 @@ Horný prepínač mení rozhranie. **Mapa obrazoviek** otvorí všetkých 33 obr
 - Platby a detail úhrady; konferencie/ročníky, nastavenia, pracovníci a záznam operácií.
 - Vyhľadávanie a filtre tabuliek, prepínanie dní, dialógy, pridanie spoluautora, výber lokálneho súboru, náhľad správy a stiahnutie ukážkového CSV.
 
-Všetky mená, počty, ceny, termíny a program ročníka 2027 sú vzorové. Prototyp nie je potvrdením finálneho rozsahu ani pravidiel konferencie. Nie je zapojený backend, autentifikácia, databáza, e-mail, bankové služby ani upload. Roly sú navigácia, nie zabezpečenie. Niektoré akcie iba zobrazia dialóg alebo potvrdenie; netvoria úplný stavový proces. Vybrané formuláre si pamätajú vzorové údaje počas práce v jednej karte cez `sessionStorage`, aj medzi stránkami a po obnovení. Zavretím karty sa relácia skončí. Heslá a lokálne súbory sa neukladajú. Pri vypnutom úložisku fungujú obrazovky aj interakcie na aktuálnej stránke, údaje sa medzi stránkami neprenesú.
+Všetky mená, počty, ceny, termíny a program ročníka 2027 sú vzorové. Prototyp nie je potvrdením finálneho rozsahu ani pravidiel konferencie. Nie je zapojený backend, autentifikácia, serverová databáza, e-mail, bankové služby ani serverový upload. Roly sú navigácia, nie zabezpečenie. Niektoré akcie iba zobrazia dialóg alebo potvrdenie; netvoria úplný stavový proces. Vybrané formuláre si pamätajú vzorové údaje počas práce v jednej karte cez `sessionStorage`, aj medzi stránkami a po obnovení. Zavretím karty sa relácia skončí. Heslá a súbory príspevkov sa neukladajú. Editor webu má samostatné lokálne úložisko obrázkov a konceptov, opísané nižšie. Pri vypnutom úložisku fungujú obrazovky aj interakcie na aktuálnej stránke, údaje sa medzi stránkami neprenesú.
 
 CSV je iba lokálna ukážka; finálny Excel export zatiaľ nie je implementovaný. PDF náhľad zobrazuje ilustračný text, nie skutočný dokument.
+
+## Editor webu konferencie
+
+Otvor [Web konferencie](superadmin/website.html), dostupný aj cez bočnú navigáciu administrácie. Obsahuje úpravu obsahu, HTML a CSS, nahratie obrázkov, priebežný náhľad pre desktop/tablet/mobil, uloženie konceptu, lokálne publikovanie a obnovu verzií.
+
+Dáta a obrázky sa ukladajú do IndexedDB v tomto prehliadači; publikovanie prepína iba lokálny náhľad. Zmeny sa neposielajú na server ani nezapisujú do zdrojového webu. [Podrobný návod a technické členenie](docs/editor-webu.md).
 
 ## Štruktúra a úprava obrazoviek
 

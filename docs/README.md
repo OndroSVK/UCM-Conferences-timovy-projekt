@@ -16,3 +16,7 @@ Dokumentácia je po slovensky. Názvy rout, komponentov, dátových polí a kód
 Po revízii rozpracovať podľa potreby: dátový model, oprávnenia, pravidlá stavov, kontrakty s backendom, dizajnové pravidlá a akceptačné scenáre. Tieto dokumenty zatiaľ nevznikli; ich obsah ani technológie nie sú týmto návrhom schválené.
 
 Pri každom rozhodnutí uviesť jeho stav, zdroj a prípadnú otvorenú otázku. Funkcie plánované v dokumentácii neznamenajú implementovanú funkcionalitu.
+
+## Editor verejného webu
+
+[Web konferencie – frontendová ukážka](editor-webu.md) – obsah, HTML, CSS, obrázky, lokálne koncepty a publikované verzie.
