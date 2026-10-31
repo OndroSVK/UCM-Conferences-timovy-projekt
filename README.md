@@ -2,6 +2,8 @@
 
 Preklikateľný dizajnový prototyp konferenčného systému pre ANS 2027. Čisté HTML, CSS a JavaScript moduly, bez build kroku a bez aplikačných závislostí.
 
+https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/?utm_source=chatgpt.com
+
 ## Spustenie
 
 V priečinku aplikácie (po klonovaní v koreni repozitára) spusti:
