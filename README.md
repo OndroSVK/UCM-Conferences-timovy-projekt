@@ -4,23 +4,23 @@ Preklikateľný dizajnový prototyp konferenčného systému pre ANS 2027. Čist
 
 ## Spustenie
 
-V koreňovom priečinku celého projektu spusti:
+V priečinku aplikácie (po klonovaní v koreni repozitára) spusti:
 
 ```sh
 python3 -m http.server 8766 --bind 127.0.0.1
 ```
 
-Otvor **http://localhost:8766/aplikacia/**. Funguje aj Live Server z VS Code. Použi HTTP server; priamy `file://` náhľad nenačíta JavaScript moduly.
+Otvor **http://localhost:8766/**. Funguje aj Live Server z VS Code. Použi HTTP server; priamy `file://` náhľad nenačíta JavaScript moduly.
 
 Priame vstupy:
 
-- [Verejná konferencia](http://localhost:8766/aplikacia/#/home)
-- [Účastnícky účet](http://localhost:8766/aplikacia/#/account)
-- [Organizátor](http://localhost:8766/aplikacia/#/organizer)
-- [Recenzent](http://localhost:8766/aplikacia/#/reviews)
-- [Programový výbor](http://localhost:8766/aplikacia/#/committee-submissions)
-- [Ekonomické oddelenie](http://localhost:8766/aplikacia/#/payments)
-- [Správa systému](http://localhost:8766/aplikacia/#/conferences)
+- [Verejná konferencia](http://localhost:8766/#/home)
+- [Účastnícky účet](http://localhost:8766/#/account)
+- [Organizátor](http://localhost:8766/#/organizer)
+- [Recenzent](http://localhost:8766/#/reviews)
+- [Programový výbor](http://localhost:8766/#/committee-submissions)
+- [Ekonomické oddelenie](http://localhost:8766/#/payments)
+- [Správa systému](http://localhost:8766/#/conferences)
 
 Horný prepínač mení rozhranie. **Mapa obrazoviek** otvorí všetkých 33 obrazoviek z analýzy a dva pomocné zoznamy. Každá obrazovka má vlastnú hash URL, funguje späť/vpred aj obnovenie stránky bez konfigurácie servera.
 
@@ -47,7 +47,7 @@ CSV je iba lokálna ukážka; finálny Excel export zatiaľ nie je implementovan
 - `public-pages.js`, `account-pages.js`, `workspace-pages.js` – jednotlivé obrazovky.
 - `docs/frontend-prototyp.md` – stav, dizajn a overenie prototypu.
 
-Písmo sa načítava z `../assets/space-grotesk.ttf`, favicon z `../favicon.ico`. Pri presune treba zachovať tieto relatívne cesty. Súčasný prezentačný web v koreni a jeho `dist/` zostali oddelené. `build.py` túto aplikáciu nebalí a SFTP konfigurácia prezentačného webu sa na ňu nevzťahuje.
+Aplikácia je samostatná: písmo a jeho licencia sú v `assets/`, favicon v `favicon.ico`. Repozitár obsahuje iba aplikáciu a jej dokumentáciu. Prezentačný web, tímové dokumenty a konfigurácia školského hostingu nie sú jeho súčasťou.
 
 ## Budúca implementácia
 
