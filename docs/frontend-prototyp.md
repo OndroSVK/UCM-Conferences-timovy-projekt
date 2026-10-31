@@ -38,4 +38,12 @@ Overenie novej štruktúry:
 - Skontrolovaných 525 lokálnych odkazov vrátane variantov šablón, štýlov, písma a ikon.
 - 85 DOM scenárov, 499 kontrol: všetky stránky a záznamy detailov, mapa, záložky, dni programu, registrácia vrátane nezhodných hesiel a návratu späť, uchovanie vzorového stavu medzi stránkami, vyhľadávanie, príspevok, čiastočná úhrada, správa a exporty. Kontrola adries aj pod podcestou repozitára GitHub Pages.
 - Safari: vizuálne overený úvod, prechod na program a prepnutie dňa; mapa a prechod do účastníkov, vyhľadanie Petry s výsledkom jedného záznamu.
-- Mobilné CSS sa nemenilo; nové samostatné meranie všetkých mobilných obrazoviek neprebehlo.
+- Mobilné rozloženie bolo následne opravené a zmerané; výsledky sú uvedené nižšie.
+
+## Mobilné rozloženie / 31. 10. 2026
+
+Opravené automatické minimálne šírky grid/flex detí, zalamovanie tlačidiel a panelových hlavičiek, riadky so súbormi, mobilná navigácia, štatistické karty a veľkosť nadpisov. Formulárové polia na mobile používajú 16 px text a ovládacie prvky väčší dotykový cieľ. Tabuľky a záložky sa posúvajú vo vlastnom ohraničenom priestore. Presah celej stránky sa neskrýva cez `overflow-x: hidden`.
+
+V Safari prebehlo 306 kontrol: všetkých 35 stránok, varianty záložiek, dni programu, kroky registrácie, otvorená mapa a mobilné menu, pri šírkach rámca 320, 360, 390, 430, 768 a 1280 px. Po načítaní písma sa merala šírka dokumentu aj viditeľné deti; povolené vnútorné posúvanie tabuliek a záložiek sa vyhodnocovalo oddelene. Výsledok: 0 presahov dokumentu aj obsahu. Rámec v desktopovom Safari odpočítava pri zvislom scrollbare 17 px z dostupnej šírky; kontrola porovnáva prvky so skutočnou šírkou obsahu.
+
+Vizuálne skontrolovaný verejný úvod a organizátorský prehľad pri šírke 390 px. Ide o overenie v Safari s mobilnými rozmermi, nie test na fyzickom iPhone alebo Androide.
