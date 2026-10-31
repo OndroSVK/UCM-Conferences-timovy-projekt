@@ -1,6 +1,7 @@
 # Analýza frontendu a návrh obrazoviek
 
-Stav: **pracovný návrh na revíziu, bez implementácie**.
+Stav: **pracovný návrh požiadaviek na revíziu; nie schválený backendový kontrakt**.
+Od 31. 10. 2026 existuje samostatný frontendový prototyp podľa tohto podkladu; jeho aktuálne správanie opisuje [projektová dokumentácia](projektova-dokumentacia.md). Navrhovaná budúca architektúra a analytické routy nižšie nie sú implementáciou backendu.
 Dátum spracovania a načítania zdroja: **31. 10. 2026**.
 Projekt: UCM Conferences, prioritne konferencia ANS 2027.
 Zameranie: podklad pre Ondra a spoluprácu frontendu s backendom, databázou a testovaním.
