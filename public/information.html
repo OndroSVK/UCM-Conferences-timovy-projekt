@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Praktické informácie · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="information">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public" selected>Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <header class="public-header">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <nav class="public-nav" aria-label="Hlavná navigácia">
+          <a href="../index.html" class="">O konferencii</a>
+          <a href="program.html" class="">Program</a>
+          <a href="information.html" class="active" aria-current="page">Praktické informácie</a>
+          <a href="../auth/login.html">Prihlásenie</a>
+          <a class="btn lime" href="../auth/register.html">
+            Registrácia
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-5-5 5 5-5 5" />
+            </svg>
+          </a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1" class="public-main">
+        <div id="screen-content">
+          <div class="page-intro">
+            <div class="eyebrow">DOBRÉ VEDIEŤ</div>
+            <h1>Na vedu sa oplatí pripraviť.</h1>
+            <p>Všetko praktické pred vašou cestou na ANS 2027.</p>
+          </div>
+          <div class="public-content">
+            <div class="two-grid">
+              <section class="card">
+                <div class="eyebrow">01 / MIESTO KONANIA</div>
+                <h2 style="margin: 18px 0">Stretnutie pod Tatrami.</h2>
+                <p>Štrbské Pleso, Vysoké Tatry, Slovensko</p>
+                <p>
+                  Miesto a dátumy sú v prototype ilustračné. Presné informácie doplní organizátor.
+                </p>
+                <div class="map-placeholder">
+                  <div class="map-pin">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M19 10c0 5-7 12-7 12S5 15 5 10a7 7 0 0 1 14 0M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0"
+                      />
+                    </svg>
+                  </div>
+                  <p>Štrbské Pleso / ilustračná schéma</p>
+                </div>
+              </section>
+              <section class="card lavender">
+                <div class="eyebrow">02 / UBYTOVANIE A DOPRAVA</div>
+                <h2 style="margin: 18px 0">
+                  Vy si vyberiete.
+                  <br />
+                  My vás nasmerujeme.
+                </h2>
+                <p>
+                  Ubytovanie si účastníci zabezpečujú samostatne. Tu pribudnú odporúčané hotely a
+                  priame odkazy na rezerváciu.
+                </p>
+                <ul class="check-list">
+                  <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                    Príchod vlakom: stanica Štrbské Pleso
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                    Odporúčame plánovať cestu vopred
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                    Hotelové rezervácie mimo tohto systému
+                  </li>
+                </ul>
+                <a
+                  class="btn small flat"
+                  href="https://www.zssk.sk/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Vyhľadať vlakové spojenie
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                  </svg>
+                </a>
+              </section>
+            </div>
+            <div class="three-grid" style="margin-top: 24px">
+              <article class="card">
+                <h3>Organizačné otázky</h3>
+                <p>
+                  Registrácia, účasť a praktické informácie. Kontaktné údaje doplní organizačný tím.
+                </p>
+              </article>
+              <article class="card">
+                <h3>Pokyny pre autorov</h3>
+                <p>
+                  Odovzdajte abstrakt a súbor vo svojom účte. Šablóny a finálne požiadavky budú
+                  doplnené.
+                </p>
+                <a class="btn small flat" href="../participant/submissions.html">
+                  Moje príspevky
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5" />
+                  </svg>
+                </a>
+              </article>
+              <article class="card lime">
+                <h3>Už máte svoj účet?</h3>
+                <p>Skontrolujte svoju účasť a pripravte sa na konferenciu.</p>
+                <a class="btn small flat" href="../participant/account.html">
+                  Otvoriť účet
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5" />
+                  </svg>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="public-footer">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <span>Veda. Ľudia. Nové spojenia.</span>
+        <a href="privacy.html">Informácie o spracúvaní údajov ↗</a>
+        <span>© 2027 · Vizuálna ukážka</span>
+      </footer>
+    </div>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Záznam operácií · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="audit">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin" selected>Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="conferences.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">SPRÁVA SYSTÉMU</div>
+            <a href="conferences.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h18v5H3zM5 8v13h14V8M10 12h4" />
+              </svg>
+              Konferencie a ročníky
+            </a>
+            <a href="settings.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1z"
+                />
+              </svg>
+              Nastavenia ročníka
+            </a>
+            <a href="users.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Pracovníci a oprávnenia
+            </a>
+            <a href="audit.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 7v5l3 2" />
+              </svg>
+              Záznam operácií
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">JK</span>
+              <div>
+                Jana Kováčová
+                <small>Superadministrátor</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">JK</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">SPRÁVA SYSTÉMU / ZÁZNAM OPERÁCIÍ</div>
+                  <h1>Každá dôležitá zmena má svoj príbeh.</h1>
+                  <p>Prehľad administrátorských operácií v konferenčnom systéme.</p>
+                </div>
+                <div class="actions"></div>
+              </div>
+              <section class="panel">
+                <div class="toolbar">
+                  <div class="filters">
+                    <label class="search">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16 10a6 6 0 1 1-12 0 6 6 0 0 1 12 0m-1 5 6 6" />
+                      </svg>
+                      <input
+                        type="search"
+                        aria-label="Pracovník alebo operácia..."
+                        placeholder="Pracovník alebo operácia..."
+                        data-search
+                      />
+                    </label>
+                    <select aria-label="Filter podľa stavu" data-filter>
+                      <option>Všetky operácie</option>
+                      <option>Platba</option>
+                      <option>Recenzia</option>
+                      <option>Registrácia</option>
+                      <option>Program</option>
+                    </select>
+                  </div>
+                  <small class="muted" data-result-count>Ukážkové záznamy</small>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">DÁTUM A ČAS</th>
+                        <th scope="col">PRACOVNÍK</th>
+                        <th scope="col">OPERÁCIA</th>
+                        <th scope="col">OBJEKT</th>
+                        <th scope="col">VÝSLEDOK</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-search-row>
+                        <td>20. 04. 2027 · 14:32</td>
+                        <td>Mária Urbanová</td>
+                        <td>Platba zaevidovaná</td>
+                        <td>ANS-2027-0042</td>
+                        <td><span class="pill green">Úspešné</span></td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>20. 04. 2027 · 13:18</td>
+                        <td>Jana Kováčová</td>
+                        <td>Recenzia – pridelenie recenzenta</td>
+                        <td>ANS-027</td>
+                        <td><span class="pill green">Úspešné</span></td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>20. 04. 2027 · 11:40</td>
+                        <td>Zuzana Veselá</td>
+                        <td>Rozhodnutie výboru</td>
+                        <td>ANS-028</td>
+                        <td><span class="pill green">Úspešné</span></td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>20. 04. 2027 · 10:12</td>
+                        <td>Jana Kováčová</td>
+                        <td>Registrácia – úprava kategórie</td>
+                        <td>ANS-2027-0048</td>
+                        <td><span class="pill green">Úspešné</span></td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>19. 04. 2027 · 16:03</td>
+                        <td>Ondrej Hudec</td>
+                        <td>Program – zmena termínu</td>
+                        <td>ANS 2027</td>
+                        <td><span class="pill green">Úspešné</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

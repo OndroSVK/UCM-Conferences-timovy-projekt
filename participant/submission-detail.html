@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Detail príspevku · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="submission-detail">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant" selected>Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="account.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">ÚČASTNÍCKA ZÓNA</div>
+            <a href="account.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+              </svg>
+              Môj prehľad
+            </a>
+            <a href="participation.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M15 8h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v12"
+                />
+              </svg>
+              Moja účasť a platba
+            </a>
+            <a href="submissions.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+              </svg>
+              Moje príspevky
+            </a>
+            <a href="profile.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Môj profil
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">MN</span>
+              <div>
+                Martin Novák
+                <small>Účastník</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">MN</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">MOJE PRÍSPEVKY / ANS-027</div>
+                  <h1>Detail príspevku</h1>
+                  <p>Applied Natural Sciences 2027</p>
+                </div>
+                <div class="actions">
+                  <a class="btn flat" href="submissions.html">Späť na príspevky</a>
+                </div>
+              </div>
+              <section class="card" style="margin-bottom: 25px">
+                <div class="card-top">
+                  <span class="eyebrow">ANS-027 / PREDNÁŠKA</span>
+                  <span class="pill blue">V recenzii</span>
+                </div>
+                <h2 class="submission-title">
+                  Využitie strojového učenia pri monitorovaní kvality vody
+                </h2>
+                <p>Martin Novák, Petra Kováčová · UCM v Trnave</p>
+              </section>
+              <div class="tabs" role="tablist">
+                <button
+                  type="button"
+                  class="tab active"
+                  role="tab"
+                  aria-selected="true"
+                  data-tab="0"
+                >
+                  Prehľad
+                </button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-tab="1">
+                  Súbory a verzie
+                </button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-tab="2">
+                  Pripomienky
+                </button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-tab="3">
+                  História
+                </button>
+              </div>
+              <div id="tab-content">
+                <div class="content-grid" style="margin-top: 0">
+                  <section class="panel">
+                    <div class="panel-head"><h2>Abstrakt</h2></div>
+                    <div class="panel-body">
+                      <p class="prose">
+                        Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev
+                        environmentálneho výskumu. V príspevku predstavujeme prístup založený na
+                        metódach strojového učenia, ktorý umožňuje identifikovať zmeny vo vybraných
+                        ukazovateľoch kvality vody. Navrhnutý model kombinuje senzorické merania s
+                        historickými údajmi a poskytuje podklad pre včasné odhalenie
+                        environmentálnych rizík. Výsledky poukazujú na potenciál medziodborovej
+                        spolupráce informatiky a environmentálnych vied.
+                      </p>
+                      <div style="margin-top: 22px">
+                        <span class="pill blue">Strojové učenie</span>
+                        <span class="pill green">Kvalita vody</span>
+                        <span class="pill gray">Environmentálne dáta</span>
+                      </div>
+                    </div>
+                  </section>
+                  <section class="panel">
+                    <div class="panel-head"><h2>Priebeh príspevku</h2></div>
+                    <div class="panel-body">
+                      <ol class="timeline">
+                        <li>
+                          <strong>Príspevok je v recenznom konaní</strong>
+                          <small>20. 04. 2027 · 10:42</small>
+                          Čakáme na posudky odborných recenzentov.
+                        </li>
+                        <li>
+                          <strong>Formálna kontrola dokončená</strong>
+                          <small>18. 04. 2027 · 14:15</small>
+                          Príspevok spĺňa formálne požiadavky.
+                        </li>
+                        <li>
+                          <strong>Príspevok bol odovzdaný</strong>
+                          <small>16. 04. 2027 · 09:30</small>
+                          Abstrakt a príloha, verzia 1.
+                        </li>
+                      </ol>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <template id="tab-0">
+      <div class="content-grid" style="margin-top: 0">
+        <section class="panel">
+          <div class="panel-head"><h2>Abstrakt</h2></div>
+          <div class="panel-body">
+            <p class="prose">
+              Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev environmentálneho
+              výskumu. V príspevku predstavujeme prístup založený na metódach strojového učenia,
+              ktorý umožňuje identifikovať zmeny vo vybraných ukazovateľoch kvality vody. Navrhnutý
+              model kombinuje senzorické merania s historickými údajmi a poskytuje podklad pre
+              včasné odhalenie environmentálnych rizík. Výsledky poukazujú na potenciál
+              medziodborovej spolupráce informatiky a environmentálnych vied.
+            </p>
+            <div style="margin-top: 22px">
+              <span class="pill blue">Strojové učenie</span>
+              <span class="pill green">Kvalita vody</span>
+              <span class="pill gray">Environmentálne dáta</span>
+            </div>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Priebeh príspevku</h2></div>
+          <div class="panel-body">
+            <ol class="timeline">
+              <li>
+                <strong>Príspevok je v recenznom konaní</strong>
+                <small>20. 04. 2027 · 10:42</small>
+                Čakáme na posudky odborných recenzentov.
+              </li>
+              <li>
+                <strong>Formálna kontrola dokončená</strong>
+                <small>18. 04. 2027 · 14:15</small>
+                Príspevok spĺňa formálne požiadavky.
+              </li>
+              <li>
+                <strong>Príspevok bol odovzdaný</strong>
+                <small>16. 04. 2027 · 09:30</small>
+                Abstrakt a príloha, verzia 1.
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="tab-1">
+      <section class="panel">
+        <div class="panel-head"><h2>Súbory a verzie</h2></div>
+        <div class="panel-body">
+          <div class="file">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+            </svg>
+            <div>
+              ANS-027_abstrakt_v2.pdf
+              <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+            </div>
+            <button type="button" class="btn small flat" data-action="file">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+              </svg>
+              Náhľad
+            </button>
+          </div>
+          <div style="margin-top: 14px">
+            <div class="file">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+              </svg>
+              <div>
+                ANS-027_abstrakt_v1.pdf
+                <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+              </div>
+              <button type="button" class="btn small flat" data-action="file">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+                Náhľad
+              </button>
+            </div>
+          </div>
+          <p class="muted" style="font-size: 11px; margin-top: 20px">
+            Predchádzajúce verzie sú zachované. Ďalšia revízia bude dostupná po výzve výboru.
+          </p>
+        </div>
+      </section>
+    </template>
+    <template id="tab-2">
+      <section class="panel">
+        <div class="panel-head"><h2>Pripomienky pre autora</h2></div>
+        <div class="panel-body">
+          <div class="empty">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 3H4v18h16V3h-5M9 2h6v4H9zM8 12l2 2 5-5M8 18h8" />
+            </svg>
+            <h3>Na dobré posúdenie treba čas.</h3>
+            <p>Po ukončení hodnotenia tu nájdete pripomienky a rozhodnutie určené vám.</p>
+          </div>
+        </div>
+      </section>
+    </template>
+    <template id="tab-3">
+      <section class="panel">
+        <div class="panel-head"><h2>História príspevku</h2></div>
+        <div class="panel-body">
+          <ol class="timeline">
+            <li>
+              <strong>Príspevok je v recenznom konaní</strong>
+              <small>20. 04. 2027 · 10:42</small>
+              Čakáme na posudky odborných recenzentov.
+            </li>
+            <li>
+              <strong>Formálna kontrola dokončená</strong>
+              <small>18. 04. 2027 · 14:15</small>
+              Príspevok spĺňa formálne požiadavky.
+            </li>
+            <li>
+              <strong>Príspevok bol odovzdaný</strong>
+              <small>16. 04. 2027 · 09:30</small>
+              Abstrakt a príloha, verzia 1.
+            </li>
+          </ol>
+        </div>
+      </section>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

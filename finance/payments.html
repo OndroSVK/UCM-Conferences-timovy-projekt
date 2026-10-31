@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Platby · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="payments">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance" selected>Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="payments.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">EKONOMICKÉ ODDELENIE</div>
+            <a href="payments.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M15 8h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v12"
+                />
+              </svg>
+              Platby
+            </a>
+            <a href="finance-export.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+              </svg>
+              Ekonomický export
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">MU</span>
+              <div>
+                Mária Urbanová
+                <small>Ekonomické oddelenie</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">MU</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">EKONOMICKÉ ODDELENIE / ANS 2027</div>
+                  <h1>Platby v dobrom poriadku.</h1>
+                  <p>Manuálna evidencia účastníckych poplatkov a prijatých úhrad.</p>
+                </div>
+                <div class="actions">
+                  <a class="btn flat" href="finance-export.html">
+                    Ekonomický export
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="four-grid">
+                <article class="card stat">
+                  <div class="stat-label">
+                    Predpísané poplatky
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M15 8h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v12"
+                      />
+                    </svg>
+                  </div>
+                  <div class="stat-value">19 440 €</div>
+                  <div class="stat-foot">128 registrácií</div>
+                </article>
+                <article class="card stat lime">
+                  <div class="stat-label">
+                    Prijaté úhrady
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </div>
+                  <div class="stat-value">14 580 €</div>
+                  <div class="stat-foot">75 % z predpisu</div>
+                </article>
+                <article class="card stat">
+                  <div class="stat-label">
+                    Zostáva uhradiť
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 7v5l3 2" />
+                    </svg>
+                  </div>
+                  <div class="stat-value">4 860 €</div>
+                  <div class="stat-foot">32 otvorených predpisov</div>
+                </article>
+                <article class="card stat yellow">
+                  <div class="stat-label">
+                    Po splatnosti
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+                    </svg>
+                  </div>
+                  <div class="stat-value">06</div>
+                  <div class="stat-foot">Vyžaduje kontrolu</div>
+                </article>
+              </div>
+              <section class="panel">
+                <div class="toolbar">
+                  <div class="filters">
+                    <label class="search">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16 10a6 6 0 1 1-12 0 6 6 0 0 1 12 0m-1 5 6 6" />
+                      </svg>
+                      <input
+                        type="search"
+                        aria-label="Meno alebo variabilný symbol..."
+                        placeholder="Meno alebo variabilný symbol..."
+                        data-search
+                      />
+                    </label>
+                    <select aria-label="Filter podľa stavu" data-filter>
+                      <option>Všetky stavy</option>
+                      <option>Zaplatené</option>
+                      <option>Čaká na úhradu</option>
+                      <option>Čiastočne zaplatené</option>
+                      <option>Oslobodené</option>
+                    </select>
+                  </div>
+                  <small class="muted" data-result-count>Ukážkové záznamy</small>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">ÚČASTNÍK</th>
+                        <th scope="col">VARIABILNÝ SYMBOL</th>
+                        <th scope="col">PREDPIS</th>
+                        <th scope="col">UHRADENÉ</th>
+                        <th scope="col">STAV</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">MN</span>
+                            <div>
+                              <strong>Martin Novák</strong>
+                              <span class="secondary">UCM v Trnave</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270042</td>
+                        <td>180,00 €</td>
+                        <td>180,00 €</td>
+                        <td><span class="pill green">Zaplatené</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=0">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">PK</span>
+                            <div>
+                              <strong>Petra Kováčová</strong>
+                              <span class="secondary">Univerzita Komenského</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270043</td>
+                        <td>180,00 €</td>
+                        <td>0,00 €</td>
+                        <td><span class="pill orange">Čaká na úhradu</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=1">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">TH</span>
+                            <div>
+                              <strong>Tomáš Horváth</strong>
+                              <span class="secondary">STU v Bratislave</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270044</td>
+                        <td>180,00 €</td>
+                        <td>180,00 €</td>
+                        <td><span class="pill green">Zaplatené</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=2">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">LV</span>
+                            <div>
+                              <strong>Lucia Vargová</strong>
+                              <span class="secondary">Univerzita Mateja Bela</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270045</td>
+                        <td>180,00 €</td>
+                        <td>90,00 €</td>
+                        <td><span class="pill blue">Čiastočne zaplatené</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=3">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">AB</span>
+                            <div>
+                              <strong>Adam Bielik</strong>
+                              <span class="secondary">UCM v Trnave</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270046</td>
+                        <td>180,00 €</td>
+                        <td>0,00 €</td>
+                        <td><span class="pill orange">Čaká na úhradu</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=4">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">EP</span>
+                            <div>
+                              <strong>Eva Poláková</strong>
+                              <span class="secondary">SAV Bratislava</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270047</td>
+                        <td>180,00 €</td>
+                        <td>180,00 €</td>
+                        <td><span class="pill green">Zaplatené</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=5">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">DK</span>
+                            <div>
+                              <strong>Daniel Král</strong>
+                              <span class="secondary">Masarykova univerzita</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270048</td>
+                        <td>0,00 €</td>
+                        <td>0,00 €</td>
+                        <td><span class="pill gray">Oslobodené</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=6">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-search-row>
+                        <td>
+                          <div class="table-person">
+                            <span class="avatar" style="">NU</span>
+                            <div>
+                              <strong>Nina Urbanová</strong>
+                              <span class="secondary">UCM v Trnave</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20270049</td>
+                        <td>180,00 €</td>
+                        <td>180,00 €</td>
+                        <td><span class="pill green">Zaplatené</span></td>
+                        <td>
+                          <a class="link" href="payment-detail.html?id=7">
+                            Otvoriť
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M5 12h14m-5-5 5 5-5 5" />
+                            </svg>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

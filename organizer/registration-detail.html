@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Detail registrácie · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="registration-detail">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer" selected>Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="organizer.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">ORGANIZÁCIA KONFERENCIE</div>
+            <a href="organizer.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+              </svg>
+              Prehľad ročníka
+            </a>
+            <a href="registrations.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Účastníci
+            </a>
+            <a href="admin-submissions.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+              </svg>
+              Príspevky
+            </a>
+            <a href="admin-reviews.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 3H4v18h16V3h-5M9 2h6v4H9zM8 12l2 2 5-5M8 18h8" />
+              </svg>
+              Priebeh recenzií
+              <span class="nav-count">22</span>
+            </a>
+            <a href="admin-program.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v16H4zM16 3v4M8 3v4M4 11h16" />
+              </svg>
+              Editor programu
+            </a>
+            <a href="messages.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 5h18v14H3zM3 5l9 8 9-8" />
+              </svg>
+              Komunikácia
+            </a>
+            <a href="exports.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+              </svg>
+              Exporty a listiny
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">JK</span>
+              <div>
+                Jana Kováčová
+                <small>Organizátor</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">JK</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+                  <h1>Martin Novák</h1>
+                  <p>ANS-2027-0042 · Applied Natural Sciences 2027</p>
+                </div>
+                <div class="actions">
+                  <a class="btn flat" href="registrations.html">Späť na zoznam</a>
+                </div>
+              </div>
+              <div class="two-grid">
+                <section class="panel">
+                  <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+                  <div class="panel-body">
+                    <dl class="definition">
+                      <dt>Účastník</dt>
+                      <dd>Martin Novák</dd>
+                      <dt>Organizácia</dt>
+                      <dd>UCM v Trnave</dd>
+                      <dt>E-mail</dt>
+                      <dd>ucastnik0@example.com</dd>
+                      <dt>Kategória</dt>
+                      <dd>Rečník</dd>
+                      <dt>Stav registrácie</dt>
+                      <dd><span class="pill green">Potvrdená</span></dd>
+                      <dt>Dátum registrácie</dt>
+                      <dd>16. apríl 2027</dd>
+                    </dl>
+                  </div>
+                </section>
+                <section class="panel">
+                  <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+                  <div class="panel-body">
+                    <span class="pill green">Zaplatené</span>
+                    <div class="amount">
+                      180
+                      <small>EUR</small>
+                    </div>
+                    <p class="muted" style="font-size: 12px">
+                      Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+                    </p>
+                    <div style="margin-top: 22px">
+                      <a class="btn small flat" href="../finance/payment-detail.html?id=0">
+                        Otvoriť detail úhrady
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M5 12h14m-5-5 5 5-5 5" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div style="margin-top: 24px">
+                <section class="panel">
+                  <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+                  <div class="panel-body">
+                    <h3>Využitie strojového učenia pri monitorovaní kvality vody</h3>
+                    <p class="muted" style="font-size: 12px; margin: 12px 0 20px">
+                      ANS-027 · Prednáška
+                    </p>
+                    <a class="btn small flat" href="admin-submission.html?id=0">
+                      Detail príspevku
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14m-5-5 5 5-5 5" />
+                      </svg>
+                    </a>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <template id="record-0">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Martin Novák</h1>
+          <p>ANS-2027-0042 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Martin Novák</dd>
+              <dt>Organizácia</dt>
+              <dd>UCM v Trnave</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik0@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Rečník</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill green">Zaplatené</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=0">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Využitie strojového učenia pri monitorovaní kvality vody</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-027 · Prednáška</p>
+            <a class="btn small flat" href="admin-submission.html?id=0">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="record-1">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Petra Kováčová</h1>
+          <p>ANS-2027-0043 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Petra Kováčová</dd>
+              <dt>Organizácia</dt>
+              <dd>Univerzita Komenského</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik1@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Autor posteru</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill orange">Čaká na úhradu</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=1">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Biodegradácia polymérov v pôdnom prostredí</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-028 · Poster</p>
+            <a class="btn small flat" href="admin-submission.html?id=1">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="record-2">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Tomáš Horváth</h1>
+          <p>ANS-2027-0044 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Tomáš Horváth</dd>
+              <dt>Organizácia</dt>
+              <dd>STU v Bratislave</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik2@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Rečník</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill green">Zaplatené</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=2">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Nové prístupy v analytickej chémii</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-029 · Prednáška</p>
+            <a class="btn small flat" href="admin-submission.html?id=2">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="record-3">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Lucia Vargová</h1>
+          <p>ANS-2027-0045 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Lucia Vargová</dd>
+              <dt>Organizácia</dt>
+              <dd>Univerzita Mateja Bela</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik3@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Autor posteru</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill blue">Čiastočne zaplatené</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=3">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Biodiverzita mestských ekosystémov</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-030 · Poster</p>
+            <a class="btn small flat" href="admin-submission.html?id=3">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="record-4">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Adam Bielik</h1>
+          <p>ANS-2027-0046 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Adam Bielik</dd>
+              <dt>Organizácia</dt>
+              <dd>UCM v Trnave</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik4@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Pasívny účastník</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill orange">Čaká na úhradu</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=4">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Optimalizácia neurónových sietí pre malé dáta</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-031 · Prednáška</p>
+            <a class="btn small flat" href="admin-submission.html?id=4">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="record-5">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Eva Poláková</h1>
+          <p>ANS-2027-0047 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Eva Poláková</dd>
+              <dt>Organizácia</dt>
+              <dd>SAV Bratislava</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik5@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Rečník</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill green">Zaplatené</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=5">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Bioaktívne látky v liečivých rastlinách</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-032 · Prednáška</p>
+            <a class="btn small flat" href="admin-submission.html?id=5">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="record-6">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Daniel Král</h1>
+          <p>ANS-2027-0048 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Daniel Král</dd>
+              <dt>Organizácia</dt>
+              <dd>Masarykova univerzita</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik6@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Rečník</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill gray">Oslobodené</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=6">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Využitie strojového učenia pri monitorovaní kvality vody</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-027 · Prednáška</p>
+            <a class="btn small flat" href="admin-submission.html?id=0">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <template id="record-7">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ÚČASTNÍCI / DETAIL REGISTRÁCIE</div>
+          <h1>Nina Urbanová</h1>
+          <p>ANS-2027-0049 · Applied Natural Sciences 2027</p>
+        </div>
+        <div class="actions"><a class="btn flat" href="registrations.html">Späť na zoznam</a></div>
+      </div>
+      <div class="two-grid">
+        <section class="panel">
+          <div class="panel-head"><h2>Registrácia a kontaktné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Účastník</dt>
+              <dd>Nina Urbanová</dd>
+              <dt>Organizácia</dt>
+              <dd>UCM v Trnave</dd>
+              <dt>E-mail</dt>
+              <dd>ucastnik7@example.com</dd>
+              <dt>Kategória</dt>
+              <dd>Pasívny účastník</dd>
+              <dt>Stav registrácie</dt>
+              <dd><span class="pill green">Potvrdená</span></dd>
+              <dt>Dátum registrácie</dt>
+              <dd>16. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Účastnícky poplatok</h2></div>
+          <div class="panel-body">
+            <span class="pill green">Zaplatené</span>
+            <div class="amount">
+              180
+              <small>EUR</small>
+            </div>
+            <p class="muted" style="font-size: 12px">
+              Manuálna evidencia platby je dostupná v ekonomickom rozhraní.
+            </p>
+            <div style="margin-top: 22px">
+              <a class="btn small flat" href="../finance/payment-detail.html?id=7">
+                Otvoriť detail úhrady
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Súvisiaci príspevok</h2></div>
+          <div class="panel-body">
+            <h3>Biodegradácia polymérov v pôdnom prostredí</h3>
+            <p class="muted" style="font-size: 12px; margin: 12px 0 20px">ANS-028 · Poster</p>
+            <a class="btn small flat" href="admin-submission.html?id=1">
+              Detail príspevku
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

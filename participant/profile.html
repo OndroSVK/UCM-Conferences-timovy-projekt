@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Môj profil · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="profile">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant" selected>Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="account.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">ÚČASTNÍCKA ZÓNA</div>
+            <a href="account.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+              </svg>
+              Môj prehľad
+            </a>
+            <a href="participation.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M15 8h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v12"
+                />
+              </svg>
+              Moja účasť a platba
+            </a>
+            <a href="submissions.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+              </svg>
+              Moje príspevky
+            </a>
+            <a href="profile.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Môj profil
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">MN</span>
+              <div>
+                Martin Novák
+                <small>Účastník</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">MN</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">MÔJ ÚČET</div>
+                  <h1>Môj profil</h1>
+                  <p>Kontaktné a pracovné údaje vášho účtu.</p>
+                </div>
+                <div class="actions"></div>
+              </div>
+              <div class="content-grid" style="margin-top: 0">
+                <section class="panel">
+                  <div class="panel-head">
+                    <h2>Osobné údaje</h2>
+                    <span class="pill blue">Účastník</span>
+                  </div>
+                  <div class="panel-body">
+                    <form data-form="profile">
+                      <div class="form-grid">
+                        <label class="field">
+                          Titul pred menom
+                          <input type="text" name="title" value="Mgr." required />
+                        </label>
+                        <label class="field">
+                          Titul za menom
+                          <input type="text" name="suffix" value="PhD." required />
+                        </label>
+                        <label class="field">
+                          Meno
+                          <input type="text" name="firstName" value="Martin" required />
+                        </label>
+                        <label class="field">
+                          Priezvisko
+                          <input type="text" name="lastName" value="Novák" required />
+                        </label>
+                        <label class="field full">
+                          E-mail
+                          <input
+                            type="email"
+                            name="email"
+                            value="martin.novak@example.com"
+                            autocomplete="email"
+                            required
+                          />
+                        </label>
+                        <label class="field full">
+                          Organizácia
+                          <input
+                            type="text"
+                            name="organization"
+                            value="Univerzita sv. Cyrila a Metoda v Trnave"
+                            required
+                          />
+                        </label>
+                        <label class="field full">
+                          Pracovisko
+                          <input
+                            type="text"
+                            name="department"
+                            value="Fakulta prírodných vied"
+                            required
+                          />
+                        </label>
+                        <label class="field">
+                          Krajina
+                          <select name="country">
+                            <option>Slovensko</option>
+                            <option>Česko</option>
+                            <option>Iná</option>
+                          </select>
+                        </label>
+                        <label class="field">
+                          Telefón
+                          <small>Voliteľné</small>
+                          <input name="phone" type="tel" placeholder="+421" />
+                        </label>
+                      </div>
+                      <div class="form-actions">
+                        <button class="btn primary" type="submit">
+                          Uložiť zmeny
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m5 12 4 4L19 6" />
+                          </svg>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </section>
+                <aside class="card lavender">
+                  <div
+                    class="avatar"
+                    style="width: 64px; height: 64px; font-size: 23px; margin-bottom: 22px"
+                  >
+                    MN
+                  </div>
+                  <h2>Martin Novák</h2>
+                  <p>
+                    UCM v Trnave
+                    <br />
+                    Účastnícky účet
+                  </p>
+                  <hr style="margin: 24px 0; border: 0; border-top: 1px solid var(--ink)" />
+                  <p>
+                    Údaje profilu sa používajú pri registráciách na konferencie. Fakturačné údaje
+                    nájdete v konkrétnej účasti.
+                  </p>
+                  <div style="margin-top: 20px">
+                    <a class="btn small flat" href="participation.html">
+                      Moja účasť
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14m-5-5 5 5-5 5" />
+                      </svg>
+                    </a>
+                  </div>
+                </aside>
+              </div>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

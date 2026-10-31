@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Editor programu · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="admin-program">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer" selected>Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="organizer.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">ORGANIZÁCIA KONFERENCIE</div>
+            <a href="organizer.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+              </svg>
+              Prehľad ročníka
+            </a>
+            <a href="registrations.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Účastníci
+            </a>
+            <a href="admin-submissions.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+              </svg>
+              Príspevky
+            </a>
+            <a href="admin-reviews.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 3H4v18h16V3h-5M9 2h6v4H9zM8 12l2 2 5-5M8 18h8" />
+              </svg>
+              Priebeh recenzií
+              <span class="nav-count">22</span>
+            </a>
+            <a href="admin-program.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v16H4zM16 3v4M8 3v4M4 11h16" />
+              </svg>
+              Editor programu
+            </a>
+            <a href="messages.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 5h18v14H3zM3 5l9 8 9-8" />
+              </svg>
+              Komunikácia
+            </a>
+            <a href="exports.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+              </svg>
+              Exporty a listiny
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">JK</span>
+              <div>
+                Jana Kováčová
+                <small>Organizátor</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">JK</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">ORGANIZÁCIA / PROGRAM</div>
+                  <h1>Dajte vede jej čas a miesto.</h1>
+                  <p>Pracovný návrh programu konferencie ANS 2027.</p>
+                </div>
+                <div class="actions">
+                  <button type="button" class="btn primary" data-action="add-session">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    Pridať blok
+                  </button>
+                </div>
+              </div>
+              <div class="notice">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+                </svg>
+                <p>Pracovný návrh · verejný program sa zobrazí až po schválení a publikovaní.</p>
+              </div>
+              <div id="schedule-container">
+                <div class="day-tabs" aria-label="Deň programu">
+                  <button class="active" data-day="0" aria-pressed="true">Streda / 15. 09.</button>
+                  <button class="" data-day="1" aria-pressed="false">Štvrtok / 16. 09.</button>
+                  <button class="" data-day="2" aria-pressed="false">Piatok / 17. 09.</button>
+                </div>
+                <div class="schedule">
+                  <article class="schedule-row">
+                    <time>09:00</time>
+                    <div>
+                      <span class="room">Foyer</span>
+                      <h3>Registrácia a ranná káva</h3>
+                      <p>Zoznámte sa s ostatnými účastníkmi.</p>
+                      <div style="margin-top: 12px">
+                        <button type="button" class="btn small flat" data-action="session-0">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                          </svg>
+                          Upraviť blok
+                        </button>
+                      </div>
+                    </div>
+                    <span class="pill gray">Networking</span>
+                  </article>
+                  <article class="schedule-row">
+                    <time>10:00</time>
+                    <div>
+                      <span class="room">Hlavná sála</span>
+                      <h3>Otvorenie konferencie ANS 2027</h3>
+                      <p>Uvítanie účastníkov a predstavenie programu.</p>
+                      <div style="margin-top: 12px">
+                        <button type="button" class="btn small flat" data-action="session-1">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                          </svg>
+                          Upraviť blok
+                        </button>
+                      </div>
+                    </div>
+                    <span class="pill gray">Spoločný program</span>
+                  </article>
+                  <article class="schedule-row">
+                    <time>10:30</time>
+                    <div>
+                      <span class="room">Hlavná sála</span>
+                      <h3>Prírodné vedy v prepojenom svete</h3>
+                      <p>Plenárna prednáška · ukážkový rečník</p>
+                      <div style="margin-top: 12px">
+                        <button type="button" class="btn small flat" data-action="session-2">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                          </svg>
+                          Upraviť blok
+                        </button>
+                      </div>
+                    </div>
+                    <span class="pill green">Keynote</span>
+                  </article>
+                  <article class="schedule-row break">
+                    <time>11:30</time>
+                    <div>
+                      <span class="room">Foyer</span>
+                      <h3>Prestávka na kávu</h3>
+                      <p>Priestor na diskusiu a nové spojenia.</p>
+                      <div style="margin-top: 12px">
+                        <button type="button" class="btn small flat" data-action="session-3">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                          </svg>
+                          Upraviť blok
+                        </button>
+                      </div>
+                    </div>
+                    <span class="pill gray">Prestávka</span>
+                  </article>
+                  <article class="schedule-row">
+                    <time>12:00</time>
+                    <div>
+                      <span class="room">Sála A</span>
+                      <h3>Dáta a technológie pre udržateľnú budúcnosť</h3>
+                      <p>Odborný blok · informatika a environmentálne vedy</p>
+                      <div style="margin-top: 12px">
+                        <button type="button" class="btn small flat" data-action="session-4">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                          </svg>
+                          Upraviť blok
+                        </button>
+                      </div>
+                    </div>
+                    <span class="pill gray">Prednášky</span>
+                  </article>
+                  <article class="schedule-row">
+                    <time>14:00</time>
+                    <div>
+                      <span class="room">Sála B</span>
+                      <h3>Nové horizonty biotechnológií</h3>
+                      <p>Odborný blok · biológia a biotechnológie</p>
+                      <div style="margin-top: 12px">
+                        <button type="button" class="btn small flat" data-action="session-5">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                          </svg>
+                          Upraviť blok
+                        </button>
+                      </div>
+                    </div>
+                    <span class="pill gray">Prednášky</span>
+                  </article>
+                  <article class="schedule-row">
+                    <time>16:00</time>
+                    <div>
+                      <span class="room">Foyer</span>
+                      <h3>Posterová sekcia & diskusia</h3>
+                      <p>Výsledky výskumu v osobnom rozhovore s autormi.</p>
+                      <div style="margin-top: 12px">
+                        <button type="button" class="btn small flat" data-action="session-6">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                          </svg>
+                          Upraviť blok
+                        </button>
+                      </div>
+                    </div>
+                    <span class="pill gray">Postery</span>
+                  </article>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn primary" data-action="submit-program">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5" />
+                  </svg>
+                  Predložiť na schválenie
+                </button>
+              </div>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <template id="schedule-0">
+      <div class="day-tabs" aria-label="Deň programu">
+        <button class="active" data-day="0" aria-pressed="true">Streda / 15. 09.</button>
+        <button class="" data-day="1" aria-pressed="false">Štvrtok / 16. 09.</button>
+        <button class="" data-day="2" aria-pressed="false">Piatok / 17. 09.</button>
+      </div>
+      <div class="schedule">
+        <article class="schedule-row">
+          <time>09:00</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Registrácia a ranná káva</h3>
+            <p>Zoznámte sa s ostatnými účastníkmi.</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Networking</span>
+        </article>
+        <article class="schedule-row">
+          <time>10:00</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Otvorenie konferencie ANS 2027</h3>
+            <p>Uvítanie účastníkov a predstavenie programu.</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Spoločný program</span>
+        </article>
+        <article class="schedule-row">
+          <time>10:30</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Prírodné vedy v prepojenom svete</h3>
+            <p>Plenárna prednáška · ukážkový rečník</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-2">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill green">Keynote</span>
+        </article>
+        <article class="schedule-row break">
+          <time>11:30</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Prestávka na kávu</h3>
+            <p>Priestor na diskusiu a nové spojenia.</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-3">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Prestávka</span>
+        </article>
+        <article class="schedule-row">
+          <time>12:00</time>
+          <div>
+            <span class="room">Sála A</span>
+            <h3>Dáta a technológie pre udržateľnú budúcnosť</h3>
+            <p>Odborný blok · informatika a environmentálne vedy</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-4">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>14:00</time>
+          <div>
+            <span class="room">Sála B</span>
+            <h3>Nové horizonty biotechnológií</h3>
+            <p>Odborný blok · biológia a biotechnológie</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-5">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>16:00</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Posterová sekcia & diskusia</h3>
+            <p>Výsledky výskumu v osobnom rozhovore s autormi.</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-6">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Postery</span>
+        </article>
+      </div>
+    </template>
+    <template id="schedule-1">
+      <div class="day-tabs" aria-label="Deň programu">
+        <button class="" data-day="0" aria-pressed="false">Streda / 15. 09.</button>
+        <button class="active" data-day="1" aria-pressed="true">Štvrtok / 16. 09.</button>
+        <button class="" data-day="2" aria-pressed="false">Piatok / 17. 09.</button>
+      </div>
+      <div class="schedule">
+        <article class="schedule-row">
+          <time>09:00</time>
+          <div>
+            <span class="room">Sála A</span>
+            <h3>Nové trendy v analytickej chémii</h3>
+            <p>Odborné prezentácie a diskusia</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row break">
+          <time>10:30</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Prestávka na kávu</h3>
+            <p>Stretnutia účastníkov</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Prestávka</span>
+        </article>
+        <article class="schedule-row">
+          <time>11:00</time>
+          <div>
+            <span class="room">Sála B</span>
+            <h3>Ekosystémy v čase klimatickej zmeny</h3>
+            <p>Odborný blok · environmentálne vedy</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-2">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>14:00</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Posterové prezentácie</h3>
+            <p>Diskusia s autormi</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-3">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Postery</span>
+        </article>
+      </div>
+    </template>
+    <template id="schedule-2">
+      <div class="day-tabs" aria-label="Deň programu">
+        <button class="" data-day="0" aria-pressed="false">Streda / 15. 09.</button>
+        <button class="" data-day="1" aria-pressed="false">Štvrtok / 16. 09.</button>
+        <button class="active" data-day="2" aria-pressed="true">Piatok / 17. 09.</button>
+      </div>
+      <div class="schedule">
+        <article class="schedule-row">
+          <time>09:00</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Veda zajtrajška: mladí výskumníci</h3>
+            <p>Doktorandské prezentácie</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>11:00</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Od výskumu k spolupráci</h3>
+            <p>Otvorená panelová diskusia</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Diskusia</span>
+        </article>
+        <article class="schedule-row">
+          <time>12:30</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Záverečné slovo a poďakovanie</h3>
+            <p>Ukončenie konferencie ANS 2027</p>
+            <div style="margin-top: 12px">
+              <button type="button" class="btn small flat" data-action="session-2">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť blok
+              </button>
+            </div>
+          </div>
+          <span class="pill gray">Spoločný program</span>
+        </article>
+      </div>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

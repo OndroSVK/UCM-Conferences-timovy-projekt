@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Nastavenia ročníka · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="settings">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin" selected>Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="conferences.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">SPRÁVA SYSTÉMU</div>
+            <a href="conferences.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h18v5H3zM5 8v13h14V8M10 12h4" />
+              </svg>
+              Konferencie a ročníky
+            </a>
+            <a href="settings.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1z"
+                />
+              </svg>
+              Nastavenia ročníka
+            </a>
+            <a href="users.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Pracovníci a oprávnenia
+            </a>
+            <a href="audit.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 7v5l3 2" />
+              </svg>
+              Záznam operácií
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">JK</span>
+              <div>
+                Jana Kováčová
+                <small>Superadministrátor</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">JK</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">SPRÁVA SYSTÉMU / ANS 2027</div>
+                  <h1>Dobrý ročník začína detailmi.</h1>
+                  <p>Nastavenia konferencie, termínov a účastníckych kategórií.</p>
+                </div>
+                <div class="actions"></div>
+              </div>
+              <div class="tabs" role="tablist">
+                <button
+                  type="button"
+                  class="tab active"
+                  role="tab"
+                  aria-selected="true"
+                  data-tab="0"
+                >
+                  Základné údaje
+                </button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-tab="1">
+                  Kategórie a poplatky
+                </button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-tab="2">
+                  Dôležité termíny
+                </button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-tab="3">
+                  Platobné údaje
+                </button>
+              </div>
+              <div id="tab-content">
+                <section class="panel">
+                  <div class="panel-head"><h2>Základné údaje ročníka</h2></div>
+                  <div class="panel-body">
+                    <form data-form="settings">
+                      <div class="form-grid">
+                        <label class="field full">
+                          Názov konferencie
+                          <input
+                            type="text"
+                            name="conferenceName"
+                            value="Applied Natural Sciences 2027"
+                            required
+                          />
+                        </label>
+                        <label class="field">
+                          Skratka
+                          <input type="text" name="shortName" value="ANS" required />
+                        </label>
+                        <label class="field">
+                          Ročník
+                          <input type="number" name="year" value="2027" required />
+                        </label>
+                        <label class="field">
+                          Začiatok
+                          <input type="date" name="startDate" value="2027-09-15" required />
+                        </label>
+                        <label class="field">
+                          Koniec
+                          <input type="date" name="endDate" value="2027-09-17" required />
+                        </label>
+                        <label class="field full">
+                          Miesto konania
+                          <input
+                            type="text"
+                            name="venue"
+                            value="Štrbské Pleso, Slovensko"
+                            required
+                          />
+                        </label>
+                        <label class="field full">
+                          Predstavenie konferencie
+                          <textarea name="description" required>
+Priestor pre nové poznatky, odvážne otázky a stretnutia naprieč prírodnými vedami.</textarea>
+                        </label>
+                      </div>
+                      <div class="form-actions">
+                        <button class="btn primary" type="submit">
+                          Uložiť zmeny
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m5 12 4 4L19 6" />
+                          </svg>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <template id="tab-0">
+      <section class="panel">
+        <div class="panel-head"><h2>Základné údaje ročníka</h2></div>
+        <div class="panel-body">
+          <form data-form="settings">
+            <div class="form-grid">
+              <label class="field full">
+                Názov konferencie
+                <input
+                  type="text"
+                  name="conferenceName"
+                  value="Applied Natural Sciences 2027"
+                  required
+                />
+              </label>
+              <label class="field">
+                Skratka
+                <input type="text" name="shortName" value="ANS" required />
+              </label>
+              <label class="field">
+                Ročník
+                <input type="number" name="year" value="2027" required />
+              </label>
+              <label class="field">
+                Začiatok
+                <input type="date" name="startDate" value="2027-09-15" required />
+              </label>
+              <label class="field">
+                Koniec
+                <input type="date" name="endDate" value="2027-09-17" required />
+              </label>
+              <label class="field full">
+                Miesto konania
+                <input type="text" name="venue" value="Štrbské Pleso, Slovensko" required />
+              </label>
+              <label class="field full">
+                Predstavenie konferencie
+                <textarea name="description" required>
+Priestor pre nové poznatky, odvážne otázky a stretnutia naprieč prírodnými vedami.</textarea>
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">
+                Uložiť zmeny
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m5 12 4 4L19 6" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </template>
+    <template id="tab-1">
+      <section class="panel">
+        <div class="panel-head"><h2>Kategórie a účastnícke poplatky</h2></div>
+        <div class="panel-body">
+          <form data-form="settings">
+            <div class="three-grid">
+              <div class="card lime">
+                <h3 style="margin-bottom: 20px">Rečník</h3>
+                <label class="field">
+                  Poplatok (€)
+                  <input type="number" name="price0" value="180" required />
+                </label>
+              </div>
+              <div class="card">
+                <h3 style="margin-bottom: 20px">Autor posteru</h3>
+                <label class="field">
+                  Poplatok (€)
+                  <input type="number" name="price1" value="120" required />
+                </label>
+              </div>
+              <div class="card">
+                <h3 style="margin-bottom: 20px">Pasívny účastník</h3>
+                <label class="field">
+                  Poplatok (€)
+                  <input type="number" name="price2" value="90" required />
+                </label>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">
+                Uložiť zmeny
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m5 12 4 4L19 6" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </template>
+    <template id="tab-2">
+      <section class="panel">
+        <div class="panel-head"><h2>Dôležité termíny</h2></div>
+        <div class="panel-body">
+          <form data-form="settings">
+            <div class="form-grid">
+              <label class="field">
+                Ukončenie registrácie
+                <input type="date" name="registrationDeadline" value="2027-04-30" required />
+              </label>
+              <label class="field">
+                Odovzdanie abstraktov
+                <input type="date" name="submissionDeadline" value="2027-05-15" required />
+              </label>
+              <label class="field">
+                Odovzdanie recenzií
+                <input type="date" name="reviewDeadline" value="2027-05-31" required />
+              </label>
+              <label class="field">
+                Oznámenie rozhodnutí
+                <input type="date" name="decisionDate" value="2027-06-30" required />
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">
+                Uložiť zmeny
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m5 12 4 4L19 6" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </template>
+    <template id="tab-3">
+      <section class="panel">
+        <div class="panel-head"><h2>Platobné inštrukcie</h2></div>
+        <div class="panel-body">
+          <div class="notice yellow">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+            </svg>
+            <p>Ide o návrh polí. Bankové údaje v prototype nie sú skutočné.</p>
+          </div>
+          <form data-form="settings">
+            <div class="form-grid">
+              <label class="field full">
+                Príjemca
+                <input type="text" name="recipient" value="UCM v Trnave" required />
+              </label>
+              <label class="field full">
+                IBAN
+                <input name="iban" placeholder="Platobné údaje doplní UCM" />
+              </label>
+              <label class="field">
+                Splatnosť poplatku
+                <input type="date" name="dueDate" value="2027-04-30" required />
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">
+                Uložiť zmeny
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m5 12 4 4L19 6" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

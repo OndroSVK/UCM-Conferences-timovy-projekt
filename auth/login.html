@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Prihlásenie · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="login">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public" selected>Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <header class="public-header">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <nav class="public-nav" aria-label="Hlavná navigácia">
+          <a href="../index.html" class="">O konferencii</a>
+          <a href="../public/program.html" class="">Program</a>
+          <a href="../public/information.html" class="">Praktické informácie</a>
+          <a href="login.html">Prihlásenie</a>
+          <a class="btn lime" href="register.html">
+            Registrácia
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-5-5 5 5-5 5" />
+            </svg>
+          </a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1" class="public-main">
+        <div id="screen-content">
+          <section class="auth">
+            <div class="auth-art">
+              <div>
+                <div class="eyebrow">UCM CONFERENCES / ANS ’27</div>
+                <h2 style="margin-top: 30px">
+                  Vaše miesto
+                  <br />
+                  vo svete vedy.
+                </h2>
+              </div>
+              <span class="orbit" aria-hidden="true">✳</span>
+              <p>
+                Od prvej myšlienky až po stretnutie.
+                <br />
+                Celá konferencia vo vašom účte.
+              </p>
+            </div>
+            <div class="auth-form">
+              <h1>Vitajte späť.</h1>
+              <p>Prihláste sa a pokračujte tam, kde ste skončili.</p>
+              <form data-form="login">
+                <label class="field">
+                  E-mail
+                  <input type="email" name="email" value="" autocomplete="email" required />
+                </label>
+                <label class="field">
+                  Heslo
+                  <input
+                    type="password"
+                    name="password"
+                    value=""
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                  />
+                </label>
+                <a href="forgot-password.html" class="link">Zabudli ste heslo?</a>
+                <button type="submit" class="btn primary">
+                  Vstúpiť do účtu
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5" />
+                  </svg>
+                </button>
+              </form>
+              <div class="form-bottom">
+                Ešte nemáte účet?
+                <a class="link" href="register.html">Registrujte sa</a>
+              </div>
+              <p style="margin-top: 26px; font-size: 10px">
+                Dizajnová ukážka. Môžete zadať vymyslené údaje; autentifikácia nie je zapojená.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="public-footer">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <span>Veda. Ľudia. Nové spojenia.</span>
+        <a href="../public/privacy.html">Informácie o spracúvaní údajov ↗</a>
+        <span>© 2027 · Vizuálna ukážka</span>
+      </footer>
+    </div>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

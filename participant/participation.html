@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Moja účasť a platba · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="participation">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant" selected>Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="account.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">ÚČASTNÍCKA ZÓNA</div>
+            <a href="account.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+              </svg>
+              Môj prehľad
+            </a>
+            <a href="participation.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M15 8h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v12"
+                />
+              </svg>
+              Moja účasť a platba
+            </a>
+            <a href="submissions.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+              </svg>
+              Moje príspevky
+            </a>
+            <a href="profile.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                />
+              </svg>
+              Môj profil
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">MN</span>
+              <div>
+                Martin Novák
+                <small>Účastník</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">MN</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">ANS 2027 / MOJA ÚČASŤ</div>
+                  <h1>Všetko pripravené na stretnutie.</h1>
+                  <p>Prehľad registrácie, účastníckeho poplatku a fakturačných údajov.</p>
+                </div>
+                <div class="actions"></div>
+              </div>
+              <div class="notice lime">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+                </svg>
+                <p>Vaša registrácia je potvrdená. Tešíme sa na vašu účasť na ANS 2027.</p>
+              </div>
+              <div class="two-grid">
+                <section class="card shadow lime">
+                  <div class="card-top">
+                    <span class="eyebrow">ÚČASTNÍCKY POPLATOK</span>
+                    <span class="pill green">Zaplatené</span>
+                  </div>
+                  <div class="amount">
+                    180
+                    <small>EUR</small>
+                  </div>
+                  <p style="color: var(--ink)">Úhrada zaevidovaná 18. apríla 2027. Ďakujeme.</p>
+                  <dl class="definition" style="margin-top: 24px">
+                    <dt style="color: var(--ink)">Predpis</dt>
+                    <dd>180,00 €</dd>
+                    <dt style="color: var(--ink)">Uhradené</dt>
+                    <dd>180,00 €</dd>
+                    <dt style="color: var(--ink)">Zostáva uhradiť</dt>
+                    <dd><strong>0,00 €</strong></dd>
+                  </dl>
+                </section>
+                <section class="panel">
+                  <div class="panel-head"><h2>Moja registrácia</h2></div>
+                  <div class="panel-body">
+                    <dl class="definition">
+                      <dt>Konferencia</dt>
+                      <dd>Applied Natural Sciences 2027</dd>
+                      <dt>Kategória</dt>
+                      <dd>Rečník</dd>
+                      <dt>Účastník</dt>
+                      <dd>Martin Novák</dd>
+                      <dt>Registrácia</dt>
+                      <dd>ANS-2027-0042</dd>
+                      <dt>Registrované</dt>
+                      <dd>16. apríl 2027</dd>
+                      <dt>Organizácia</dt>
+                      <dd>UCM v Trnave</dd>
+                    </dl>
+                    <div style="margin-top: 24px">
+                      <a class="link" href="submissions.html">
+                        Moje príspevky
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M5 12h14m-5-5 5 5-5 5" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="two-grid" style="margin-top: 24px">
+                <section class="panel">
+                  <div class="panel-head"><h2>Platobné údaje</h2></div>
+                  <div class="panel-body">
+                    <div class="notice yellow">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+                      </svg>
+                      <p>Ilustračné platobné údaje. Neposielajte žiadnu platbu.</p>
+                    </div>
+                    <dl class="definition">
+                      <dt>Príjemca</dt>
+                      <dd>UCM v Trnave – ukážka</dd>
+                      <dt>IBAN</dt>
+                      <dd>SK•• •••• •••• •••• •••• ••••</dd>
+                      <dt>Variabilný symbol</dt>
+                      <dd>
+                        20270042
+                        <button type="button" class="btn small flat" data-action="copy-vs">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8 8h13v13H8zM16 8V3H3v13h5" />
+                          </svg>
+                          Kopírovať
+                        </button>
+                      </dd>
+                      <dt>Splatnosť</dt>
+                      <dd>30. apríl 2027</dd>
+                    </dl>
+                  </div>
+                </section>
+                <section class="panel">
+                  <div class="panel-head"><h2>Fakturačné a organizačné údaje</h2></div>
+                  <div class="panel-body">
+                    <dl class="definition">
+                      <dt>Organizácia</dt>
+                      <dd>Univerzita sv. Cyrila a Metoda</dd>
+                      <dt>Mesto</dt>
+                      <dd>Trnava, Slovensko</dd>
+                      <dt>Stravovanie</dt>
+                      <dd>Bez uvedených obmedzení</dd>
+                    </dl>
+                    <div style="margin-top: 25px">
+                      <button type="button" class="btn small flat" data-action="billing">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                        </svg>
+                        Upraviť údaje
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <template id="participation-unpaid">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">ANS 2027 / MOJA ÚČASŤ</div>
+          <h1>Všetko pripravené na stretnutie.</h1>
+          <p>Prehľad registrácie, účastníckeho poplatku a fakturačných údajov.</p>
+        </div>
+        <div class="actions"></div>
+      </div>
+      <div class="notice lime">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+        </svg>
+        <p>Vaša registrácia je potvrdená. Tešíme sa na vašu účasť na ANS 2027.</p>
+      </div>
+      <div class="two-grid">
+        <section class="card shadow yellow">
+          <div class="card-top">
+            <span class="eyebrow">ÚČASTNÍCKY POPLATOK</span>
+            <span class="pill orange">Čaká na úhradu</span>
+          </div>
+          <div class="amount">
+            180
+            <small>EUR</small>
+          </div>
+          <p style="color: var(--ink)">Prosíme, uhraďte účastnícky poplatok bankovým prevodom.</p>
+          <dl class="definition" style="margin-top: 24px">
+            <dt style="color: var(--ink)">Predpis</dt>
+            <dd>180,00 €</dd>
+            <dt style="color: var(--ink)">Uhradené</dt>
+            <dd>0,00 €</dd>
+            <dt style="color: var(--ink)">Zostáva uhradiť</dt>
+            <dd><strong>180,00 €</strong></dd>
+          </dl>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Moja registrácia</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Konferencia</dt>
+              <dd>Applied Natural Sciences 2027</dd>
+              <dt>Kategória</dt>
+              <dd>Rečník</dd>
+              <dt>Účastník</dt>
+              <dd>Martin Novák</dd>
+              <dt>Registrácia</dt>
+              <dd>ANS-2027-0042</dd>
+              <dt>Registrované</dt>
+              <dd>16. apríl 2027</dd>
+              <dt>Organizácia</dt>
+              <dd>UCM v Trnave</dd>
+            </dl>
+            <div style="margin-top: 24px">
+              <a class="link" href="submissions.html">
+                Moje príspevky
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="two-grid" style="margin-top: 24px">
+        <section class="panel">
+          <div class="panel-head"><h2>Platobné údaje</h2></div>
+          <div class="panel-body">
+            <div class="notice yellow">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+              </svg>
+              <p>Ilustračné platobné údaje. Neposielajte žiadnu platbu.</p>
+            </div>
+            <dl class="definition">
+              <dt>Príjemca</dt>
+              <dd>UCM v Trnave – ukážka</dd>
+              <dt>IBAN</dt>
+              <dd>SK•• •••• •••• •••• •••• ••••</dd>
+              <dt>Variabilný symbol</dt>
+              <dd>
+                20270042
+                <button type="button" class="btn small flat" data-action="copy-vs">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 8h13v13H8zM16 8V3H3v13h5" />
+                  </svg>
+                  Kopírovať
+                </button>
+              </dd>
+              <dt>Splatnosť</dt>
+              <dd>30. apríl 2027</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Fakturačné a organizačné údaje</h2></div>
+          <div class="panel-body">
+            <dl class="definition">
+              <dt>Organizácia</dt>
+              <dd>Univerzita sv. Cyrila a Metoda</dd>
+              <dt>Mesto</dt>
+              <dd>Trnava, Slovensko</dd>
+              <dt>Stravovanie</dt>
+              <dd>Bez uvedených obmedzení</dd>
+            </dl>
+            <div style="margin-top: 25px">
+              <button type="button" class="btn small flat" data-action="billing">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m16 3 5 5-12 12-6 1 1-6zM14 5l5 5" />
+                </svg>
+                Upraviť údaje
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

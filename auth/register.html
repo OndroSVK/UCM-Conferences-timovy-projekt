@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Registrácia · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="register">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public" selected>Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <header class="public-header">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <nav class="public-nav" aria-label="Hlavná navigácia">
+          <a href="../index.html" class="">O konferencii</a>
+          <a href="../public/program.html" class="">Program</a>
+          <a href="../public/information.html" class="">Praktické informácie</a>
+          <a href="login.html">Prihlásenie</a>
+          <a class="btn lime" href="register.html">
+            Registrácia
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-5-5 5 5-5 5" />
+            </svg>
+          </a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1" class="public-main">
+        <div id="screen-content">
+          <div class="page-intro">
+            <div class="eyebrow">PRVÝ KROK K NOVÝM SPOJENIAM</div>
+            <h1>Vidíme sa na ANS ’27.</h1>
+            <p>Vytvorte si účet a zaregistrujte svoju účasť na konferencii.</p>
+          </div>
+          <div class="public-content register-layout">
+            <section class="panel">
+              <div class="panel-body">
+                <div class="steps">
+                  <div class="step active">
+                    <span>1</span>
+                    Váš profil
+                  </div>
+                  <div class="step">
+                    <span>2</span>
+                    Vaša účasť
+                  </div>
+                  <div class="step">
+                    <span>3</span>
+                    Rekapitulácia
+                  </div>
+                </div>
+                <form data-form="register" data-step="0">
+                  <div class="form-grid">
+                    <label class="field">
+                      Meno
+                      <input type="text" name="firstName" value="" required />
+                    </label>
+                    <label class="field">
+                      Priezvisko
+                      <input type="text" name="lastName" value="" required />
+                    </label>
+                    <label class="field full">
+                      E-mail
+                      <input type="email" name="email" value="" autocomplete="email" required />
+                    </label>
+                    <label class="field full">
+                      Organizácia / pracovisko
+                      <input type="text" name="organization" value="" required />
+                    </label>
+                    <label class="field">
+                      Heslo (aspoň 8 znakov)
+                      <input
+                        type="password"
+                        name="password"
+                        value=""
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                      />
+                    </label>
+                    <label class="field">
+                      Zopakujte heslo
+                      <input
+                        type="password"
+                        name="passwordConfirmation"
+                        value=""
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div class="form-actions">
+                    <button type="submit" class="btn primary">
+                      Pokračovať
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14m-5-5 5 5-5 5" />
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
+            <aside class="card lime shadow">
+              <div class="eyebrow">APPLIED NATURAL SCIENCES</div>
+              <h2 style="font-size: 48px; margin: 20px 0">ANS ’27</h2>
+              <p style="color: var(--ink)">
+                15. — 17. september 2027
+                <br />
+                Štrbské Pleso, Slovensko
+              </p>
+              <hr style="border: 0; border-top: 1px solid var(--ink); margin: 24px 0" />
+              <div class="eyebrow">V CENE ÚČASTI / UKÁŽKA</div>
+              <ul class="check-list">
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                  Vstup na odborný program
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                  Konferenčné materiály
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                  Priestor pre nové kontakty
+                </li>
+              </ul>
+              <small>Ukážkové ceny, miesto a termín. Nejde o záväznú registráciu.</small>
+            </aside>
+          </div>
+        </div>
+      </main>
+      <footer class="public-footer">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <span>Veda. Ľudia. Nové spojenia.</span>
+        <a href="../public/privacy.html">Informácie o spracúvaní údajov ↗</a>
+        <span>© 2027 · Vizuálna ukážka</span>
+      </footer>
+    </div>
+    <template id="register-step-0">
+      <div class="page-intro">
+        <div class="eyebrow">PRVÝ KROK K NOVÝM SPOJENIAM</div>
+        <h1>Vidíme sa na ANS ’27.</h1>
+        <p>Vytvorte si účet a zaregistrujte svoju účasť na konferencii.</p>
+      </div>
+      <div class="public-content register-layout">
+        <section class="panel">
+          <div class="panel-body">
+            <div class="steps">
+              <div class="step active">
+                <span>1</span>
+                Váš profil
+              </div>
+              <div class="step">
+                <span>2</span>
+                Vaša účasť
+              </div>
+              <div class="step">
+                <span>3</span>
+                Rekapitulácia
+              </div>
+            </div>
+            <form data-form="register" data-step="0">
+              <div class="form-grid">
+                <label class="field">
+                  Meno
+                  <input type="text" name="firstName" value="" required="" />
+                </label>
+                <label class="field">
+                  Priezvisko
+                  <input type="text" name="lastName" value="" required="" />
+                </label>
+                <label class="field full">
+                  E-mail
+                  <input type="email" name="email" value="" autocomplete="email" required="" />
+                </label>
+                <label class="field full">
+                  Organizácia / pracovisko
+                  <input type="text" name="organization" value="" required="" />
+                </label>
+                <label class="field">
+                  Heslo (aspoň 8 znakov)
+                  <input
+                    type="password"
+                    name="password"
+                    value=""
+                    minlength="8"
+                    autocomplete="new-password"
+                    required=""
+                  />
+                </label>
+                <label class="field">
+                  Zopakujte heslo
+                  <input
+                    type="password"
+                    name="passwordConfirmation"
+                    value=""
+                    minlength="8"
+                    autocomplete="new-password"
+                    required=""
+                  />
+                </label>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn primary">
+                  Pokračovať
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <aside class="card lime shadow">
+          <div class="eyebrow">APPLIED NATURAL SCIENCES</div>
+          <h2 style="font-size: 48px; margin: 20px 0">ANS ’27</h2>
+          <p style="color: var(--ink)">
+            15. — 17. september 2027
+            <br />
+            Štrbské Pleso, Slovensko
+          </p>
+          <hr style="border: 0; border-top: 1px solid var(--ink); margin: 24px 0" />
+          <div class="eyebrow">V CENE ÚČASTI / UKÁŽKA</div>
+          <ul class="check-list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Vstup na odborný program
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Konferenčné materiály
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Priestor pre nové kontakty
+            </li>
+          </ul>
+          <small>Ukážkové ceny, miesto a termín. Nejde o záväznú registráciu.</small>
+        </aside>
+      </div>
+    </template>
+    <template id="register-step-1">
+      <div class="page-intro">
+        <div class="eyebrow">PRVÝ KROK K NOVÝM SPOJENIAM</div>
+        <h1>Vidíme sa na ANS ’27.</h1>
+        <p>Vytvorte si účet a zaregistrujte svoju účasť na konferencii.</p>
+      </div>
+      <div class="public-content register-layout">
+        <section class="panel">
+          <div class="panel-body">
+            <div class="steps">
+              <div class="step">
+                <span>1</span>
+                Váš profil
+              </div>
+              <div class="step active">
+                <span>2</span>
+                Vaša účasť
+              </div>
+              <div class="step">
+                <span>3</span>
+                Rekapitulácia
+              </div>
+            </div>
+            <form data-form="register" data-step="1">
+              <h3 style="margin-bottom: 18px">Ako sa chcete zúčastniť?</h3>
+              <label class="choice">
+                <input type="radio" name="category" value="Rečník" checked="" />
+                <span>
+                  Rečník
+                  <small>Prezentácia odborného príspevku</small>
+                </span>
+                <b>180 €</b>
+              </label>
+              <label class="choice">
+                <input type="radio" name="category" value="Autor posteru" />
+                <span>
+                  Autor posteru
+                  <small>Prezentácia výsledkov formou posteru</small>
+                </span>
+                <b>120 €</b>
+              </label>
+              <label class="choice">
+                <input type="radio" name="category" value="Pasívny účastník" />
+                <span>
+                  Pasívny účastník
+                  <small>Prednášky, diskusie a nové spojenia</small>
+                </span>
+                <b>90 €</b>
+              </label>
+              <div class="form-grid" style="margin-top: 24px">
+                <label class="field">
+                  Fakturačná organizácia
+                  <input type="text" name="billingOrganization" value="" required="" />
+                </label>
+                <label class="field">
+                  Mesto
+                  <input type="text" name="city" value="" required="" />
+                </label>
+                <label class="field">
+                  Krajina
+                  <select name="country">
+                    <option>Slovensko</option>
+                    <option>Česko</option>
+                    <option>Poľsko</option>
+                    <option>Iná</option>
+                  </select>
+                </label>
+                <label class="field">
+                  Stravovacie obmedzenia
+                  <small>Dobrovoľné</small>
+                  <input name="dietaryRequirements" placeholder="Napr. vegetariánska strava" />
+                </label>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn flat" data-action="register-back">Späť</button>
+                <button type="submit" class="btn primary">
+                  Pokračovať
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <aside class="card lime shadow">
+          <div class="eyebrow">APPLIED NATURAL SCIENCES</div>
+          <h2 style="font-size: 48px; margin: 20px 0">ANS ’27</h2>
+          <p style="color: var(--ink)">
+            15. — 17. september 2027
+            <br />
+            Štrbské Pleso, Slovensko
+          </p>
+          <hr style="border: 0; border-top: 1px solid var(--ink); margin: 24px 0" />
+          <div class="eyebrow">V CENE ÚČASTI / UKÁŽKA</div>
+          <ul class="check-list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Vstup na odborný program
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Konferenčné materiály
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Priestor pre nové kontakty
+            </li>
+          </ul>
+          <small>Ukážkové ceny, miesto a termín. Nejde o záväznú registráciu.</small>
+        </aside>
+      </div>
+    </template>
+    <template id="register-step-2">
+      <div class="page-intro">
+        <div class="eyebrow">PRVÝ KROK K NOVÝM SPOJENIAM</div>
+        <h1>Vidíme sa na ANS ’27.</h1>
+        <p>Vytvorte si účet a zaregistrujte svoju účasť na konferencii.</p>
+      </div>
+      <div class="public-content register-layout">
+        <section class="panel">
+          <div class="panel-body">
+            <div class="steps">
+              <div class="step">
+                <span>1</span>
+                Váš profil
+              </div>
+              <div class="step">
+                <span>2</span>
+                Vaša účasť
+              </div>
+              <div class="step active">
+                <span>3</span>
+                Rekapitulácia
+              </div>
+            </div>
+            <form data-form="register" data-step="2">
+              <h3>Skontrolujte svoju registráciu</h3>
+              <dl class="definition" style="margin: 25px 0">
+                <dt>Meno</dt>
+                <dd data-registration="name">— —</dd>
+                <dt>E-mail</dt>
+                <dd data-registration="email">—</dd>
+                <dt>Organizácia</dt>
+                <dd data-registration="organization">—</dd>
+                <dt>Kategória</dt>
+                <dd data-registration="category">—</dd>
+                <dt>Účastnícky poplatok</dt>
+                <dd data-registration="fee"><strong>180 €</strong></dd>
+              </dl>
+              <div class="notice">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01"></path>
+                </svg>
+                <p>
+                  Platba bankovým prevodom. Po registrácii nájdete platobné inštrukcie vo svojom
+                  účte.
+                </p>
+              </div>
+              <label class="checkbox">
+                <input type="checkbox" required="" />
+                <span>
+                  Oboznámil/a som sa s
+                  <a class="link" href="../public/privacy.html">informáciami o spracúvaní údajov</a>
+                  .
+                </span>
+              </label>
+              <div class="form-actions">
+                <button type="button" class="btn flat" data-action="register-back">Späť</button>
+                <button type="submit" class="btn primary">
+                  Dokončiť ukážkovú registráciu
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <aside class="card lime shadow">
+          <div class="eyebrow">APPLIED NATURAL SCIENCES</div>
+          <h2 style="font-size: 48px; margin: 20px 0">ANS ’27</h2>
+          <p style="color: var(--ink)">
+            15. — 17. september 2027
+            <br />
+            Štrbské Pleso, Slovensko
+          </p>
+          <hr style="border: 0; border-top: 1px solid var(--ink); margin: 24px 0" />
+          <div class="eyebrow">V CENE ÚČASTI / UKÁŽKA</div>
+          <ul class="check-list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Vstup na odborný program
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Konferenčné materiály
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+              Priestor pre nové kontakty
+            </li>
+          </ul>
+          <small>Ukážkové ceny, miesto a termín. Nejde o záväznú registráciu.</small>
+        </aside>
+      </div>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

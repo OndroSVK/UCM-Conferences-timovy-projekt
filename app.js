@@ -1,77 +1,9 @@
 import * as ui from "./ui.js";
-import * as pub from "./public-pages.js";
-import * as account from "./account-pages.js";
-import * as work from "./workspace-pages.js";
-const {
-  icon,
-  esc,
-  link,
-  button,
-  field,
-  select,
-  area,
-  notice,
-  badge,
-  table,
-  people,
-  submissions,
-} = ui;
-export const screens = [
-  ["V01", "home", "O konferencii", "public", "globe"],
-  ["V02", "program", "Program konferencie", "public", "calendar"],
-  ["V03", "information", "Praktické informácie", "public", "pin"],
-  ["V04", "privacy", "Ochrana údajov", "public", "shield"],
-  ["A01", "login", "Prihlásenie", "public", "logout"],
-  ["A02", "register", "Registrácia", "public", "users"],
-  ["A03", "forgot-password", "Zabudnuté heslo", "public", "help"],
-  ["A04", "reset-password", "Obnova hesla", "public", "shield"],
-  ["U01", "account", "Môj prehľad", "participant", "grid"],
-  ["U02", "profile", "Môj profil", "participant", "users"],
-  ["U03", "participation", "Moja účasť a platba", "participant", "coin"],
-  ["U04", "submissions", "Moje príspevky", "participant", "file"],
-  ["U05", "submission-new", "Nový príspevok", "participant", "plus"],
-  ["U06", "submission-detail", "Detail príspevku", "participant", "file"],
-  ["O01", "organizer", "Prehľad ročníka", "organizer", "grid"],
-  ["O02", "registrations", "Účastníci", "organizer", "users"],
-  ["O03", "registration-detail", "Detail registrácie", "organizer", "users"],
-  ["O04", "admin-submissions", "Príspevky", "organizer", "file"],
-  ["O05", "admin-submission", "Kontrola príspevku", "organizer", "review"],
-  ["O06", "admin-reviews", "Priebeh recenzií", "organizer", "review"],
-  ["O07", "admin-program", "Editor programu", "organizer", "calendar"],
-  ["O08", "messages", "Komunikácia", "organizer", "mail"],
-  ["O09", "exports", "Exporty a listiny", "organizer", "download"],
-  ["R01", "reviews", "Moje recenzie", "reviewer", "review"],
-  ["R02", "review-detail", "Hodnotenie príspevku", "reviewer", "edit"],
-  ["C01", "decision", "Odborné rozhodnutie", "committee", "review"],
-  ["C02", "committee-program", "Schválenie programu", "committee", "calendar"],
-  [
-    "—",
-    "committee-submissions",
-    "Príspevky na rozhodnutie",
-    "committee",
-    "file",
-  ],
-  ["E01", "payments", "Platby", "finance", "coin"],
-  ["E02", "payment-detail", "Detail úhrady", "finance", "coin"],
-  ["—", "finance-export", "Ekonomický export", "finance", "download"],
-  ["S01", "conferences", "Konferencie a ročníky", "superadmin", "archive"],
-  ["S02", "settings", "Nastavenia ročníka", "superadmin", "settings"],
-  ["S03", "users", "Pracovníci a oprávnenia", "superadmin", "users"],
-  ["S04", "audit", "Záznam operácií", "superadmin", "clock"],
-];
-const roles = {
-  public: ["Verejnosť", "home", "Verejné rozhranie"],
-  participant: ["Účastník", "account", "Účastnícka zóna"],
-  organizer: ["Organizátor", "organizer", "Organizácia konferencie"],
-  reviewer: ["Recenzent", "reviews", "Odborné recenzie"],
-  committee: ["Programový výbor", "committee-submissions", "Programový výbor"],
-  finance: ["Ekonomické oddelenie", "payments", "Ekonomické oddelenie"],
-  superadmin: ["Superadministrátor", "conferences", "Správa systému"],
-};
-let route = "home",
-  query = new URLSearchParams(),
-  role = "public",
-  registerStep = 0,
+import { screens, roles, pagePaths, routeHref } from "./routes.js";
+const { icon, esc, link, button, field, select, notice, badge, table, people, submissions } = ui;
+const route = document.body.dataset.screen;
+const query = new URLSearchParams(location.search);
+let registerStep = 0,
   registration = {},
   tab = 0,
   day = 0,
@@ -81,191 +13,175 @@ let route = "home",
   paymentOverrides = {},
   exportRows = [],
   exportHeaders = [];
-const navRoutes = {
-  participant: ["account", "participation", "submissions", "profile"],
-  organizer: [
-    "organizer",
-    "registrations",
-    "admin-submissions",
-    "admin-reviews",
-    "admin-program",
-    "messages",
-    "exports",
-  ],
-  reviewer: ["reviews"],
-  committee: ["committee-submissions", "committee-program"],
-  finance: ["payments", "finance-export"],
-  superadmin: ["conferences", "settings", "users", "audit"],
+const id = () => {
+  const value = Number(query.get("id"));
+  return Number.isInteger(value) && document.getElementById(`record-${value}`) ? value : 0;
 };
-const id = () => Math.max(0, Number(query.get("id")) || 0);
-function content() {
-  switch (route) {
-    case "home":
-      return pub.publicHome();
-    case "program":
-      return pub.publicProgram();
-    case "information":
-      return pub.information();
-    case "privacy":
-      return pub.privacy();
-    case "login":
-    case "forgot-password":
-    case "reset-password":
-      return pub.auth(route);
-    case "register":
-      return pub.register(registerStep, registration);
-    case "account":
-      return account.accountHome();
-    case "profile":
-      return account.profile();
-    case "participation":
-      return account.participation(!registration.email);
-    case "submissions":
-      return account.mySubmissions();
-    case "submission-new":
-      return account.newSubmission();
-    case "submission-detail":
-      return account.submissionDetail(tab);
-    case "organizer":
-      return work.organizerHome();
-    case "registrations":
-      return work.registrations();
-    case "registration-detail":
-      return work.registrationDetail(id());
-    case "admin-submissions":
-      return work.adminSubmissions();
-    case "admin-submission":
-      return work.adminSubmission(id());
-    case "admin-reviews":
-      return work.adminReviews();
-    case "admin-program":
-      return work.programEditor(false, day);
-    case "reviews":
-      return work.reviewList();
-    case "review-detail":
-      return work.reviewDetail(id());
-    case "committee-submissions":
-      return work.adminSubmissions(true);
-    case "decision":
-      return work.decision(id());
-    case "committee-program":
-      return work.programEditor(true, day);
-    case "payments":
-      return work.payments();
-    case "payment-detail":
-      return work.paymentDetail(id(), paymentOverrides[id()] ?? false);
-    case "messages":
-      return work.messages();
-    case "exports":
-      return work.exportsPage();
-    case "finance-export":
-      return work.exportsPage(true);
-    case "conferences":
-      return work.conferences();
-    case "settings":
-      return work.settings(tab);
-    case "users":
-      return work.users();
-    case "audit":
-      return work.audit();
-    default:
-      return `<div class="empty"><h1>Táto stránka tu nie je.</h1><p>Vyberte si obrazovku z mapy prototypu.</p><div style="margin-top:24px">${link("Späť na úvod", "home")}</div></div>`;
-  }
-}
-const brand = () =>
-  `<a class="brand" href="#/home" aria-label="UCM Conferences – úvod"><span class="brand-mark">u</span><span>UCM<small>CONFERENCES</small></span></a>`;
-const prototype = () =>
-  `<div class="prototype"><div class="prototype-left"><span class="dot"></span><span>DIZAJNOVÝ PROTOTYP <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span></span></div><div class="prototype-tools"><label><span class="sr-only">Rozhranie</span><select id="role-switch" aria-label="Prepnúť rozhranie">${Object.entries(
-    roles,
-  )
-    .map(
-      ([key, r]) =>
-        `<option value="${key}" ${role === key ? "selected" : ""}>${r[0]}</option>`,
-    )
-    .join(
-      "",
-    )}</select></label><button data-action="screen-map">${icon("grid")}Mapa obrazoviek</button></div></div>`;
-function publicLayout(body) {
-  return `${prototype()}<header class="public-header">${brand()}<nav class="public-nav" aria-label="Hlavná navigácia">${[
-    ["O konferencii", "home"],
-    ["Program", "program"],
-    ["Praktické informácie", "information"],
-  ]
-    .map(
-      ([label, r]) =>
-        `<a href="#/${r}" class="${route === r ? "active" : ""}" ${route === r ? 'aria-current="page"' : ""}>${label}</a>`,
-    )
-    .join(
-      "",
-    )}<a href="#/login">Prihlásenie</a>${link("Registrácia", "register", "lime", "arrow")}</nav></header><main id="main" tabindex="-1" class="public-main">${body}</main><footer class="public-footer">${brand()}<span>Veda. Ľudia. Nové spojenia.</span><a href="#/privacy">Informácie o spracúvaní údajov ↗</a><span>© 2027 · Vizuálna ukážka</span></footer>`;
-}
-function activeNav(r) {
-  if (route === r) return true;
-  return (
-    {
-      "registration-detail": "registrations",
-      "admin-submission": "admin-submissions",
-      "submission-new": "submissions",
-      "submission-detail": "submissions",
-      "review-detail": "reviews",
-      decision: "committee-submissions",
-      "payment-detail": "payments",
-    }[route] === r
+const storageKey = "ucm-prototype-state-v1";
+let baseContent,
+  navigating = false;
+
+function formValues(form) {
+  return Object.fromEntries(
+    [...new FormData(form)].filter(([name]) => {
+      const field = form.elements.namedItem(name);
+      return field?.type !== "password" && field?.type !== "file";
+    }),
   );
 }
-function workspaceLayout(body) {
-  const user =
-    role === "participant"
-      ? ["Martin Novák", "MN"]
-      : role === "reviewer"
-        ? ["Peter Malík", "PM"]
-        : role === "finance"
-          ? ["Mária Urbanová", "MU"]
-          : ["Jana Kováčová", "JK"];
-  return `${prototype()}<div class="workspace"><aside class="sidebar">${brand()}<a class="edition-card" href="#/${roles[role][1]}"><div class="eyebrow">AKTUÁLNY ROČNÍK</div><div class="edition-title">ANS 2027 ${icon("down")}</div><small class="muted" style="font-size:9px">Applied Natural Sciences</small></a><nav aria-label="Pracovná navigácia"><div class="nav-label">${roles[role][2].toUpperCase()}</div>${navRoutes[
-    role
-  ]
-    .map((r) => {
-      const s = screens.find((s) => s[1] === r);
-      return `<a href="#/${r}" class="${activeNav(r) ? "active" : ""}" ${activeNav(r) ? 'aria-current="page"' : ""}>${icon(s[4])}${s[2]}${r === "admin-reviews" ? '<span class="nav-count">22</span>' : ""}</a>`;
-    })
-    .join(
-      "",
-    )}</nav><div class="sidebar-bottom"><div class="help-box"><strong>Potrebujete sa zorientovať?</strong><p>Objavte všetky obrazovky a používateľské rozhrania.</p><button type="button" class="link" style="border:0;background:none;padding:0;font-size:11px" data-action="screen-map">Mapa prototypu ${icon("arrow")}</button></div><div class="user"><span class="avatar">${user[1]}</span><div>${user[0]}<small>${roles[role][0]}</small></div><a style="margin-left:auto" href="#/home" aria-label="Vrátiť sa na verejný web">${icon("logout")}</a></div></div></aside><div class="workspace-body"><header class="workspace-header"><div class="header-left"><button class="icon-btn mobile-menu" aria-label="Otvoriť navigáciu" aria-expanded="false" data-action="menu">${icon("menu")}</button><span>Pracovný priestor</span><span>ANS 2027</span></div><div class="header-tools"><a class="view-public link" href="#/home" style="font-size:11px">Verejný web ${icon("external")}</a><button class="icon-btn" data-action="notifications" aria-label="Oznámenia">${icon("bell")}</button><span class="avatar">${user[1]}</span></div></header><main class="workspace-main" id="main" tabindex="-1">${body}<footer class="workspace-footer"><span>UCM CONFERENCES / ANS 2027</span><span>Dizajnový prototyp · ukážkové údaje</span></footer></main></div></div>`;
+
+// Only mock form values are carried between separate HTML pages in this tab.
+// Passwords and local file selections never enter browser storage.
+function remember() {
+  try {
+    sessionStorage.setItem(
+      storageKey,
+      JSON.stringify({ registration, savedForms, savedSubmission, paymentOverrides }),
+    );
+  } catch {
+    /* The prototype also works when browser storage is disabled. */
+  }
 }
-function render(reset = false) {
-  if (reset) {
-    const parts = location.hash.replace(/^#\/?/, "").split("?");
-    route = parts[0] || "home";
-    query = new URLSearchParams(parts[1] || "");
-    tab = 0;
-    day = 0;
-    role = screens.find((s) => s[1] === route)?.[3] || "public";
+function navigate(target) {
+  remember();
+  navigating = true;
+  location.href = routeHref(target);
+}
+function mountTemplate(target, name) {
+  const template = document.getElementById(name);
+  if (!template) return;
+  document.querySelector(target).replaceChildren(template.content.cloneNode(true));
+}
+function restoreForm(form, values) {
+  if (!values) return;
+  for (const [key, value] of Object.entries(values)) {
+    const el = form.elements.namedItem(key);
+    if (!el || el.type === "file" || el.type === "password") continue;
+    if (el instanceof RadioNodeList) el.value = value;
+    else if (el.type === "checkbox") el.checked = Boolean(value);
+    else el.value = value;
   }
-  document.title = `${screens.find((s) => s[1] === route)?.[2] || "Stránka nenájdená"} · ANS 2027 / UCM`;
-  document.querySelector("#app").innerHTML =
-    role === "public" ? publicLayout(content()) : workspaceLayout(content());
-  for (const form of document.querySelectorAll("form[data-form]")) {
-    const values = savedForms[`${route}-${tab}`];
-    if (values)
-      for (const [key, value] of Object.entries(values)) {
-        const el = form.elements.namedItem(key);
-        if (el && el.type !== "file" && el.type !== "password")
-          el.value = value;
-      }
+}
+function render() {
+  if (route === "register") {
+    mountTemplate("#screen-content", `register-step-${registerStep}`);
+    restoreForm(document.querySelector('form[data-form="register"]'), registration);
+    const summary = {
+      ...registration,
+      name: [registration.firstName, registration.lastName].filter(Boolean).join(" "),
+      fee:
+        (registration.category === "Autor posteru"
+          ? "120"
+          : registration.category === "Pasívny účastník"
+            ? "90"
+            : "180") + " €",
+    };
+    document
+      .querySelectorAll("[data-registration]")
+      .forEach((el) => (el.textContent = summary[el.dataset.registration] || "—"));
+  } else if (route === "settings" || route === "submission-detail") {
+    mountTemplate("#tab-content", `tab-${tab}`);
+    document.querySelectorAll("[data-tab]").forEach((el) => {
+      const active = Number(el.dataset.tab) === tab;
+      el.classList.toggle("active", active);
+      el.setAttribute("aria-selected", active);
+    });
+  } else if (route === "payment-detail") {
+    document.querySelector("#screen-content").replaceChildren(baseContent.cloneNode(true));
+    updatePayment();
   }
+  for (const form of document.querySelectorAll("form[data-form]"))
+    restoreForm(form, savedForms[`${route}-${tab}`]);
   if (savedSubmission && route === "submission-detail") {
-    document.querySelector(".submission-title").textContent =
-      savedSubmission.title;
+    document.querySelector(".submission-title").textContent = savedSubmission.title;
     const prose = document.querySelector("#tab-content .prose");
     if (prose) prose.textContent = savedSubmission.abstract;
   }
-  if (reset) {
-    window.scrollTo({ top: 0 });
-    document.querySelector("#main")?.focus({ preventScroll: true });
+}
+function updatePayment() {
+  const amount = paymentOverrides[id()];
+  if (amount === undefined) return;
+  const paid = amount >= 180;
+  const card = document.querySelector("#screen-content .card.shadow");
+  card.classList.toggle("lime", paid);
+  card.classList.toggle("yellow", !paid);
+  const badge = card.querySelector(".pill");
+  badge.textContent = paid ? "Zaplatené" : "Čiastočne zaplatené";
+  badge.className = "pill " + (paid ? "green" : "blue");
+  const values = card.querySelectorAll("dd");
+  const money = (n) => n.toFixed(2).replace(".", ",") + " €";
+  values[0].textContent = money(amount);
+  values[1].textContent = money(Math.max(0, 180 - amount));
+  // Replace the illustrative received-payment row with this session's entry.
+  const rows = document.querySelector("#screen-content tbody");
+  while (rows.children.length > 1) rows.lastElementChild.remove();
+  const tr = document.createElement("tr");
+  const form = savedForms[`${route}-0`] || {};
+  for (const value of [
+    form.paymentDate || "2027-04-20",
+    "Prijatá úhrada",
+    money(amount),
+    "Ekonomické oddelenie",
+  ]) {
+    const td = document.createElement("td");
+    td.textContent = value;
+    tr.append(td);
+  }
+  rows.append(tr);
+}
+function initialize() {
+  // Preserve previously shared prototype links while using real HTML navigation.
+  if (location.hash.startsWith("#/")) {
+    const oldRoute = location.hash.slice(2);
+    if (pagePaths[oldRoute.split("?")[0]]) {
+      location.replace(routeHref(oldRoute));
+      return;
+    }
+  }
+  try {
+    const state = JSON.parse(sessionStorage.getItem(storageKey) || "{}");
+    registration = state.registration || {};
+    savedForms = state.savedForms || {};
+    savedSubmission = state.savedSubmission || null;
+    paymentOverrides = state.paymentOverrides || {};
+  } catch {
+    /* Ignore malformed or unavailable prototype state. */
+  }
+  if (document.getElementById("record-0"))
+    mountTemplate(
+      "#screen-content",
+      document.getElementById(`record-${id()}`) ? `record-${id()}` : "record-0",
+    );
+  if (route === "participation" && registration.email)
+    mountTemplate("#screen-content", "participation-unpaid");
+  baseContent = document.createDocumentFragment();
+  document
+    .querySelector("#screen-content")
+    .childNodes.forEach((el) => baseContent.append(el.cloneNode(true)));
+  render();
+  try {
+    const flash = sessionStorage.getItem("ucm-prototype-flash");
+    if (flash) {
+      sessionStorage.removeItem("ucm-prototype-flash");
+      toast(flash);
+    }
+  } catch {
+    /* Browser storage is optional. */
   }
 }
+document.addEventListener("click", (e) => {
+  if (e.target.closest("a[href]") && !e.target.closest(".skip")) remember();
+});
+window.addEventListener("pagehide", remember);
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) initialize();
+});
 function toast(message) {
+  if (navigating) {
+    try {
+      sessionStorage.setItem("ucm-prototype-flash", message);
+    } catch {}
+  }
   const el = document.querySelector("#toast");
   el.textContent = message;
   el.classList.add("visible");
@@ -291,7 +207,7 @@ function map() {
           .filter((s) => s[3] === key)
           .map(
             (s) =>
-              `<a class="map-link" href="#/${s[1]}" data-map-link><span>${s[0]}</span>${s[2]}${icon("arrow")}</a>`,
+              `<a class="map-link" href="${routeHref(s[1])}" data-map-link><span>${s[0]}</span>${s[2]}${icon("arrow")}</a>`,
           )
           .join("")}</section>`,
     )
@@ -299,24 +215,19 @@ function map() {
   d.showModal();
 }
 function filterRows() {
-  const search =
-      document.querySelector("[data-search]")?.value.toLocaleLowerCase("sk") ||
-      "",
+  const search = document.querySelector("[data-search]")?.value.toLocaleLowerCase("sk") || "",
     filter = document.querySelector("[data-filter]")?.value || "";
   let visible = 0;
   document.querySelectorAll("[data-search-row]").forEach((row) => {
     const text = row.textContent.toLocaleLowerCase("sk");
     const show =
       text.includes(search) &&
-      (!filter ||
-        filter.startsWith("Všetky") ||
-        text.includes(filter.toLocaleLowerCase("sk")));
+      (!filter || filter.startsWith("Všetky") || text.includes(filter.toLocaleLowerCase("sk")));
     row.hidden = !show;
     if (show) visible++;
   });
   const count = document.querySelector("[data-result-count]");
-  if (count)
-    count.textContent = `${visible} ${visible === 1 ? "záznam" : "záznamov"}`;
+  if (count) count.textContent = `${visible} ${visible === 1 ? "záznam" : "záznamov"}`;
   let empty = document.querySelector("[data-filter-empty]");
   if (!empty) {
     empty = document.createElement("p");
@@ -337,13 +248,9 @@ function downloadCsv() {
   const csv =
     "\uFEFF" +
     [exportHeaders, ...exportRows]
-      .map((r) =>
-        r.map((v) => '"' + String(v).replaceAll('"', '""') + '"').join(";"),
-      )
+      .map((r) => r.map((v) => '"' + String(v).replaceAll('"', '""') + '"').join(";"))
       .join("\r\n");
-  const url = URL.createObjectURL(
-    new Blob([csv], { type: "text/csv;charset=utf-8" }),
-  );
+  const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
   const a = document.createElement("a");
   a.href = url;
   a.download = "ANS-2027-ukazkovy-export.csv";
@@ -362,8 +269,7 @@ document.addEventListener("click", async (e) => {
   const tabButton = e.target.closest("[data-tab]");
   if (tabButton) {
     const form = document.querySelector("#tab-content form");
-    if (form)
-      savedForms[`${route}-${tab}`] = Object.fromEntries(new FormData(form));
+    if (form) savedForms[`${route}-${tab}`] = formValues(form);
     tab = Number(tabButton.dataset.tab);
     render();
     return;
@@ -371,10 +277,7 @@ document.addEventListener("click", async (e) => {
   const dayButton = e.target.closest("[data-day]");
   if (dayButton) {
     day = Number(dayButton.dataset.day);
-    document.querySelector("#schedule-container").innerHTML = pub.schedule(
-      route === "admin-program",
-      day,
-    );
+    mountTemplate("#schedule-container", `schedule-${day}`);
     return;
   }
   const action = e.target.closest("[data-action]")?.dataset.action;
@@ -390,9 +293,7 @@ document.addEventListener("click", async (e) => {
       closeModal();
       break;
     case "menu": {
-      const open = document
-        .querySelector(".workspace")
-        .classList.toggle("menu-open");
+      const open = document.querySelector(".workspace").classList.toggle("menu-open");
       e.target.closest("button").setAttribute("aria-expanded", open);
       break;
     }
@@ -437,13 +338,13 @@ document.addEventListener("click", async (e) => {
     }
     case "save-draft": {
       const f = document.querySelector('[data-form="submission"]');
-      savedForms[`${route}-${tab}`] = Object.fromEntries(new FormData(f));
+      savedForms[`${route}-${tab}`] = formValues(f);
       toast("Koncept je uložený v pamäti tejto ukážky.");
       break;
     }
     case "save-review": {
       const f = document.querySelector('[data-form="review"]');
-      savedForms[`${route}-${tab}`] = Object.fromEntries(new FormData(f));
+      savedForms[`${route}-${tab}`] = formValues(f);
       toast("Koncept recenzie je uložený v tejto ukážke.");
       break;
     }
@@ -477,9 +378,7 @@ document.addEventListener("click", async (e) => {
           : action === "submit-program"
             ? "Predložiť program výboru?"
             : "Vrátiť program na úpravu?",
-        notice(
-          "Táto akcia iba zobrazí výsledok v prototype. Verejný program sa nezmení.",
-        ),
+        notice("Táto akcia iba zobrazí výsledok v prototype. Verejný program sa nezmení."),
         button("Potvrdiť ukážku", "confirm-program", "primary", "check"),
       );
       break;
@@ -532,15 +431,12 @@ document.addEventListener("click", async (e) => {
 });
 document.addEventListener("change", (e) => {
   if (e.target.id === "role-switch") {
-    location.hash = "/" + roles[e.target.value][1];
+    navigate(roles[e.target.value][1]);
   }
   if (e.target.matches("[data-filter]")) filterRows();
   if (e.target.type === "file") {
     const label = document.querySelector("[data-file-label]");
-    if (label)
-      label.textContent = e.target.files[0]
-        ? `Vybrané: ${e.target.files[0].name}`
-        : "";
+    if (label) label.textContent = e.target.files[0] ? `Vybrané: ${e.target.files[0].name}` : "";
   }
   if (e.target.name === "recipients") {
     const counts = {
@@ -549,8 +445,7 @@ document.addEventListener("change", (e) => {
       "Autori posterov": 38,
       "Účastníci s neuhradeným poplatkom": 32,
     };
-    document.querySelector("[data-recipient-count]").textContent =
-      counts[e.target.value];
+    document.querySelector("[data-recipient-count]").textContent = counts[e.target.value];
   }
 });
 document.addEventListener("input", (e) => {
@@ -563,10 +458,7 @@ document.addEventListener("submit", (e) => {
   e.preventDefault();
   const type = form.dataset.form,
     data = Object.fromEntries(new FormData(form));
-  if (
-    data.passwordConfirmation !== undefined &&
-    data.password !== data.passwordConfirmation
-  ) {
+  if (data.passwordConfirmation !== undefined && data.password !== data.passwordConfirmation) {
     form.elements.passwordConfirmation.setCustomValidity("Heslá sa nezhodujú.");
     form.elements.passwordConfirmation.reportValidity();
     return;
@@ -580,14 +472,14 @@ document.addEventListener("submit", (e) => {
       window.scrollTo({ top: 0 });
     } else {
       registerStep = 0;
-      location.hash = "/participation";
+      navigate("participation");
       toast("Ukážková registrácia je hotová. Platobné údaje sú ilustračné.");
     }
     return;
   }
   if (type === "login") {
     form.reset();
-    location.hash = "/account";
+    navigate("account");
     toast("Otvorený ukážkový účet Martina Nováka.");
     return;
   }
@@ -600,14 +492,14 @@ document.addEventListener("submit", (e) => {
   }
   if (type === "reset-password") {
     form.reset();
-    location.hash = "/login";
+    navigate("login");
     toast("Ukážka obnovy je dokončená. Žiadne heslo sa neuložilo.");
     return;
   }
   if (type === "submission") {
     savedSubmission = { title: data.title, abstract: data.abstract };
-    savedForms[`${route}-${tab}`] = Object.fromEntries(new FormData(form));
-    location.hash = "/submission-detail";
+    savedForms[`${route}-${tab}`] = formValues(form);
+    navigate("submission-detail");
     toast("Príspevok bol odovzdaný v lokálnej ukážke.");
     return;
   }
@@ -619,10 +511,11 @@ document.addEventListener("submit", (e) => {
     return;
   }
   if (type === "payment") {
-    if (Number(data.amount) <= 0) {
+    if (!Number.isFinite(Number(data.amount)) || Number(data.amount) <= 0) {
       toast("Zadajte kladnú prijatú sumu.");
       return;
     }
+    savedForms[`${route}-${tab}`] = formValues(form);
     paymentOverrides[id()] = Number(data.amount);
     render();
     toast(`V ukážke je zaevidovaných ${data.amount} €. E-mail sa neposiela.`);
@@ -648,23 +541,10 @@ document.addEventListener("submit", (e) => {
             "Pasívni účastníci": "Pasívny účastník",
           }[data.category] === p[2],
       )
-      .filter(
-        (p) =>
-          data.paymentStatus === "Všetky stavy" || data.paymentStatus === p[3],
-      );
+      .filter((p) => data.paymentStatus === "Všetky stavy" || data.paymentStatus === p[3]);
     exportHeaders = finance
-      ? [
-          "Meno a priezvisko",
-          "Organizácia",
-          "Variabilný symbol",
-          "Predpis a úhrada",
-        ]
-      : [
-          "Meno a priezvisko",
-          "Organizácia",
-          "Kategória účasti",
-          "Stav registrácie",
-        ];
+      ? ["Meno a priezvisko", "Organizácia", "Variabilný symbol", "Predpis a úhrada"]
+      : ["Meno a priezvisko", "Organizácia", "Kategória účasti", "Stav registrácie"];
     exportRows = rows.map((p) =>
       finance
         ? [p[0], p[1], `202700${42 + people.indexOf(p)}`, p[3]]
@@ -692,7 +572,7 @@ document.addEventListener("submit", (e) => {
     );
     return;
   }
-  savedForms[`${route}-${tab}`] = data;
+  savedForms[`${route}-${tab}`] = formValues(form);
   if (form.closest("dialog")) closeModal();
   toast(
     type === "decision"
@@ -704,21 +584,12 @@ for (const d of document.querySelectorAll("dialog")) {
   d.addEventListener("click", (e) => {
     if (e.target === d) {
       const r = d.getBoundingClientRect();
-      if (
-        e.clientX < r.left ||
-        e.clientX > r.right ||
-        e.clientY < r.top ||
-        e.clientY > r.bottom
-      )
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)
         d.close();
     }
   });
   d.addEventListener("click", (e) => {
-    if (e.target.closest('a[href^="#/"]')) d.close();
+    if (e.target.closest("a[href]")) d.close();
   });
 }
-window.addEventListener("hashchange", () => {
-  for (const d of document.querySelectorAll("dialog[open]")) d.close();
-  render(true);
-});
-render(true);
+initialize();

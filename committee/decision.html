@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Odborné rozhodnutie · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="decision">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public">Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee" selected>Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+            <span class="brand-mark">u</span>
+            <span>
+              UCM
+              <small>CONFERENCES</small>
+            </span>
+          </a>
+          <a class="edition-card" href="committee-submissions.html">
+            <div class="eyebrow">AKTUÁLNY ROČNÍK</div>
+            <div class="edition-title">
+              ANS 2027
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+            <small class="muted" style="font-size: 9px">Applied Natural Sciences</small>
+          </a>
+          <nav aria-label="Pracovná navigácia">
+            <div class="nav-label">PROGRAMOVÝ VÝBOR</div>
+            <a href="committee-submissions.html" class="active" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+              </svg>
+              Príspevky na rozhodnutie
+            </a>
+            <a href="committee-program.html" class="">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v16H4zM16 3v4M8 3v4M4 11h16" />
+              </svg>
+              Schválenie programu
+            </a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="help-box">
+              <strong>Potrebujete sa zorientovať?</strong>
+              <p>Objavte všetky obrazovky a používateľské rozhrania.</p>
+              <button
+                type="button"
+                class="link"
+                style="border: 0; background: none; padding: 0; font-size: 11px"
+                data-action="screen-map"
+              >
+                Mapa prototypu
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+              </button>
+            </div>
+            <div class="user">
+              <span class="avatar">JK</span>
+              <div>
+                Jana Kováčová
+                <small>Programový výbor</small>
+              </div>
+              <a
+                style="margin-left: auto"
+                href="../index.html"
+                aria-label="Vrátiť sa na verejný web"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3H4v18h5M10 12h11m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <div class="workspace-body">
+          <header class="workspace-header">
+            <div class="header-left">
+              <button
+                class="icon-btn mobile-menu"
+                aria-label="Otvoriť navigáciu"
+                aria-expanded="false"
+                data-action="menu"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+              </button>
+              <span>Pracovný priestor</span>
+              <span>ANS 2027</span>
+            </div>
+            <div class="header-tools">
+              <a class="view-public link" href="../index.html" style="font-size: 11px">
+                Verejný web
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                </svg>
+              </a>
+              <button class="icon-btn" data-action="notifications" aria-label="Oznámenia">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0v6l-2 3h16l-2-3zM10 21h4" />
+                </svg>
+              </button>
+              <span class="avatar">JK</span>
+            </div>
+          </header>
+          <main class="workspace-main" id="main" tabindex="-1">
+            <div id="screen-content">
+              <div class="page-heading">
+                <div>
+                  <div class="eyebrow">PROGRAMOVÝ VÝBOR / ANS-027</div>
+                  <h1>Odporúčania poznáme. Rozhodnutie je na vás.</h1>
+                  <p>Odborné rozhodnutie o príspevku · ANS 2027</p>
+                </div>
+                <div class="actions">
+                  <a class="btn flat" href="committee-submissions.html">Všetky príspevky</a>
+                </div>
+              </div>
+              <div class="content-grid" style="margin-top: 0">
+                <div>
+                  <section class="panel">
+                    <div class="panel-head"><h2>Príspevok</h2></div>
+                    <div class="panel-body">
+                      <h2 class="submission-title">
+                        Využitie strojového učenia pri monitorovaní kvality vody
+                      </h2>
+                      <p class="prose">
+                        Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev
+                        environmentálneho výskumu. V príspevku predstavujeme prístup založený na
+                        metódach strojového učenia, ktorý umožňuje identifikovať zmeny vo vybraných
+                        ukazovateľoch kvality vody. Navrhnutý model kombinuje senzorické merania s
+                        historickými údajmi a poskytuje podklad pre včasné odhalenie
+                        environmentálnych rizík. Výsledky poukazujú na potenciál medziodborovej
+                        spolupráce informatiky a environmentálnych vied.
+                      </p>
+                      <div style="margin-top: 25px">
+                        <div class="file">
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                          </svg>
+                          <div>
+                            ANS-027_abstrakt_v2.pdf
+                            <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+                          </div>
+                          <button type="button" class="btn small flat" data-action="file">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                            </svg>
+                            Náhľad
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div style="margin-top: 24px">
+                    <section class="panel">
+                      <div class="panel-head"><h2>Odovzdané odborné posudky</h2></div>
+                      <div class="panel-body">
+                        <article style="margin-bottom: 24px">
+                          <div class="card-top" style="margin-bottom: 12px">
+                            <h3>Recenzia 01</h3>
+                            <span class="pill green">Odporúča prijať</span>
+                          </div>
+                          <p class="prose">
+                            Príspevok prináša zaujímavé výsledky a má zrozumiteľne opísanú metodiku.
+                            Odporúčam rozšíriť porovnanie s existujúcimi prístupmi.
+                          </p>
+                        </article>
+                        <article>
+                          <div class="card-top" style="margin-bottom: 12px">
+                            <h3>Recenzia 02</h3>
+                            <span class="pill orange">Prijať po úpravách</span>
+                          </div>
+                          <p class="prose">
+                            Odporúčam spresniť opis dátového súboru a doplniť diskusiu limitov
+                            modelu.
+                          </p>
+                        </article>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <aside>
+                  <section class="panel">
+                    <div class="panel-head"><h2>Rozhodnutie výboru</h2></div>
+                    <div class="panel-body">
+                      <form data-form="decision">
+                        <label class="field">
+                          Výsledok posúdenia
+                          <select name="decision">
+                            <option>Prijať</option>
+                            <option>Podmienečne prijať</option>
+                            <option>Vyžiadať úpravy</option>
+                            <option>Zamietnuť</option>
+                          </select>
+                        </label>
+                        <div style="margin-top: 20px">
+                          <label class="field">
+                            Odôvodnenie pre autora
+                            <textarea name="reason" required></textarea>
+                          </label>
+                        </div>
+                        <div class="form-actions">
+                          <button class="btn primary" type="submit">
+                            Potvrdiť ukážkové rozhodnutie
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="m5 12 4 4L19 6" />
+                            </svg>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </section>
+                  <div style="margin-top: 24px">
+                    <div class="notice">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+                      </svg>
+                      <p>
+                        Pracovná ukážka rozhodovacieho procesu. Žiadne rozhodnutie ani e-mail sa
+                        neodosiela.
+                      </p>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+            <footer class="workspace-footer">
+              <span>UCM CONFERENCES / ANS 2027</span>
+              <span>Dizajnový prototyp · ukážkové údaje</span>
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
+    <template id="record-0">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">PROGRAMOVÝ VÝBOR / ANS-027</div>
+          <h1>Odporúčania poznáme. Rozhodnutie je na vás.</h1>
+          <p>Odborné rozhodnutie o príspevku · ANS 2027</p>
+        </div>
+        <div class="actions">
+          <a class="btn flat" href="committee-submissions.html">Všetky príspevky</a>
+        </div>
+      </div>
+      <div class="content-grid" style="margin-top: 0">
+        <div>
+          <section class="panel">
+            <div class="panel-head"><h2>Príspevok</h2></div>
+            <div class="panel-body">
+              <h2 class="submission-title">
+                Využitie strojového učenia pri monitorovaní kvality vody
+              </h2>
+              <p class="prose">
+                Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev environmentálneho
+                výskumu. V príspevku predstavujeme prístup založený na metódach strojového učenia,
+                ktorý umožňuje identifikovať zmeny vo vybraných ukazovateľoch kvality vody.
+                Navrhnutý model kombinuje senzorické merania s historickými údajmi a poskytuje
+                podklad pre včasné odhalenie environmentálnych rizík. Výsledky poukazujú na
+                potenciál medziodborovej spolupráce informatiky a environmentálnych vied.
+              </p>
+              <div style="margin-top: 25px">
+                <div class="file">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                  </svg>
+                  <div>
+                    ANS-027_abstrakt_v2.pdf
+                    <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+                  </div>
+                  <button type="button" class="btn small flat" data-action="file">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                    </svg>
+                    Náhľad
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <section class="panel">
+              <div class="panel-head"><h2>Odovzdané odborné posudky</h2></div>
+              <div class="panel-body">
+                <article style="margin-bottom: 24px">
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 01</h3>
+                    <span class="pill green">Odporúča prijať</span>
+                  </div>
+                  <p class="prose">
+                    Príspevok prináša zaujímavé výsledky a má zrozumiteľne opísanú metodiku.
+                    Odporúčam rozšíriť porovnanie s existujúcimi prístupmi.
+                  </p>
+                </article>
+                <article>
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 02</h3>
+                    <span class="pill orange">Prijať po úpravách</span>
+                  </div>
+                  <p class="prose">
+                    Odporúčam spresniť opis dátového súboru a doplniť diskusiu limitov modelu.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+        <aside>
+          <section class="panel">
+            <div class="panel-head"><h2>Rozhodnutie výboru</h2></div>
+            <div class="panel-body">
+              <form data-form="decision">
+                <label class="field">
+                  Výsledok posúdenia
+                  <select name="decision">
+                    <option>Prijať</option>
+                    <option>Podmienečne prijať</option>
+                    <option>Vyžiadať úpravy</option>
+                    <option>Zamietnuť</option>
+                  </select>
+                </label>
+                <div style="margin-top: 20px">
+                  <label class="field">
+                    Odôvodnenie pre autora
+                    <textarea name="reason" required></textarea>
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">
+                    Potvrdiť ukážkové rozhodnutie
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <div class="notice">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+              </svg>
+              <p>
+                Pracovná ukážka rozhodovacieho procesu. Žiadne rozhodnutie ani e-mail sa neodosiela.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </template>
+    <template id="record-1">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">PROGRAMOVÝ VÝBOR / ANS-028</div>
+          <h1>Odporúčania poznáme. Rozhodnutie je na vás.</h1>
+          <p>Odborné rozhodnutie o príspevku · ANS 2027</p>
+        </div>
+        <div class="actions">
+          <a class="btn flat" href="committee-submissions.html">Všetky príspevky</a>
+        </div>
+      </div>
+      <div class="content-grid" style="margin-top: 0">
+        <div>
+          <section class="panel">
+            <div class="panel-head"><h2>Príspevok</h2></div>
+            <div class="panel-body">
+              <h2 class="submission-title">Biodegradácia polymérov v pôdnom prostredí</h2>
+              <p class="prose">
+                Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev environmentálneho
+                výskumu. V príspevku predstavujeme prístup založený na metódach strojového učenia,
+                ktorý umožňuje identifikovať zmeny vo vybraných ukazovateľoch kvality vody.
+                Navrhnutý model kombinuje senzorické merania s historickými údajmi a poskytuje
+                podklad pre včasné odhalenie environmentálnych rizík. Výsledky poukazujú na
+                potenciál medziodborovej spolupráce informatiky a environmentálnych vied.
+              </p>
+              <div style="margin-top: 25px">
+                <div class="file">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                  </svg>
+                  <div>
+                    ANS-027_abstrakt_v2.pdf
+                    <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+                  </div>
+                  <button type="button" class="btn small flat" data-action="file">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                    </svg>
+                    Náhľad
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <section class="panel">
+              <div class="panel-head"><h2>Odovzdané odborné posudky</h2></div>
+              <div class="panel-body">
+                <article style="margin-bottom: 24px">
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 01</h3>
+                    <span class="pill green">Odporúča prijať</span>
+                  </div>
+                  <p class="prose">
+                    Príspevok prináša zaujímavé výsledky a má zrozumiteľne opísanú metodiku.
+                    Odporúčam rozšíriť porovnanie s existujúcimi prístupmi.
+                  </p>
+                </article>
+                <article>
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 02</h3>
+                    <span class="pill orange">Prijať po úpravách</span>
+                  </div>
+                  <p class="prose">
+                    Odporúčam spresniť opis dátového súboru a doplniť diskusiu limitov modelu.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+        <aside>
+          <section class="panel">
+            <div class="panel-head"><h2>Rozhodnutie výboru</h2></div>
+            <div class="panel-body">
+              <form data-form="decision">
+                <label class="field">
+                  Výsledok posúdenia
+                  <select name="decision">
+                    <option>Prijať</option>
+                    <option>Podmienečne prijať</option>
+                    <option>Vyžiadať úpravy</option>
+                    <option>Zamietnuť</option>
+                  </select>
+                </label>
+                <div style="margin-top: 20px">
+                  <label class="field">
+                    Odôvodnenie pre autora
+                    <textarea name="reason" required></textarea>
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">
+                    Potvrdiť ukážkové rozhodnutie
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <div class="notice">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+              </svg>
+              <p>
+                Pracovná ukážka rozhodovacieho procesu. Žiadne rozhodnutie ani e-mail sa neodosiela.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </template>
+    <template id="record-2">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">PROGRAMOVÝ VÝBOR / ANS-029</div>
+          <h1>Odporúčania poznáme. Rozhodnutie je na vás.</h1>
+          <p>Odborné rozhodnutie o príspevku · ANS 2027</p>
+        </div>
+        <div class="actions">
+          <a class="btn flat" href="committee-submissions.html">Všetky príspevky</a>
+        </div>
+      </div>
+      <div class="content-grid" style="margin-top: 0">
+        <div>
+          <section class="panel">
+            <div class="panel-head"><h2>Príspevok</h2></div>
+            <div class="panel-body">
+              <h2 class="submission-title">Nové prístupy v analytickej chémii</h2>
+              <p class="prose">
+                Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev environmentálneho
+                výskumu. V príspevku predstavujeme prístup založený na metódach strojového učenia,
+                ktorý umožňuje identifikovať zmeny vo vybraných ukazovateľoch kvality vody.
+                Navrhnutý model kombinuje senzorické merania s historickými údajmi a poskytuje
+                podklad pre včasné odhalenie environmentálnych rizík. Výsledky poukazujú na
+                potenciál medziodborovej spolupráce informatiky a environmentálnych vied.
+              </p>
+              <div style="margin-top: 25px">
+                <div class="file">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                  </svg>
+                  <div>
+                    ANS-027_abstrakt_v2.pdf
+                    <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+                  </div>
+                  <button type="button" class="btn small flat" data-action="file">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                    </svg>
+                    Náhľad
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <section class="panel">
+              <div class="panel-head"><h2>Odovzdané odborné posudky</h2></div>
+              <div class="panel-body">
+                <article style="margin-bottom: 24px">
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 01</h3>
+                    <span class="pill green">Odporúča prijať</span>
+                  </div>
+                  <p class="prose">
+                    Príspevok prináša zaujímavé výsledky a má zrozumiteľne opísanú metodiku.
+                    Odporúčam rozšíriť porovnanie s existujúcimi prístupmi.
+                  </p>
+                </article>
+                <article>
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 02</h3>
+                    <span class="pill orange">Prijať po úpravách</span>
+                  </div>
+                  <p class="prose">
+                    Odporúčam spresniť opis dátového súboru a doplniť diskusiu limitov modelu.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+        <aside>
+          <section class="panel">
+            <div class="panel-head"><h2>Rozhodnutie výboru</h2></div>
+            <div class="panel-body">
+              <form data-form="decision">
+                <label class="field">
+                  Výsledok posúdenia
+                  <select name="decision">
+                    <option>Prijať</option>
+                    <option>Podmienečne prijať</option>
+                    <option>Vyžiadať úpravy</option>
+                    <option>Zamietnuť</option>
+                  </select>
+                </label>
+                <div style="margin-top: 20px">
+                  <label class="field">
+                    Odôvodnenie pre autora
+                    <textarea name="reason" required></textarea>
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">
+                    Potvrdiť ukážkové rozhodnutie
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <div class="notice">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+              </svg>
+              <p>
+                Pracovná ukážka rozhodovacieho procesu. Žiadne rozhodnutie ani e-mail sa neodosiela.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </template>
+    <template id="record-3">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">PROGRAMOVÝ VÝBOR / ANS-030</div>
+          <h1>Odporúčania poznáme. Rozhodnutie je na vás.</h1>
+          <p>Odborné rozhodnutie o príspevku · ANS 2027</p>
+        </div>
+        <div class="actions">
+          <a class="btn flat" href="committee-submissions.html">Všetky príspevky</a>
+        </div>
+      </div>
+      <div class="content-grid" style="margin-top: 0">
+        <div>
+          <section class="panel">
+            <div class="panel-head"><h2>Príspevok</h2></div>
+            <div class="panel-body">
+              <h2 class="submission-title">Biodiverzita mestských ekosystémov</h2>
+              <p class="prose">
+                Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev environmentálneho
+                výskumu. V príspevku predstavujeme prístup založený na metódach strojového učenia,
+                ktorý umožňuje identifikovať zmeny vo vybraných ukazovateľoch kvality vody.
+                Navrhnutý model kombinuje senzorické merania s historickými údajmi a poskytuje
+                podklad pre včasné odhalenie environmentálnych rizík. Výsledky poukazujú na
+                potenciál medziodborovej spolupráce informatiky a environmentálnych vied.
+              </p>
+              <div style="margin-top: 25px">
+                <div class="file">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                  </svg>
+                  <div>
+                    ANS-027_abstrakt_v2.pdf
+                    <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+                  </div>
+                  <button type="button" class="btn small flat" data-action="file">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                    </svg>
+                    Náhľad
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <section class="panel">
+              <div class="panel-head"><h2>Odovzdané odborné posudky</h2></div>
+              <div class="panel-body">
+                <article style="margin-bottom: 24px">
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 01</h3>
+                    <span class="pill green">Odporúča prijať</span>
+                  </div>
+                  <p class="prose">
+                    Príspevok prináša zaujímavé výsledky a má zrozumiteľne opísanú metodiku.
+                    Odporúčam rozšíriť porovnanie s existujúcimi prístupmi.
+                  </p>
+                </article>
+                <article>
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 02</h3>
+                    <span class="pill orange">Prijať po úpravách</span>
+                  </div>
+                  <p class="prose">
+                    Odporúčam spresniť opis dátového súboru a doplniť diskusiu limitov modelu.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+        <aside>
+          <section class="panel">
+            <div class="panel-head"><h2>Rozhodnutie výboru</h2></div>
+            <div class="panel-body">
+              <form data-form="decision">
+                <label class="field">
+                  Výsledok posúdenia
+                  <select name="decision">
+                    <option>Prijať</option>
+                    <option>Podmienečne prijať</option>
+                    <option>Vyžiadať úpravy</option>
+                    <option>Zamietnuť</option>
+                  </select>
+                </label>
+                <div style="margin-top: 20px">
+                  <label class="field">
+                    Odôvodnenie pre autora
+                    <textarea name="reason" required></textarea>
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">
+                    Potvrdiť ukážkové rozhodnutie
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <div class="notice">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+              </svg>
+              <p>
+                Pracovná ukážka rozhodovacieho procesu. Žiadne rozhodnutie ani e-mail sa neodosiela.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </template>
+    <template id="record-4">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">PROGRAMOVÝ VÝBOR / ANS-031</div>
+          <h1>Odporúčania poznáme. Rozhodnutie je na vás.</h1>
+          <p>Odborné rozhodnutie o príspevku · ANS 2027</p>
+        </div>
+        <div class="actions">
+          <a class="btn flat" href="committee-submissions.html">Všetky príspevky</a>
+        </div>
+      </div>
+      <div class="content-grid" style="margin-top: 0">
+        <div>
+          <section class="panel">
+            <div class="panel-head"><h2>Príspevok</h2></div>
+            <div class="panel-body">
+              <h2 class="submission-title">Optimalizácia neurónových sietí pre malé dáta</h2>
+              <p class="prose">
+                Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev environmentálneho
+                výskumu. V príspevku predstavujeme prístup založený na metódach strojového učenia,
+                ktorý umožňuje identifikovať zmeny vo vybraných ukazovateľoch kvality vody.
+                Navrhnutý model kombinuje senzorické merania s historickými údajmi a poskytuje
+                podklad pre včasné odhalenie environmentálnych rizík. Výsledky poukazujú na
+                potenciál medziodborovej spolupráce informatiky a environmentálnych vied.
+              </p>
+              <div style="margin-top: 25px">
+                <div class="file">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                  </svg>
+                  <div>
+                    ANS-027_abstrakt_v2.pdf
+                    <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+                  </div>
+                  <button type="button" class="btn small flat" data-action="file">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                    </svg>
+                    Náhľad
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <section class="panel">
+              <div class="panel-head"><h2>Odovzdané odborné posudky</h2></div>
+              <div class="panel-body">
+                <article style="margin-bottom: 24px">
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 01</h3>
+                    <span class="pill green">Odporúča prijať</span>
+                  </div>
+                  <p class="prose">
+                    Príspevok prináša zaujímavé výsledky a má zrozumiteľne opísanú metodiku.
+                    Odporúčam rozšíriť porovnanie s existujúcimi prístupmi.
+                  </p>
+                </article>
+                <article>
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 02</h3>
+                    <span class="pill orange">Prijať po úpravách</span>
+                  </div>
+                  <p class="prose">
+                    Odporúčam spresniť opis dátového súboru a doplniť diskusiu limitov modelu.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+        <aside>
+          <section class="panel">
+            <div class="panel-head"><h2>Rozhodnutie výboru</h2></div>
+            <div class="panel-body">
+              <form data-form="decision">
+                <label class="field">
+                  Výsledok posúdenia
+                  <select name="decision">
+                    <option>Prijať</option>
+                    <option>Podmienečne prijať</option>
+                    <option>Vyžiadať úpravy</option>
+                    <option>Zamietnuť</option>
+                  </select>
+                </label>
+                <div style="margin-top: 20px">
+                  <label class="field">
+                    Odôvodnenie pre autora
+                    <textarea name="reason" required></textarea>
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">
+                    Potvrdiť ukážkové rozhodnutie
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <div class="notice">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+              </svg>
+              <p>
+                Pracovná ukážka rozhodovacieho procesu. Žiadne rozhodnutie ani e-mail sa neodosiela.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </template>
+    <template id="record-5">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">PROGRAMOVÝ VÝBOR / ANS-032</div>
+          <h1>Odporúčania poznáme. Rozhodnutie je na vás.</h1>
+          <p>Odborné rozhodnutie o príspevku · ANS 2027</p>
+        </div>
+        <div class="actions">
+          <a class="btn flat" href="committee-submissions.html">Všetky príspevky</a>
+        </div>
+      </div>
+      <div class="content-grid" style="margin-top: 0">
+        <div>
+          <section class="panel">
+            <div class="panel-head"><h2>Príspevok</h2></div>
+            <div class="panel-body">
+              <h2 class="submission-title">Bioaktívne látky v liečivých rastlinách</h2>
+              <p class="prose">
+                Kvalita vodných ekosystémov predstavuje jednu z kľúčových výziev environmentálneho
+                výskumu. V príspevku predstavujeme prístup založený na metódach strojového učenia,
+                ktorý umožňuje identifikovať zmeny vo vybraných ukazovateľoch kvality vody.
+                Navrhnutý model kombinuje senzorické merania s historickými údajmi a poskytuje
+                podklad pre včasné odhalenie environmentálnych rizík. Výsledky poukazujú na
+                potenciál medziodborovej spolupráce informatiky a environmentálnych vied.
+              </p>
+              <div style="margin-top: 25px">
+                <div class="file">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                  </svg>
+                  <div>
+                    ANS-027_abstrakt_v2.pdf
+                    <small>PDF · 248 kB · verzia 2 · ukážkový súbor</small>
+                  </div>
+                  <button type="button" class="btn small flat" data-action="file">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 5H5v14h14v-3M13 5h6v6M10 14l9-9" />
+                    </svg>
+                    Náhľad
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <section class="panel">
+              <div class="panel-head"><h2>Odovzdané odborné posudky</h2></div>
+              <div class="panel-body">
+                <article style="margin-bottom: 24px">
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 01</h3>
+                    <span class="pill green">Odporúča prijať</span>
+                  </div>
+                  <p class="prose">
+                    Príspevok prináša zaujímavé výsledky a má zrozumiteľne opísanú metodiku.
+                    Odporúčam rozšíriť porovnanie s existujúcimi prístupmi.
+                  </p>
+                </article>
+                <article>
+                  <div class="card-top" style="margin-bottom: 12px">
+                    <h3>Recenzia 02</h3>
+                    <span class="pill orange">Prijať po úpravách</span>
+                  </div>
+                  <p class="prose">
+                    Odporúčam spresniť opis dátového súboru a doplniť diskusiu limitov modelu.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+        <aside>
+          <section class="panel">
+            <div class="panel-head"><h2>Rozhodnutie výboru</h2></div>
+            <div class="panel-body">
+              <form data-form="decision">
+                <label class="field">
+                  Výsledok posúdenia
+                  <select name="decision">
+                    <option>Prijať</option>
+                    <option>Podmienečne prijať</option>
+                    <option>Vyžiadať úpravy</option>
+                    <option>Zamietnuť</option>
+                  </select>
+                </label>
+                <div style="margin-top: 20px">
+                  <label class="field">
+                    Odôvodnenie pre autora
+                    <textarea name="reason" required></textarea>
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">
+                    Potvrdiť ukážkové rozhodnutie
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <div style="margin-top: 24px">
+            <div class="notice">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+              </svg>
+              <p>
+                Pracovná ukážka rozhodovacieho procesu. Žiadne rozhodnutie ani e-mail sa neodosiela.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

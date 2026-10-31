@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2446ed" />
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>Program konferencie · ANS 2027 / UCM</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-screen="program">
+    <a class="skip" href="#main">Preskočiť na obsah</a>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public" selected>Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <header class="public-header">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <nav class="public-nav" aria-label="Hlavná navigácia">
+          <a href="../index.html" class="">O konferencii</a>
+          <a href="program.html" class="active" aria-current="page">Program</a>
+          <a href="information.html" class="">Praktické informácie</a>
+          <a href="../auth/login.html">Prihlásenie</a>
+          <a class="btn lime" href="../auth/register.html">
+            Registrácia
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-5-5 5 5-5 5" />
+            </svg>
+          </a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1" class="public-main">
+        <div id="screen-content">
+          <div class="page-intro">
+            <div class="eyebrow">STRETNIME SA PRI VEDE</div>
+            <h1>Program konferencie</h1>
+            <p>Prednášky, nové perspektívy aj rozhovory medzi nimi. Vyberte si svoj deň.</p>
+          </div>
+          <div class="notice">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 11v6M12 7h.01" />
+            </svg>
+            <p>
+              Toto je ukážkový program dizajnového prototypu. Termíny, miesto a obsah ročníka 2027
+              sú ilustračné.
+            </p>
+          </div>
+          <div class="public-content" id="schedule-container">
+            <div class="day-tabs" aria-label="Deň programu">
+              <button class="active" data-day="0" aria-pressed="true">Streda / 15. 09.</button>
+              <button class="" data-day="1" aria-pressed="false">Štvrtok / 16. 09.</button>
+              <button class="" data-day="2" aria-pressed="false">Piatok / 17. 09.</button>
+            </div>
+            <div class="schedule">
+              <article class="schedule-row">
+                <time>09:00</time>
+                <div>
+                  <span class="room">Foyer</span>
+                  <h3>Registrácia a ranná káva</h3>
+                  <p>Zoznámte sa s ostatnými účastníkmi.</p>
+                </div>
+                <span class="pill gray">Networking</span>
+              </article>
+              <article class="schedule-row">
+                <time>10:00</time>
+                <div>
+                  <span class="room">Hlavná sála</span>
+                  <h3>Otvorenie konferencie ANS 2027</h3>
+                  <p>Uvítanie účastníkov a predstavenie programu.</p>
+                </div>
+                <span class="pill gray">Spoločný program</span>
+              </article>
+              <article class="schedule-row">
+                <time>10:30</time>
+                <div>
+                  <span class="room">Hlavná sála</span>
+                  <h3>Prírodné vedy v prepojenom svete</h3>
+                  <p>Plenárna prednáška · ukážkový rečník</p>
+                </div>
+                <span class="pill green">Keynote</span>
+              </article>
+              <article class="schedule-row break">
+                <time>11:30</time>
+                <div>
+                  <span class="room">Foyer</span>
+                  <h3>Prestávka na kávu</h3>
+                  <p>Priestor na diskusiu a nové spojenia.</p>
+                </div>
+                <span class="pill gray">Prestávka</span>
+              </article>
+              <article class="schedule-row">
+                <time>12:00</time>
+                <div>
+                  <span class="room">Sála A</span>
+                  <h3>Dáta a technológie pre udržateľnú budúcnosť</h3>
+                  <p>Odborný blok · informatika a environmentálne vedy</p>
+                </div>
+                <span class="pill gray">Prednášky</span>
+              </article>
+              <article class="schedule-row">
+                <time>14:00</time>
+                <div>
+                  <span class="room">Sála B</span>
+                  <h3>Nové horizonty biotechnológií</h3>
+                  <p>Odborný blok · biológia a biotechnológie</p>
+                </div>
+                <span class="pill gray">Prednášky</span>
+              </article>
+              <article class="schedule-row">
+                <time>16:00</time>
+                <div>
+                  <span class="room">Foyer</span>
+                  <h3>Posterová sekcia & diskusia</h3>
+                  <p>Výsledky výskumu v osobnom rozhovore s autormi.</p>
+                </div>
+                <span class="pill gray">Postery</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="public-footer">
+        <a class="brand" href="../index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <span>Veda. Ľudia. Nové spojenia.</span>
+        <a href="privacy.html">Informácie o spracúvaní údajov ↗</a>
+        <span>© 2027 · Vizuálna ukážka</span>
+      </footer>
+    </div>
+    <template id="schedule-0">
+      <div class="day-tabs" aria-label="Deň programu">
+        <button class="active" data-day="0" aria-pressed="true">Streda / 15. 09.</button>
+        <button class="" data-day="1" aria-pressed="false">Štvrtok / 16. 09.</button>
+        <button class="" data-day="2" aria-pressed="false">Piatok / 17. 09.</button>
+      </div>
+      <div class="schedule">
+        <article class="schedule-row">
+          <time>09:00</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Registrácia a ranná káva</h3>
+            <p>Zoznámte sa s ostatnými účastníkmi.</p>
+          </div>
+          <span class="pill gray">Networking</span>
+        </article>
+        <article class="schedule-row">
+          <time>10:00</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Otvorenie konferencie ANS 2027</h3>
+            <p>Uvítanie účastníkov a predstavenie programu.</p>
+          </div>
+          <span class="pill gray">Spoločný program</span>
+        </article>
+        <article class="schedule-row">
+          <time>10:30</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Prírodné vedy v prepojenom svete</h3>
+            <p>Plenárna prednáška · ukážkový rečník</p>
+          </div>
+          <span class="pill green">Keynote</span>
+        </article>
+        <article class="schedule-row break">
+          <time>11:30</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Prestávka na kávu</h3>
+            <p>Priestor na diskusiu a nové spojenia.</p>
+          </div>
+          <span class="pill gray">Prestávka</span>
+        </article>
+        <article class="schedule-row">
+          <time>12:00</time>
+          <div>
+            <span class="room">Sála A</span>
+            <h3>Dáta a technológie pre udržateľnú budúcnosť</h3>
+            <p>Odborný blok · informatika a environmentálne vedy</p>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>14:00</time>
+          <div>
+            <span class="room">Sála B</span>
+            <h3>Nové horizonty biotechnológií</h3>
+            <p>Odborný blok · biológia a biotechnológie</p>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>16:00</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Posterová sekcia & diskusia</h3>
+            <p>Výsledky výskumu v osobnom rozhovore s autormi.</p>
+          </div>
+          <span class="pill gray">Postery</span>
+        </article>
+      </div>
+    </template>
+    <template id="schedule-1">
+      <div class="day-tabs" aria-label="Deň programu">
+        <button class="" data-day="0" aria-pressed="false">Streda / 15. 09.</button>
+        <button class="active" data-day="1" aria-pressed="true">Štvrtok / 16. 09.</button>
+        <button class="" data-day="2" aria-pressed="false">Piatok / 17. 09.</button>
+      </div>
+      <div class="schedule">
+        <article class="schedule-row">
+          <time>09:00</time>
+          <div>
+            <span class="room">Sála A</span>
+            <h3>Nové trendy v analytickej chémii</h3>
+            <p>Odborné prezentácie a diskusia</p>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row break">
+          <time>10:30</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Prestávka na kávu</h3>
+            <p>Stretnutia účastníkov</p>
+          </div>
+          <span class="pill gray">Prestávka</span>
+        </article>
+        <article class="schedule-row">
+          <time>11:00</time>
+          <div>
+            <span class="room">Sála B</span>
+            <h3>Ekosystémy v čase klimatickej zmeny</h3>
+            <p>Odborný blok · environmentálne vedy</p>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>14:00</time>
+          <div>
+            <span class="room">Foyer</span>
+            <h3>Posterové prezentácie</h3>
+            <p>Diskusia s autormi</p>
+          </div>
+          <span class="pill gray">Postery</span>
+        </article>
+      </div>
+    </template>
+    <template id="schedule-2">
+      <div class="day-tabs" aria-label="Deň programu">
+        <button class="" data-day="0" aria-pressed="false">Streda / 15. 09.</button>
+        <button class="" data-day="1" aria-pressed="false">Štvrtok / 16. 09.</button>
+        <button class="active" data-day="2" aria-pressed="true">Piatok / 17. 09.</button>
+      </div>
+      <div class="schedule">
+        <article class="schedule-row">
+          <time>09:00</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Veda zajtrajška: mladí výskumníci</h3>
+            <p>Doktorandské prezentácie</p>
+          </div>
+          <span class="pill gray">Prednášky</span>
+        </article>
+        <article class="schedule-row">
+          <time>11:00</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Od výskumu k spolupráci</h3>
+            <p>Otvorená panelová diskusia</p>
+          </div>
+          <span class="pill gray">Diskusia</span>
+        </article>
+        <article class="schedule-row">
+          <time>12:30</time>
+          <div>
+            <span class="room">Hlavná sála</span>
+            <h3>Záverečné slovo a poďakovanie</h3>
+            <p>Ukončenie konferencie ANS 2027</p>
+          </div>
+          <span class="pill gray">Spoločný program</span>
+        </article>
+      </div>
+    </template>
+    <dialog id="screen-map" aria-labelledby="map-title"></dialog>
+    <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="../app.js"></script>
+  </body>
+</html>

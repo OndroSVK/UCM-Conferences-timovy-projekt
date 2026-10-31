@@ -4,17 +4,289 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2446ed" />
-    <meta
-      name="description"
-      content="Interaktívny dizajnový prototyp konferenčného systému UCM Conferences – ANS 2027."
-    />
-    <title>ANS 2027 · UCM Conferences</title>
+    <meta name="description" content="Dizajnový prototyp UCM Conferences – ANS 2027." />
+    <title>O konferencii · ANS 2027 / UCM</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-screen="home">
     <a class="skip" href="#main">Preskočiť na obsah</a>
-    <div id="app"></div>
+    <div id="app">
+      <div class="prototype">
+        <div class="prototype-left">
+          <span class="dot"></span>
+          <span>
+            DIZAJNOVÝ PROTOTYP
+            <span class="prototype-detail">/ Vzorové údaje · ANS 2027</span>
+          </span>
+        </div>
+        <div class="prototype-tools">
+          <label>
+            <span class="sr-only">Rozhranie</span>
+            <select id="role-switch" aria-label="Prepnúť rozhranie">
+              <option value="public" selected>Verejnosť</option>
+              <option value="participant">Účastník</option>
+              <option value="organizer">Organizátor</option>
+              <option value="reviewer">Recenzent</option>
+              <option value="committee">Programový výbor</option>
+              <option value="finance">Ekonomické oddelenie</option>
+              <option value="superadmin">Superadministrátor</option>
+            </select>
+          </label>
+          <button data-action="screen-map">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+            </svg>
+            Mapa obrazoviek
+          </button>
+        </div>
+      </div>
+      <header class="public-header">
+        <a class="brand" href="index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <nav class="public-nav" aria-label="Hlavná navigácia">
+          <a href="index.html" class="active" aria-current="page">O konferencii</a>
+          <a href="public/program.html" class="">Program</a>
+          <a href="public/information.html" class="">Praktické informácie</a>
+          <a href="auth/login.html">Prihlásenie</a>
+          <a class="btn lime" href="auth/register.html">
+            Registrácia
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-5-5 5 5-5 5" />
+            </svg>
+          </a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1" class="public-main">
+        <div id="screen-content">
+          <section class="hero">
+            <div class="hero-copy">
+              <div class="eyebrow">
+                <span class="dot"></span>
+                UCM V TRNAVE / FAKULTA PRÍRODNÝCH VIED
+              </div>
+              <h1>
+                Veda, ktorá
+                <br />
+                nás
+                <em>spája.</em>
+              </h1>
+              <p>
+                Applied Natural Sciences 2027. Priestor pre nové poznatky, odvážne otázky a
+                stretnutia naprieč prírodnými vedami.
+              </p>
+              <div class="actions">
+                <a class="btn primary" href="auth/register.html">
+                  Chcem sa zúčastniť
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5" />
+                  </svg>
+                </a>
+                <a class="btn flat" href="public/program.html">
+                  Objaviť program
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14m-5-5 5 5-5 5" />
+                  </svg>
+                </a>
+              </div>
+              <div class="hero-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 5h16v16H4zM16 3v4M8 3v4M4 11h16" />
+                  </svg>
+                  15. — 17. september 2027
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M19 10c0 5-7 12-7 12S5 15 5 10a7 7 0 0 1 14 0M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0"
+                    />
+                  </svg>
+                  Štrbské Pleso, Slovensko
+                </span>
+              </div>
+            </div>
+            <div class="hero-art">
+              <span class="art-year">SCIENCE. CONNECTED.</span>
+              <span class="art-edition">MEET · SHARE · DISCOVER</span>
+              <svg viewBox="0 0 400 400" aria-hidden="true">
+                <g transform="translate(200 180)">
+                  <ellipse rx="154" ry="61" transform="rotate(-35)" />
+                  <ellipse rx="154" ry="61" transform="rotate(35)" />
+                  <ellipse rx="154" ry="61" transform="rotate(90)" />
+                  <circle r="26" fill="#dbf587" stroke="#19211f" stroke-width="1.5" />
+                  <circle
+                    cx="126"
+                    cy="-82"
+                    r="15"
+                    fill="#ffb8a0"
+                    stroke="#19211f"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="-126"
+                    cy="-82"
+                    r="12"
+                    fill="#dbf587"
+                    stroke="#19211f"
+                    stroke-width="1.5"
+                  />
+                  <circle cy="154" r="12" fill="#fffef9" stroke="#19211f" stroke-width="1.5" />
+                </g>
+              </svg>
+              <div class="art-label">
+                ANS ’27
+                <small>APPLIED NATURAL SCIENCES</small>
+              </div>
+              <div class="art-sticker">
+                <strong>3 dni.</strong>
+                Nekonečno
+                <br />
+                možností.
+              </div>
+            </div>
+          </section>
+          <div class="ticker">
+            <span>
+              Biológia
+              <b>↗</b>
+            </span>
+            <span>
+              Biotechnológie
+              <b>↗</b>
+            </span>
+            <span>
+              Chémia
+              <b>↗</b>
+            </span>
+            <span>
+              Environmentálne vedy
+              <b>↗</b>
+            </span>
+            <span>
+              Informatika
+              <b>↗</b>
+            </span>
+          </div>
+          <section class="section">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">ZAPÍŠTE SI DO KALENDÁRA</div>
+                <h2>Veľké veci majú svoj termín.</h2>
+              </div>
+              <span class="pill">Ukážkový harmonogram</span>
+            </div>
+            <div class="three-grid">
+              <article class="card shadow lime">
+                <div class="card-top">
+                  <span class="eyebrow">01 / REGISTRÁCIA</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"
+                    />
+                  </svg>
+                </div>
+                <div class="deadline-day">
+                  30. apríl
+                  <span class="deadline-month">2027</span>
+                </div>
+                <h3>Vaše miesto vo vede.</h3>
+                <p>Prihláste sa ako rečník, autor posteru alebo účastník.</p>
+              </article>
+              <article class="card shadow">
+                <div class="card-top">
+                  <span class="eyebrow">02 / ABSTRAKTY</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6v20h14V8zM14 2v6h6M9 13h8M9 17h6" />
+                  </svg>
+                </div>
+                <div class="deadline-day">
+                  15. máj
+                  <span class="deadline-month">2027</span>
+                </div>
+                <h3>Podeľte sa o svoj výskum.</h3>
+                <p>Predstavte výsledky, ktoré posúvajú váš odbor vpred.</p>
+              </article>
+              <article class="card shadow lavender">
+                <div class="card-top">
+                  <span class="eyebrow">03 / STRETNUTIE</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 5h16v16H4zM16 3v4M8 3v4M4 11h16" />
+                  </svg>
+                </div>
+                <div class="deadline-day">
+                  15. september
+                  <span class="deadline-month">2027</span>
+                </div>
+                <h3>Vidíme sa pod Tatrami.</h3>
+                <p>Tri dni prednášok, diskusií a nových vedeckých spojení.</p>
+              </article>
+            </div>
+          </section>
+          <section class="section">
+            <div class="two-grid">
+              <div>
+                <div class="eyebrow">JEDNA KONFERENCIA. MNOHO PERSPEKTÍV.</div>
+                <h2 style="font-size: 40px; margin: 18px 0">
+                  Od myšlienky
+                  <br />
+                  k novým možnostiam.
+                </h2>
+                <p class="muted prose">
+                  ANS prepája vedeckú komunitu, mladých výskumníkov a ľudí, ktorí chcú prírodné vedy
+                  posúvať ďalej. Prineste svoju perspektívu.
+                </p>
+                <div class="actions" style="margin-top: 24px">
+                  <a class="btn flat" href="public/information.html">
+                    Praktické informácie
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h14m-5-5 5 5-5 5" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="card blue shadow">
+                <div class="eyebrow">VAŠA KONFERENCIA NA JEDNOM MIESTE</div>
+                <h2 style="font-size: 34px; margin: 24px 0">
+                  Menej administratívy.
+                  <br />
+                  Viac priestoru pre vedu.
+                </h2>
+                <p>
+                  Registrácia, príspevky, stav recenzie aj platba. Všetko nájdete vo svojom
+                  účastníckom účte.
+                </p>
+                <div style="margin-top: 25px">
+                  <a class="btn lime" href="participant/account.html">
+                    Pozrieť môj účet
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h14m-5-5 5 5-5 5" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="public-footer">
+        <a class="brand" href="index.html" aria-label="UCM Conferences – úvod">
+          <span class="brand-mark">u</span>
+          <span>
+            UCM
+            <small>CONFERENCES</small>
+          </span>
+        </a>
+        <span>Veda. Ľudia. Nové spojenia.</span>
+        <a href="public/privacy.html">Informácie o spracúvaní údajov ↗</a>
+        <span>© 2027 · Vizuálna ukážka</span>
+      </footer>
+    </div>
     <dialog id="screen-map" aria-labelledby="map-title"></dialog>
     <dialog id="action-dialog" aria-labelledby="dialog-title"></dialog>
     <div id="toast" role="status" aria-live="polite"></div>
