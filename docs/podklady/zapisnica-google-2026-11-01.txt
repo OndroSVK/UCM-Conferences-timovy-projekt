@@ -101,3 +101,26 @@ Adriana spravila toto>
 Lukas ide podla planu
 vymyslel pouzivatelsku prirucku a AI prirucku
 vymyslel editor html a css priamo v admin paneli
+
+
+Doplnenie realizovaných prác 31. 10. – 1. 11. 2026
+
+
+Ondro dokončil preklikateľný frontendový prototyp všetkých rolí, samostatné HTML obrazovky, filtre, dialógy, lokálne formuláre a mobilné rozloženie. Backend, autentifikácia a serverové ukladanie zatiaľ nie sú pripojené.
+
+
+Na Lukášov návrh vznikla frontendová ukážka editora HTML/CSS: obsah, obrázky, responzívny náhľad, koncepty a publikované verzie v prehliadači. Lokálne publikovanie ešte nemení serverový web.
+
+
+V Gite vznikli tri živé dokumenty: projektová dokumentácia, používateľská príručka a AI príručka. AI na technický návod smeruje aj AGENTS.md.
+
+
+Adrianin databázový podklad bol zapracovaný do dokumentácie: 16 entít, 21 vzťahov a pôvodné PDF. Súbor report-databaza.md obsahuje 30 otvorených zistení, otázok a odporúčaní pred implementáciou. Platby a poplatky návrh odkladá; ubytovanie zostáva len organizačnou informáciou a externým odkazom podľa zákazníckeho rozsahu.
+
+
+Plán bol aktualizovaný: prvý projektový týždeň je dokončený; druhý má 6 hotových a 6 rozpracovaných úloh vrátane hostingu. Dominikove pôvodné implementačné úlohy boli zachované v treťom týždni.
+
+
+Prezentačný web má aktualizovanú zápisnicu, databázový PDF podklad a odkazy na dokumentáciu aj živý prototyp.
+Dokumentácia: https://github.com/OndroSVK/UCM-Conferences-timovy-projekt/blob/main/docs/README.md
+Prototyp: https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/

@@ -1,6 +1,6 @@
 # Zápisnice a priebeh projektu UCM Conferences
 
-Aktualizované 1. 11. 2026. Zdroj: [tímová zápisnica v Google Docs](https://docs.google.com/document/d/1UGouF6UbpzQYj0o3fd-yql3aJioUEau_ns_nu8vUubs/edit), načítaná 1. 11. 2026; doplnené realizované práce podľa Git histórie a tohto pracovného záznamu. Originálny Google dokument týmto exportom nemeníme. [Snímka zdroja](podklady/zapisnica-google-2026-11-01.txt).
+Aktualizované 1. 11. 2026. Zdroj: [tímová zápisnica v Google Docs](https://docs.google.com/document/d/1UGouF6UbpzQYj0o3fd-yql3aJioUEau_ns_nu8vUubs/edit), načítaná 1. 11. 2026; doplnené realizované práce podľa Git histórie a tohto pracovného záznamu. Doplnený prehľad realizovaných prác bol 1. 11. 2026 zapísaný aj do pôvodnej Google zápisnice; uloženie bolo overené textovým exportom. [Snímka zdroja](podklady/zapisnica-google-2026-11-01.txt).
 
 ## Stretnutie 24. októbra 2026
 

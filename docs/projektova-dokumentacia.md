@@ -176,3 +176,5 @@ Platby a poplatky sú v databázovom návrhu vedome odložené. Naďalej zostáv
 ### Priebežné odovzdávanie častí systému
 
 Každá dodaná časť dostane vlastný opis v `docs/`, pôvodný podklad v `docs/podklady/`, stav (návrh / implementácia / overené nasadenie), mapu súborov, dáta, rozhrania, obmedzenia a spôsob overenia. Aktuálne sú zdokumentované frontend, editor webu a databázový návrh; backend/nasadzovacie podklady sa doplnia po skutočnom dodaní. Hlavná dokumentácia a obe príručky sa aktualizujú podľa dopadu.
+
+Overenie publikácie 1. 11. 2026: aktualizovaný školský prezentačný web, PDF zápisnice a databázové PDF boli nahraté cez existujúce SFTP nastavenie; ich verejné HTTP kópie boli porovnané SHA-256 s lokálnym výstupom. Pôvodný HTML a PDF zápisnice boli pred nahratím zálohované. Stručný prehľad realizovaných prác bol doplnený aj do Google zápisnice a overený exportom.
