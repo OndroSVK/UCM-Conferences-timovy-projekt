@@ -1,4 +1,4 @@
-﻿xDo 21.10.2026 (denné štúdium) a do 28.10.2026 (externé štúdium) si pripravte prezentáciu tímu, tému projektu, motivačný dokument a projektovú stránku.
+xDo 21.10.2026 (denné štúdium) a do 28.10.2026 (externé štúdium) si pripravte prezentáciu tímu, tému projektu, motivačný dokument a projektovú stránku.
 Zadanie pre denných a externých študentov:
 Vytvorte úvodné logo projektu + vytvorte úvodnú webovú stránku projektu tak, aby bola graficky v súlade so softvérovým dielom. Webová stránka bude obsahovať:
 * grafickú šablónu celého webu,
@@ -76,10 +76,10 @@ vsetky minulotyzdnove tasky boli dokoncene
 
 ondro vytvoril screeny, rozbehol github a spristupnil web v github pages
 
-Ondro doriesi hosting aplikacie IN PROGRES 
+Ondro doriesi hosting aplikacie IN PROGRES
 
 
-dominik si vymyslel tieto tasky aj ich splnil to su teda tohtotyzdnove, 
+dominik si vymyslel tieto tasky aj ich splnil to su teda tohtotyzdnove,
 Ako som s Ondrom rozprával pripravím nás na to keď budeme mať hosting zatiaľ si to spojazdnim lokálne a pripravím package aby sme to potom vedeli jednoducho nasadiť na hosting
 1.⁠ ⁠Príprava prostredia a kontrola kompatibility
 Nachystať prostredie (Docker na Debiane) a overiť, že všetko spolu funguje — PHP, JavaScript, HTML aj CSS. Cieľ, aby stránka bežala rovnako u každého v tíme, nielen na jednom počítači.
