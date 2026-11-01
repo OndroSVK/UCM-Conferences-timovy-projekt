@@ -349,3 +349,7 @@ Nie je to schválené rozdelenie semestrov ani nový harmonogram.
 - Rovnaké základné procesy sú dostupné v SK/EN, na mobile aj klávesnicou.
 
 Tieto body sú podklady pre budúce akceptačné scenáre, nie tvrdenie o vykonaných testoch.
+
+## Doplnenie podkladov 1. novembra 2026
+
+Dodané [databázové PDF](podklady/databaza.pdf) a [aktualizovaná zápisnica](zapisnice.md) dopĺňajú návrh, nemenia spätne záväznosť Z/N/O. [Databázový prehľad](databaza.md) opisuje 16 entít a 21 vzťahov, [report](report-databaza.md) otvorené medzery. Návrh už navrhuje osoby bez účtu, viac rolí a viac príspevkov na registráciu; schválenie konkrétnych pravidiel zostáva samostatným krokom. Platby/poplatky sú v tejto databázovej etape odložené a ubytovanie zostáva len informačné. Analytická kapitola 9 opisuje budúcu frameworkovú architektúru, nie aktuálny statický frontend.

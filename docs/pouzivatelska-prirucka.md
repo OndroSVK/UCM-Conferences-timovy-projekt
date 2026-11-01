@@ -1,6 +1,6 @@
 # Používateľská príručka UCM Conferences
 
-Verzia príručky: frontendový prototyp, 31. 10. 2026. Určené účastníkom, organizátorom, recenzentom, programovému výboru, ekonomickému oddeleniu a správcovi systému.
+Verzia príručky: frontendový prototyp, aktualizované 1. 11. 2026. Určené účastníkom, organizátorom, recenzentom, programovému výboru, ekonomickému oddeleniu a správcovi systému.
 
 ## 1. Čo práve používate
 
@@ -154,3 +154,9 @@ Pri hlásení chyby uveďte adresu stránky, zvolenú rolu, prehliadač, kroky, 
 ## 12. Ďalšie dokumenty
 
 Technické súvislosti sú v [projektovej dokumentácii](projektova-dokumentacia.md), detail editora v [doplnkovom návode](editor-webu.md). Zoznam plánovaných funkcií nie je návodom na funkcie, ktoré už možno používať. Táto príručka sa aktualizuje spolu s aplikáciou v Gite.
+
+## 13. Kde sledovať aktuálny projekt
+
+[Prototyp na GitHub Pages](https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/) je možné prezerať bez lokálneho servera. [Index dokumentácie na GitHube](https://github.com/OndroSVK/UCM-Conferences-timovy-projekt/blob/main/docs/README.md) obsahuje tri príručky, [zápisnice](zapisnice.md), [databázový návrh](databaza.md) a [report jeho otvorených otázok](report-databaza.md). Odkazy sú aj na prezentačnom webe projektu.
+
+Databázové PDF je analytický návrh; jeho pridanie nemení spôsob ukladania údajov v prototype. Registrácie, posudky, platby a serverové účty tým nezačali fungovať na serveri. Každá ďalšia dodaná časť bude postupne doplnená do dokumentácie so svojím skutočným stavom.

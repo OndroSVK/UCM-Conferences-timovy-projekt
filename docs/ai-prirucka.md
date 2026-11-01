@@ -1,6 +1,6 @@
 # AI príručka pre úpravy UCM Conferences
 
-Aktualizované 31. 10. 2026. Účel: umožniť AI aj novému vývojárovi začať konkrétnu zmenu bez opätovného skúmania celého projektu. Cesty sú relatívne ku Git koreňu aplikácie. Návod treba overiť proti aktuálnemu kódu a novším pokynom zákazníka.
+Aktualizované 1. 11. 2026. Účel: umožniť AI aj novému vývojárovi začať konkrétnu zmenu bez opätovného skúmania celého projektu. Cesty sú relatívne ku Git koreňu aplikácie. Návod treba overiť proti aktuálnemu kódu a novším pokynom zákazníka.
 
 ## 1. Kontext na prvé načítanie
 
@@ -186,7 +186,7 @@ Pri zmene uprav podľa dopadu:
 - AI príručku pri presune kódu, novom kontrakte, príkaze alebo testovacom postupe;
 - README/index a doplnkový návod, ak by zostali v rozpore.
 
-Záznam o rozhodnutí má obsahovať dátum, zdroj, stav (implementované/návrh/otvorené) a dopad. Nevymýšľaj zákaznícke schválenie. Pri odovzdaní zhrň zmenené správanie, overenie, obmedzenia a stav commitu/pushu. GitHub Pages nasadenie nepotvrdzuj len na základe pushu; v repozitári aktuálne nie je deploy workflow a nastavenie hostingu je externé.
+Záznam o rozhodnutí má obsahovať dátum, zdroj, stav (implementované/návrh/otvorené) a dopad. Nevymýšľaj zákaznícke schválenie. Pri odovzdaní zhrň zmenené správanie, overenie, obmedzenia a stav commitu/pushu. GitHub Pages nasadenie nepotvrdzuj len na základe pushu; v repozitári aktuálne nie je deploy workflow a nastavenie hostingu je externé. HTTP dostupnosť statického prototypu bola samostatne overená 1. 11. 2026.
 
 ## 11. Orientácia pri probléme
 
@@ -203,3 +203,13 @@ Záznam o rozhodnutí má obsahovať dátum, zdroj, stav (implementované/návrh
 | Nový údaj chýba v inom zozname | Statické HTML, `ui.js` a session stav nie sú jeden dátový model |
 
 Na detailnejší kontext pokračuj [projektovou dokumentáciou](projektova-dokumentacia.md), [editorom](editor-webu.md) a podľa oblasti [analýzou](frontend-analyza.md). Týmto dokumentom sa riaď ako mapou súčasnej implementácie; pri rozpore má prednosť aktuálny kód pre opis správania a novšie výslovné zadanie používateľa pre požadovanú zmenu.
+
+## 12. Databázový podklad a ďalšie odovzdávané moduly
+
+Začni [databázovým prehľadom](databaza.md) a [reportom databázy](report-databaza.md), potom podľa úlohy [originálnym PDF](podklady/databaza.pdf). PDF je konceptuálny model MariaDB so 16 entitami a 21 vzťahmi; nie SQL, migrácia, seed ani dôkaz nasadenia. Názvy v PDF sú slovenské zdrojové identifikátory; mapovanie na anglický kód treba dohodnúť a zdokumentovať. DB F1–F13 nezamieňaj s FE F01–F14.
+
+Najväčšie integračné medzery: obsah recenzie a hodnotená verzia, audit, rozsah rolí, integrita ročníkov, schválenie/publikácia programu, finančný model a serverová perzistencia editora. Platby PDF vedome odkladá; hotelové rezervácie sú mimo zákazníckeho rozsahu. VERZIA_PRISPEVKU nie je verzia verejného webu.
+
+[Zápisnica](zapisnice.md) dokladá Dominikovu prípravu Docker/Debian prostredia, nasadenia cez Git a balíka na hosting. Nedodané backendové zdroje alebo konfiguráciu nevymýšľaj a nepripisuj ich tomuto repozitáru. Hosting zostáva samostatne rozpracovaný. Frontendový GitHub Pages je dostupný, čo neznamená hotový aplikačný server.
+
+Pri novom podklade zachovaj originál v `docs/podklady/`, doplň opis modulu a dátum/zdroj/stav, prepoj ho z indexu a hlavnej projektovej dokumentácie. Otvorené problémy eviduj oddelene od verného prepisu. [Plán v Gite](plan-projektu.json) je snímkou zdroja `plan-projektu.json` nadradeného prezentačného webu, nie druhým nezávisle udržiavaným plánom. Zápisnice v Markdown sú priebežný konsolidovaný záznam; pôvodný Google dokument sa lokálnym exportom automaticky nemení.

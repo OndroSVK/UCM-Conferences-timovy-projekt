@@ -1,0 +1,397 @@
+{
+  "updated": "2026-11-01",
+  "weeks": [
+    {
+      "number": 1,
+      "title": "Analýza a návrh",
+      "tasks": [
+        {
+          "owner": "Ondro",
+          "title": "Rozdelenie úloh v tíme a príprava harmonogramu projektu.",
+          "status": "done",
+          "note": "Rozdelenie úloh a harmonogram sú pripravené."
+        },
+        {
+          "owner": "Ondro",
+          "title": "Návrh štruktúry aplikácie a obrazoviek pre účastníka a organizátora.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Ondro",
+          "title": "Dohodnutie komunikácie frontendu s backendom s Lukášom a Dominikom.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Spresnenie požiadaviek zadávateľa a určenie priorít funkcií.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Spísanie používateľských scenárov a podmienok overenia ich dokončenia.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Dohodnutie technického riešenia backendu a rozdelenie jeho modulov s Dominikom.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Spolupráca s Adrianou na návrhu databázových tabuliek a vzťahov.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Návrh dátových modelov pre konferencie, registrácie a abstrakty.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Návrh backendových operácií na odovzdávanie a správu abstraktov.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice a potvrdenia používateľa; analytická/návrhová etapa."
+        },
+        {
+          "owner": "Adriana",
+          "title": "Analýza – katalóg funkčných požiadaviek.",
+          "status": "done",
+          "note": "Odovzdané v databaza.pdf: katalóg funkcií, dátová analýza a ER diagram; ďalšie úpravy modelu sú v reporte databázy."
+        },
+        {
+          "owner": "Adriana",
+          "title": "Dátová analýza.",
+          "status": "done",
+          "note": "Odovzdané v databaza.pdf: katalóg funkcií, dátová analýza a ER diagram; ďalšie úpravy modelu sú v reporte databázy."
+        },
+        {
+          "owner": "Adriana",
+          "title": "Entitno-relačný diagram.",
+          "status": "done",
+          "note": "Odovzdané v databaza.pdf: katalóg funkcií, dátová analýza a ER diagram; ďalšie úpravy modelu sú v reporte databázy."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Základ aplikácie a databázy",
+      "tasks": [
+        {
+          "owner": "Ondro",
+          "title": "Vytvorenie základného vzhľadu aplikácie, navigácie a spoločných komponentov.",
+          "status": "done",
+          "note": "Hotové vo frontendovom prototype; serverové pripojenie zatiaľ nie je implementované."
+        },
+        {
+          "owner": "Ondro",
+          "title": "Vytvorenie verejnej stránky konferencie a registračného formulára.",
+          "status": "done",
+          "note": "Hotové vo frontendovom prototype; serverové pripojenie zatiaľ nie je implementované."
+        },
+        {
+          "owner": "Ondro",
+          "title": "Príprava obrazoviek prihlásenia a používateľského prehľadu.",
+          "status": "done",
+          "note": "Hotové vo frontendovom prototype; serverové pripojenie zatiaľ nie je implementované."
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Príprava základnej štruktúry backendu a vývojového prostredia.",
+          "status": "in_progress",
+          "note": "Rozpracované podľa aktualizácie plánu 1. 11. 2026."
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Implementácia registrácie, prihlasovania a odhlasovania používateľov.",
+          "status": "in_progress",
+          "note": "Rozpracované podľa aktualizácie plánu 1. 11. 2026."
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Implementácia používateľských rolí a prístupových oprávnení.",
+          "status": "in_progress",
+          "note": "Rozpracované podľa aktualizácie plánu 1. 11. 2026."
+        },
+        {
+          "owner": "Adriana",
+          "title": "Vytvorenie databázy.",
+          "status": "in_progress",
+          "note": "Rozpracované podľa aktualizácie plánu 1. 11. 2026."
+        },
+        {
+          "owner": "Adriana",
+          "title": "Naplnenie databázy testovacími údajmi.",
+          "status": "in_progress",
+          "note": "Rozpracované podľa aktualizácie plánu 1. 11. 2026."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Príprava prostredia Docker na Debiane a kontrola kompatibility PHP, JavaScriptu, HTML a CSS.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice; podklady zatiaľ nie sú v repozitári aplikácie. Neznamená overené produkčné nasadenie."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Príprava nasadenia aplikácie cez Git.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice; podklady zatiaľ nie sú v repozitári aplikácie. Neznamená overené produkčné nasadenie."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Príprava balíka projektu na hosting.",
+          "status": "done",
+          "note": "Dokončené podľa tímovej zápisnice; podklady zatiaľ nie sú v repozitári aplikácie. Neznamená overené produkčné nasadenie."
+        },
+        {
+          "owner": "Ondro",
+          "title": "Doriešenie hostingu aplikácie.",
+          "status": "in_progress",
+          "note": "Podľa zápisnice rozpracované; verejný frontendový prototyp už beží na GitHub Pages."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Prepojenie a hlavné funkcie",
+      "tasks": [
+        {
+          "owner": "Ondro",
+          "title": "Prepojenie registračného formulára a prihlasovania s backendom.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Ondro",
+          "title": "Vytvorenie formulára na odovzdanie abstraktu a zobrazenia jeho stavu.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Ondro",
+          "title": "Vytvorenie administračných obrazoviek na prehľad registrácií a abstraktov.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Implementácia vytvorenia a úpravy konferencie vrátane základných údajov a termínov.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Implementácia prihlasovania účastníkov na konkrétnu konferenciu.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Prepojenie týchto funkcií s frontendom a kontrola prioritných požiadaviek.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Spolupráca s Adrianou na prepojení databázy s backendom.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Implementácia schválenia alebo zamietnutia abstraktu a evidencie jeho stavu.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Implementácia zoznamov, filtrovania a exportu registrácií pre organizátora.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Adriana",
+          "title": "Prepojenie databázy s projektom.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Adriana",
+          "title": "Testovanie funkčnosti databázy.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Adriana",
+          "title": "Rozšírenie databázy.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Vytvorenie databázových migrácií a modelov podľa dohodnutého návrhu.",
+          "status": "planned",
+          "note": "Pôvodná implementačná úloha presunutá z 2. týždňa; nezamieňať s hotovou prípravou nasadenia."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Implementácia ukladania abstraktov a ich priradenia k účastníkovi a konferencii.",
+          "status": "planned",
+          "note": "Pôvodná implementačná úloha presunutá z 2. týždňa; nezamieňať s hotovou prípravou nasadenia."
+        },
+        {
+          "owner": "Dominik",
+          "title": "Doplnenie databázových obmedzení na zabezpečenie správnosti údajov.",
+          "status": "planned",
+          "note": "Pôvodná implementačná úloha presunutá z 2. týždňa; nezamieňať s hotovou prípravou nasadenia."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Testovanie a úpravy",
+      "tasks": [
+        {
+          "owner": "Ondro",
+          "title": "Doplnenie kontroly formulárov, chybových hlásení a potvrdení vykonaných akcií.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Ondro",
+          "title": "Úprava zobrazenia aplikácie pre mobilné zariadenia.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Ondro",
+          "title": "Oprava chýb frontendu podľa testovania a kontrola plnenia tímových úloh.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Doplnenie kontroly vstupov a oprávnení pri používateľoch a registráciách.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Oprava chýb vlastných backendových modulov podľa testovania.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Vyhodnotenie pripomienok zadávateľa a aktualizácia zostávajúcich úloh.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Testovanie vlastných backendových funkcií a oprava zistených chýb.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Kontrola databázových dopytov a doplnenie potrebných indexov.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Overenie správania pri úprave a mazaní súvisiacich záznamov.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Adriana",
+          "title": "Postupné testovanie všetkých doteraz vytvorených funkcií.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Adriana",
+          "title": "Príprava skriptu na testovanie celej aplikácie.",
+          "status": "planned",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Finalizácia a odovzdanie",
+      "tasks": [
+        {
+          "owner": "Ondro",
+          "title": "Oprava zostávajúcich chýb frontendu a zjednotenie vzhľadu aplikácie.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Ondro",
+          "title": "Doplnenie používateľskej dokumentácie a príprava ukážky aplikácie.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Ondro",
+          "title": "Koordinácia finálnej kontroly a odovzdania projektu.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Finálne overenie aplikácie podľa požiadaviek a používateľských scenárov.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Doplnenie technickej dokumentácie vlastných backendových modulov.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Lukáš",
+          "title": "Príprava podkladov na odovzdanie vrátane splnených požiadaviek a známych obmedzení.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Oprava zostávajúcich chýb backendu a databázových väzieb.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Doplnenie dokumentácie dátových modelov, migrácií a vlastných backendových funkcií.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Dominik",
+          "title": "Príprava inicializácie databázy a overenie aplikácie na čistej databáze s testovacími údajmi.",
+          "status": "planned",
+          "note": ""
+        },
+        {
+          "owner": "Adriana",
+          "title": "Oprava chýb, testy, kontroly, finalizácia a dokumentácia.",
+          "status": "planned",
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "currentWeek": 2,
+  "statusSource": "Zápisnica tímu načítaná 2026-11-01; pokyn používateľa; databaza.pdf."
+}

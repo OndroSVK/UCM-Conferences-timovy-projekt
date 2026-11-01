@@ -10,7 +10,7 @@ https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/
 - [Používateľská príručka](docs/pouzivatelska-prirucka.md) – postupy pre všetky roly a editor webu.
 - [AI príručka](docs/ai-prirucka.md) – mapa kódu, kontrakty, pravidlá úprav a overovanie.
 
-[Index a doplnkové podklady](docs/README.md). AI začína cez [AGENTS.md](AGENTS.md).
+[Index a doplnkové podklady](docs/README.md), [databázový model](docs/databaza.md), [report databázy](docs/report-databaza.md) a [zápisnice](docs/zapisnice.md). AI začína cez [AGENTS.md](AGENTS.md).
 Dokumentáciu aktualizujeme spolu s funkčnými zmenami v rovnakom commite.
 
 ## Spustenie
@@ -82,7 +82,7 @@ Prvá zobrazená verzia je v `#screen-content`, interaktívne varianty v pomenov
 
 Príklad: účastnícky profil uprav v `participant/profile.html`, editor programu v `organizer/admin-program.html`. Pri pridaní novej obrazovky doplň aj katalóg v `routes.js` a príslušné odkazy navigácie. Relatívne odkazy fungujú aj na GitHub Pages pod cestou repozitára.
 
-Aplikácia je samostatná: písmo a jeho licencia sú v `assets/`, favicon v `favicon.ico`. Repozitár obsahuje iba aplikáciu a jej dokumentáciu. Prezentačný web, tímové dokumenty a konfigurácia školského hostingu nie sú jeho súčasťou.
+Aplikácia je samostatná: písmo a jeho licencia sú v `assets/`, favicon v `favicon.ico`. Repozitár obsahuje aplikáciu, jej dokumentáciu a vybrané zdrojové podklady v `docs/podklady/`. Zdrojový prezentačný web a konfigurácia školského hostingu nie sú jeho súčasťou.
 
 ## Budúca implementácia
 

@@ -1,0 +1,103 @@
+﻿xDo 21.10.2026 (denné štúdium) a do 28.10.2026 (externé štúdium) si pripravte prezentáciu tímu, tému projektu, motivačný dokument a projektovú stránku.
+Zadanie pre denných a externých študentov:
+Vytvorte úvodné logo projektu + vytvorte úvodnú webovú stránku projektu tak, aby bola graficky v súlade so softvérovým dielom. Webová stránka bude obsahovať:
+* grafickú šablónu celého webu,
+* názov softvérového diela,
+* motivačný dokument v pdf,
+* prezentáciu softvérového diela v pdf,
+* riešiteľský tím tak, aby každý člen mal uvedenú rolu v tíme a fotografiu,
+* fotografia celého riešiteľského tímu,
+* úvodná zápisnica z prvého spoločného stretnutia.
+Rozdelenie študentov do tímov podľa jednotlivých študijných skupín + téma projektu:
+
+
+
+
+Motivačný dokument
+Motivačný dokument má predpísanú štruktúru a rozsah:
+1. Tím:
+   * predstavenie tímu; doterajšie skúsenosti, najmä v súvislosti s témou - konkrétne, napr. aj vybrané predmety bc. štúdia súvisiace s témou
+   * koncipujte ako jeden odsek pre každého študenta z tímu
+   * je dôležité, aby ste ukázali, že ste súdržná skupina, zamyslite sa nad silnými stránkami tímu ako skupiny a doložte ich konkrétnymi informáciami o jednotlivcoch
+2. Motivácia:
+
+   * akú chcete tému a prečo
+   * čo viete poskytnúť v súvislosti s touto témou (špeciálne doplnenie predstavenia)
+   * nakoľko odhadujete časový fond po celú dobu riešenia
+Dokument bude zavesený na webovej stránke vedúceho tímu najneskôr 21.10.2026 v formáte pdf, bude obsahovať aj mailový kontakt na tím, na jednotlivcov.
+Je dôležité dať všetkým členom tímu šancu na prípravu dokumentu. Je dôležité, aby sa každý člen tímu o svoj podiel práce v tíme na príprave dokumentu uchádzal.
+Odovzdá sa len jeden dokument (pdf). Aktuálna štruktúra (časti a ich číslovanie) je na tíme, dôležité je, aby tam boli všetky časti a aby bolo jasné, v ktorej časti sa hovorí ku ktorej téme.
+
+
+Zapis stretnutia 24. 10. 2026 Trnava
+
+
+Zakladna debata, fotenie plan nasledujuceho stretnutia, priprava, individualna analyza zadania
+
+
+Zapis stretnutia 25. 10. 2026 ON LINE
+
+
+Vsetci: prerozdelenie pozícii, spisovanie otazok na zakaznika, rozdelenie uloh
+
+
+Lukas: Analyza zadania, návrh technologického stacku
+
+Ondro: logo, tímová web page, zhromazdovanie informacii pre tvorbu dokumentov timu, tvorba kooperacnych dokumentov
+
+Vsetci: spisovanie bio spisovanie specifikacie
+
+Ulohy Ondro: tvorba prezentacneho webu a dokumentov
+
+Vsetci: kontrola webu a dokumentov
+
+Vecer:
+Ondro vytvoril web v odsuhlasenom dizajne, vytvoril a nahral dokumenty na zaklade internych dokumentov vytvorenych clenmi timu
+
+
+vsetci kontrola webu a dokumentov, prijate bez vyhrad
+
+Dalsie stretnutie v Sobotu 31. 10
+
+
+
+
+zapis aktivity 26. 10.
+Lukas poslal otazky na zakaznika, otazky boli posunute zakaznikovi
+
+
+cakame na odpoved zakaznika pre dospecifikovanie aplikacie
+
+zakaznik odpovedal, je to v nalyze
+
+28. 10. Stretnutie nazivo studovna pocas obedajsej pauzy
+
+vsetky minulotyzdnove tasky boli dokoncene
+
+ondro vytvoril screeny, rozbehol github a spristupnil web v github pages
+
+Ondro doriesi hosting aplikacie IN PROGRES 
+
+
+dominik si vymyslel tieto tasky aj ich splnil to su teda tohtotyzdnove, 
+Ako som s Ondrom rozprával pripravím nás na to keď budeme mať hosting zatiaľ si to spojazdnim lokálne a pripravím package aby sme to potom vedeli jednoducho nasadiť na hosting
+1.⁠ ⁠Príprava prostredia a kontrola kompatibility
+Nachystať prostredie (Docker na Debiane) a overiť, že všetko spolu funguje — PHP, JavaScript, HTML aj CSS. Cieľ, aby stránka bežala rovnako u každého v tíme, nielen na jednom počítači.
+
+
+2.⁠ ⁠Nasadenie cez git
+Nastavenie tak, aby sme kód vedeli jednoducho preniesť na server bez ručného prekopírovania súborov.
+
+
+3.⁠ ⁠Príprava balíka na hosting (LIVE stránka)
+Pripraviť hotový balík projektu, ktorý sa dá nahrať na hosting, aby sme mali živú stránku dostupnú online.
+
+
+Adriana spravila toto>
+[30/10/2026, 19:47:51] ~ Adriana Rumanovská: posielam svoje tri tasky co som mala na tento tyzden v jednom pdf, hlavny je diagram a atributy .. je mozne ze pri tvorbe bude samozrejme prechadzat este upravami.. doplnte si to kto kam potrebuje ak robite nejaku dokumentaciu..
+[30/10/2026, 19:49:01] ~ Adriana Rumanovská: a teda, pre info, vynechala som platby a ubytka, tie mam na plane zahrnut vramci tasku rozsirenia databazy.. aj spolu so vsetkym co sa pri developovani vyskytne
+
+
+Lukas ide podla planu
+vymyslel pouzivatelsku prirucku a AI prirucku
+vymyslel editor html a css priamo v admin paneli

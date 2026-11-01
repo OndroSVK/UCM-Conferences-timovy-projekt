@@ -1,6 +1,6 @@
 # Projektová dokumentácia UCM Conferences
 
-Stav dokumentu: dokumentácia aktuálneho frontendového prototypu a hraníc budúceho systému. Aktualizované 31. 10. 2026. Zdrojom implementačných tvrdení je kód v tomto repozitári; požiadavky vychádzajú z lokálnej [analýzy](frontend-analyza.md). Dokument nepredstavuje schválenie otvorených návrhov.
+Stav dokumentu: dokumentácia aktuálneho frontendového prototypu a hraníc budúceho systému. Aktualizované 1. 11. 2026. Zdrojom implementačných tvrdení je kód v tomto repozitári; požiadavky vychádzajú z lokálnej [analýzy](frontend-analyza.md). Dokument nepredstavuje schválenie otvorených návrhov.
 
 ## 1. Účel a rozsah
 
@@ -18,9 +18,9 @@ Analýza, záznamy overení a detail editora sú doplnkové podklady, prepojené
 
 Git koreň tejto aplikácie je lokálne priečinok `aplikacia/`; na GitHube ide o `OndroSVK/UCM-Conferences-timovy-projekt`. Cesty v tomto dokumente sú relatívne ku Git koreňu, pokiaľ nie je uvedené inak. Samostatný klon preto začína súbormi `index.html`, `app.js` a `README.md`, bez nadradeného priečinka `aplikacia`.
 
-V lokálnom nadradenom pracovnom priestore existuje aj školský prezentačný web. Má vlastný `index.html`, `style.css`, `build.py`, plán `plan-projektu.json`, fotografie a tímové dokumenty DOCX/PDF. Nie je súčasťou Git repozitára aplikácie. Jeho účelom je predstaviť tím a projekt, nie prevádzkovať konferenčné účty.
+V lokálnom nadradenom pracovnom priestore existuje aj školský prezentačný web. Má vlastný `index.html`, `style.css`, `build.py`, plán `plan-projektu.json`, fotografie a tímové dokumenty DOCX/PDF. Zdrojový prezentačný web nie je súčasťou Git repozitára aplikácie; vybrané podklady a zápisnice sú do dokumentácie aplikácie kopírované samostatne. Jeho účelom je predstaviť tím a projekt, nie prevádzkovať konferenčné účty.
 
-Prezentačný build `python3 build.py` generuje sekciu plánu medzi `PLAN:START` a `PLAN:END`, overuje odkazy a tri PDF, pripravuje `dist/` a `output/ucm-conferences-web.zip`. Balí iba prezentačný web, assets a PDF. Aplikácia ani táto Markdown dokumentácia sa týmto buildom nepublikujú. Existujúce nastavenie školského uploadu aplikáciu vylučuje; lokálne konfigurácie editora sa neverzionujú. Pri odovzdaní samotného klonu aplikácie nemožno predpokladať existenciu nadradených súborov.
+Prezentačný build `python3 build.py` generuje sekciu plánu medzi `PLAN:START` a `PLAN:END`, overuje odkazy a projektové PDF vrátane databázového návrhu, pripravuje `dist/` a `output/ucm-conferences-web.zip`. Balí iba prezentačný web, assets a PDF. Aplikácia ani táto Markdown dokumentácia sa týmto buildom nepublikujú. Existujúce nastavenie školského uploadu aplikáciu vylučuje; lokálne konfigurácie editora sa neverzionujú. Pri odovzdaní samotného klonu aplikácie nemožno predpokladať existenciu nadradených súborov.
 
 ## 3. Stav funkcií
 
@@ -46,7 +46,7 @@ Lokálna analýza označuje **Z** ako zákaznícku požiadavku, **N** ako návrh
 
 Potvrdený cieľ zahŕňa konfigurovateľné kategórie účasti a poplatky, individuálne oslobodenie, účty a registrácie na ročníky, odborné príspevky s recenziami a revíziami, bankový prevod s manuálnou evidenciou, automatické oznámenia, program, exporty, SK/EN a záznam dôležitých operácií. Ubytovanie je len informácia s externým odkazom. Nepridávať hotelové rezervácie, platobnú bránu, bankové API ani evidenciu veku na základe domnienky.
 
-Potvrdené cieľové prostredie podľa analýzy je LXC, GNU/Debian 13, PHP 8.5+ a MariaDB. Laravel/Filament je návrh tímu. V repozitári nie je PHP aplikácia, databázová schéma, API ani frameworkový základ.
+Potvrdené cieľové prostredie podľa analýzy je LXC, GNU/Debian 13, PHP 8.5+ a MariaDB. Laravel/Filament je návrh tímu. V repozitári nie je PHP aplikácia, fyzická databázová schéma, API ani frameworkový základ. Od 1. 11. je doložený [konceptuálny databázový model](databaza.md) so zdrojovým PDF, 16 entitami a 21 vzťahmi; nejde o implementáciu MariaDB.
 
 Pred backendom treba uzavrieť najmä identitu/SSO, rozsah rolí podľa ročníka, počty a pravidlá príspevkov, limity súborov, anonymitu a kolá recenzií, rozhodovacie právomoci, platobné a fakturačné pravidlá, publikáciu programu, rozsah prekladov a uchovávanie údajov. Úplný zoznam Q01–Q20 a pokrytie F01–F14 sú v [analýze](frontend-analyza.md). Neodvodzovať schválené pravidlá z makiet formulárov alebo z pevnej sumy v JavaScripte.
 
@@ -141,7 +141,7 @@ python3 -m http.server 8766 --bind 127.0.0.1
 
 Otvoriť `http://localhost:8766/`. V nadradenom pracovnom priestore je aplikácia na `http://localhost:8766/aplikacia/`. Priamy `file://` režim nestačí. Vývojový Python server je len lokálny náhľad, nie cieľová produkčná služba.
 
-Statický hosting musí zachovať adresáre a MIME typy JS/CSS/HTML. Netreba serverový rewrite ani kompiláciu. Pri publikovaní je vstupom obsah Git koreňa aplikácie, nie build školského webu. V repozitári aktuálne nie je verzionovaný automatický deploy workflow. Konkrétne nastavenie GitHub Pages je externé nastavenie hostingu a tento dokument jeho aktuálny stav nepotvrdzuje.
+Statický hosting musí zachovať adresáre a MIME typy JS/CSS/HTML. Netreba serverový rewrite ani kompiláciu. Pri publikovaní je vstupom obsah Git koreňa aplikácie, nie build školského webu. V repozitári aktuálne nie je verzionovaný automatický deploy workflow. Verejný prototyp je na [GitHub Pages](https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/); 1. 11. 2026 bol overený HTTP 200. Ide o statický frontend, nie serverový backend. Konkrétne nastavenie hostingu zostáva externé.
 
 Záloha kódu a Markdown dokumentácie je commit na Gite; vzdialená kópia vznikne až úspešným pushom. Lokálne koncepty a obrázky editora sú mimo Gitu. Vymazanie dát webu ich môže nezvratne odstrániť. Obnova staršieho commitu obnovuje kód, nie IndexedDB alebo reláciu používateľa. Pred návratom k staršiemu kódu posúdiť kompatibilitu uložených dát. Históriu editora používať na obnovu konceptu v tom istom prehliadači.
 
@@ -155,6 +155,24 @@ Zatiaľ chýba fyzické mobilné overenie všetkých funkcií, produkčné oprá
 
 ## 12. Ďalší rozvoj a správa dokumentácie
 
-Najbližší návrhový krok je uzavrieť otvorené otázky analýzy a schváliť backendový stack a rozsah. Následne navrhnúť dátový model a väzby účtu, registrácie, príspevku, verzie, recenzie, rozhodnutia, úhrady a programu. Tieto názvy sú logické oblasti, nie existujúce tabuľky.
+Najbližší návrhový krok je uzavrieť otvorené otázky analýzy a schváliť backendový stack a rozsah. Následne navrhnúť dátový model a väzby účtu, registrácie, príspevku, verzie, recenzie, rozhodnutia, úhrady a programu. Dodané PDF už navrhuje časť entít týchto oblastí, ale fyzické tabuľky ani finančné rozšírenie nie sú v repozitári implementované.
 
 Každá funkčná zmena má v rovnakom commite upraviť dotknuté hlavné dokumenty. Autor zmeny doplní dátum a rozlíši implementáciu, návrh a otvorené otázky. Používateľská príručka opisuje skutočné správanie; AI príručka aktuálne umiestnenie kódu a kontrakty. Po zavedení backendu treba nahradiť prototypové postupy skutočným nasadením, migráciami, zálohou, oprávneniami a prevádzkovými kontrolami. Dokumenty s historickými overeniami zachovať ako datované záznamy.
+
+## 13. Doplnené moduly a podklady 1. novembra 2026
+
+### Databázový návrh
+
+[Opis databázy](databaza.md) preberá všetky dodané entity, atribúty a vzťahy z [PDF](podklady/databaza.pdf). [Report databázy](report-databaza.md) má 30 otvorených zistení rôzneho typu: chýbajúce časti, otázky, odložený rozsah i detaily ďalšej fázy. Nie je to tvrdenie o 30 chybách bežiacej databázy. Najvyššiu prioritu má posudok a hodnotená verzia, audit, rozsah rolí, integrita ročníkov a proces schvaľovania/publikácie.
+
+Platby a poplatky sú v databázovom návrhu vedome odložené. Naďalej zostávajú požiadavkou systému a maketou vo frontende. Rezervácie ubytovania nie sú požiadavkou; rozsah je informácia a externý odkaz. Databázový katalóg F1–F13 má vlastné číslovanie odlišné od frontend F01–F14.
+
+### Tímový priebeh a nasadenie
+
+[Zápisnice](zapisnice.md) prepájajú zdrojový Google dokument načítaný 1. 11. s doloženými frontendovými commitmi. Dominikove tri prípravné úlohy (prostredie Docker/Debian, nasadenie cez Git a balík na hosting) sú podľa zápisnice hotové. Ich konfigurácia ani PHP/backendové zdroje však v tomto repozitári nie sú; nejde o potvrdenú integráciu backendu. Ondrovo doriešenie hostingu zostáva rozpracované.
+
+[Verzionovaná snímka plánu](plan-projektu.json) označuje 1. týždeň ako dokončený; v aktuálnom 2. týždni rozlišuje doložené hotové výstupy a rozpracované úlohy. Pôvodné Dominikove implementačné úlohy sa zachovali v 3. týždni. Pri ďalšej aktualizácii najprv meniť zdrojový plán prezentačného webu a potom obnoviť túto snímku.
+
+### Priebežné odovzdávanie častí systému
+
+Každá dodaná časť dostane vlastný opis v `docs/`, pôvodný podklad v `docs/podklady/`, stav (návrh / implementácia / overené nasadenie), mapu súborov, dáta, rozhrania, obmedzenia a spôsob overenia. Aktuálne sú zdokumentované frontend, editor webu a databázový návrh; backend/nasadzovacie podklady sa doplnia po skutočnom dodaní. Hlavná dokumentácia a obe príručky sa aktualizujú podľa dopadu.

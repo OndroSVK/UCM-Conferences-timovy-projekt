@@ -12,6 +12,18 @@ Dokumentácia žije v Gite spolu s kódom, vo formáte Markdown. Aktualizuje sa 
 
 [AGENTS.md](../AGENTS.md) v koreni odkazuje AI priamo na príručku. [README aplikácie](../README.md) obsahuje rýchle spustenie.
 
+## Odovzdané časti a priebeh
+
+| Časť | Podklad a stav |
+| --- | --- |
+| Frontend a editor webu | [Prototyp](frontend-prototyp.md), [editor](editor-webu.md); implementovaná lokálna ukážka |
+| Databáza | [Opis modelu](databaza.md), [originálne PDF](podklady/databaza.pdf); konceptuálny návrh 16 entít a 21 vzťahov |
+| Kontrola databázy | [Report databázy](report-databaza.md); 30 otvorených zistení, otázok a úloh ďalšej fázy |
+| Tímový priebeh | [Zápisnice](zapisnice.md), [PDF](podklady/03-zapisnice-stretnuti.pdf), [DOCX](podklady/03-zapisnice-stretnuti.docx), [snímka plánu](plan-projektu.json), [snímka Google zdroja](podklady/zapisnica-google-2026-11-01.txt) |
+| Backend a nasadenie | Príprava podľa zápisnice; zdroje backendu a nasadzovacie balíky zatiaľ nedodané do tohto repozitára |
+
+[Prezerať prototyp na GitHub Pages](https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/). Podklady a opisy ďalších častí sa pridávajú priebežne; pri každej sa uvádza dátum, pôvod a rozdiel medzi návrhom, implementáciou a overeným nasadením.
+
 ## Doplnkové podklady
 
 - [Analýza frontendu a obrazoviek](frontend-analyza.md): požiadavky Z, návrhy N, otvorené otázky O, pokrytie F01–F14 a otázky Q01–Q20. Analytické routy a navrhované komponenty nie sú súčasnou fyzickou štruktúrou.
