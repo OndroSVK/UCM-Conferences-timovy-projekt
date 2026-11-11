@@ -159,4 +159,32 @@ Technické súvislosti sú v [projektovej dokumentácii](projektova-dokumentacia
 
 [Prototyp na GitHub Pages](https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/) je možné prezerať bez lokálneho servera. [Index dokumentácie na GitHube](https://github.com/OndroSVK/UCM-Conferences-timovy-projekt/blob/main/docs/README.md) obsahuje tri príručky, [zápisnice](zapisnice.md), [databázový návrh](databaza.md) a [report jeho otvorených otázok](report-databaza.md). Odkazy sú aj na prezentačnom webe projektu.
 
-Databázové PDF je analytický návrh; jeho pridanie nemení spôsob ukladania údajov v prototype. Registrácie, posudky, platby a serverové účty tým nezačali fungovať na serveri. Každá ďalšia dodaná časť bude postupne doplnená do dokumentácie so svojím skutočným stavom.
+Databázové PDF je analytický návrh; jeho pridanie nemení spôsob ukladania údajov v prototype. Každá ďalšia dodaná časť bude postupne doplnená do dokumentácie so svojím skutočným stavom.
+
+## 14. Serverová verzia (backend, od 11. 11. 2026)
+
+Kapitoly 1–11 opisujú statický prototyp. Serverová verzia v priečinku `backend/` už skutočne ukladá údaje, ale zatiaľ beží iba lokálne u vývojára; verejná adresa ani e-mailový server ešte nie sú (BO11, BO14). Rozhranie je v angličtine.
+
+**Účastník**
+
+1. Na stránke konferencie (napr. `ans2027.<adresa>`) zvoľte *Register for the conference*. Vyplňte účet, osobné údaje, kategóriu, odvetvie a fakturačné údaje a potvrďte oboznámenie sa so spracovaním údajov.
+2. Po odoslaní ste prihlásený a vidíte svoju registráciu: tri samostatné stavy (registrácia, platba, príspevok), platobné inštrukcie s vlastným variabilným symbolom a e-mail s potvrdením.
+3. Ak už účet máte, systém druhý účet nevytvorí. Prihláste sa a na stránke ďalšej konferencie ju pridajte k účtu.
+4. Rečník nahrá abstrakt a autor posteru poster, iba vo formáte PDF do 10 MB a do termínu. Kým výbor nerozhodne, môže nahrať novú verziu; staršie verzie zostávajú.
+5. Po úplnej úhrade sa v účte objaví testovacia faktúra (označená TEST INVOICE, nie je daňovým dokladom). Po úhrade a prijatí príspevku sa účasť potvrdí automaticky.
+
+**Prihlásenie**
+
+Jedno okno pre všetkých na `/login`. Účastník skončí vo svojom účte, pracovník v administrácii a kto má obe roly, vyberie si. Po 3 nesprávnych heslách je prihlásenie na 5 minút zablokované (pracovná hodnota, BO2). Zabudnuté heslo obnovíte odkazom *Forgot your password?*.
+
+**Organizátor**
+
+Vidí iba konferencie, ku ktorým ho priradil superadministrátor, a prepína ich v ľavom paneli. V detaile registrácie organizátor s poverením na platby zaeviduje úhradu (suma, dátum, poznámka) alebo udelí oslobodenie od poplatku. Úhradu nájde podľa variabilného symbolu. Čiastočná úhrada ukáže zostatok. Preplatok sa iba zobrazí ako upozornenie; vrátenie peňazí prebieha mimo systému. Organizátor tiež potvrdí alebo zruší registráciu a stiahne export XLSX/CSV.
+
+**Programový výbor**
+
+V časti *Submissions* stiahne PDF a zaznamená jednokolové rozhodnutie (prijatý, podmienečne prijatý, zamietnutý) s odôvodnením pre autora. Finančné ani fakturačné údaje sa výboru nezobrazujú a jeho export ich neobsahuje.
+
+**Superadministrátor**
+
+Vidí všetky konferencie. V časti *Team* priradí existujúci účet ako organizátora alebo člena výboru konkrétnej konferencie a organizátorovi môže pridať poverenie na platby.

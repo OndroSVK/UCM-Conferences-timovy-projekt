@@ -20,7 +20,8 @@ Dokumentácia žije v Gite spolu s kódom, vo formáte Markdown. Aktualizuje sa 
 | Databáza | [Opis modelu](databaza.md), [originálne PDF](podklady/databaza.pdf); konceptuálny návrh 16 entít a 21 vzťahov |
 | Kontrola databázy | [Report databázy](report-databaza.md); 30 otvorených zistení, otázok a úloh ďalšej fázy |
 | Tímový priebeh | [Zápisnice](zapisnice.md), [PDF](podklady/03-zapisnice-stretnuti.pdf), [DOCX](podklady/03-zapisnice-stretnuti.docx), [snímka plánu](plan-projektu.json), [snímka Google zdroja](podklady/zapisnica-google-2026-11-01.txt) |
-| Backend a nasadenie | Príprava podľa zápisnice; zdroje backendu a nasadzovacie balíky zatiaľ nedodané do tohto repozitára |
+| Backend | [backend.md](backend.md), kód v `/backend`; Laravel 13 implementovaný 11. 11. 2026, overený na PHP 8.5 so SQLite, MariaDB a Docker zatiaľ neoverené |
+| Nasadenie | Príprava podľa zápisnice; Docker a nasadzovacie balíky zatiaľ nedodané do tohto repozitára |
 
 [Prezerať prototyp na GitHub Pages](https://ondrosvk.github.io/UCM-Conferences-timovy-projekt/). Podklady a opisy ďalších častí sa pridávajú priebežne; pri každej sa uvádza dátum, pôvod a rozdiel medzi návrhom, implementáciou a overeným nasadením.
 

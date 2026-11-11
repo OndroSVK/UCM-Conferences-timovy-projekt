@@ -86,4 +86,4 @@ Aplikácia je samostatná: písmo a jeho licencia sú v `assets/`, favicon v `fa
 
 ## Budúca implementácia
 
-Prototyp nevyberá backendový stack. Zadávateľom potvrdené prostredie: LXC, GNU/Debian 13, PHP 8.5+ a MariaDB. Laravel/Filament boli návrhom tímu. [Analýza obrazoviek](docs/frontend-analyza.md) zostáva podkladom pre ďalšiu revíziu.
+Backend je od 11. 11. 2026 v priečinku [`backend/`](backend/README.md): Laravel 13 na PHP 8.5+ a MariaDB (LXC, GNU/Debian 13). Rozhodnutia a stav sú v [backend.md](docs/backend.md). Tento statický prototyp a jeho GitHub Pages sa backendom nemenia. [Analýza obrazoviek](docs/frontend-analyza.md) zostáva podkladom pre ďalšiu revíziu.

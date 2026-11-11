@@ -1,0 +1,23 @@
+/* Additions to the prototype stylesheet (styles.css, copied from the static frontend). */
+.alert { border: 2px solid var(--ink); padding: 12px 16px; margin: 0 0 18px; background: var(--white); box-shadow: var(--shadow); }
+.alert.ok { background: var(--lime); }
+.alert.warn { background: var(--yellow); }
+.alert.error { background: var(--coral); }
+.alert ul { margin: 6px 0 0; padding-left: 18px; }
+.field-error { color: #a1260b; font-size: 12px; }
+.inline-form { display: inline; }
+.stack > * + * { margin-top: 18px; }
+.kv { display: grid; grid-template-columns: minmax(120px, 34%) 1fr; gap: 6px 14px; margin: 0; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; overflow-wrap: anywhere; }
+.btn.small { padding: 6px 10px; font-size: 12px; }
+.danger { color: #a1260b; }
+.pill.yellow { background: var(--yellow); }
+.history { list-style: none; padding: 0; margin: 0; }
+.history li { padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.radio-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.workspace-main .panel + .panel, .workspace-main .card + .card { margin-top: 18px; }
+@media (max-width: 800px) {
+  .kv { grid-template-columns: 1fr; }
+  .kv dt { margin-top: 8px; }
+}

@@ -204,6 +204,17 @@ Záznam o rozhodnutí má obsahovať dátum, zdroj, stav (implementované/návrh
 
 Na detailnejší kontext pokračuj [projektovou dokumentáciou](projektova-dokumentacia.md), [editorom](editor-webu.md) a podľa oblasti [analýzou](frontend-analyza.md). Týmto dokumentom sa riaď ako mapou súčasnej implementácie; pri rozpore má prednosť aktuálny kód pre opis správania a novšie výslovné zadanie používateľa pre požadovanú zmenu.
 
+## 12a. Backend v `/backend` (od 11. 11. 2026)
+
+Pre backend platí [backend.md](backend.md) ako jediný zdroj rozhodnutí; tvrdenie z kapitoly 1, že PHP backend neexistuje, sa týka iba statického frontendu v koreni.
+
+- Feature = trieda v `app/Modules/<Modul>/Actions` + test `tests/Modules/<Modul>/…Test.php`. Controllery v `app/Http` iba volajú Actions.
+- Modely s `conference_id` používajú `BelongsToConference`; dopyt bez `ConferenceContext` vyhodí `MissingConferenceContext`. V teste nastav kontext helperom `inConference()` z `tests/Pest.php`; helper sa volá `conferenceContext()`, lebo `context()` je funkcia Laravelu.
+- Stav sa mení iba cez `Workflow\Actions\ChangeStatus` (`initialize()` pre prvý stav, `byStaff()` pre admina); kontroluje to `tests/CrossCutting/ArchitectureTest.php`.
+- Oprávnenia: `Shared/Auth/Role::permissions()` a `AccessControl`; poverenia pre organizátora iba z `Permission::delegable()`.
+- Overenie: `vendor/bin/pest` musí prejsť pred commitom; pri zmene obrazovky aj `tests/Http`. Testy zámkov bežia iba na MariaDB.
+- Neznáme pravidlo neriešiť potichu: použiť pracovný návrh, označiť `// PROPOSAL: <otázka>` a zapísať do backend.md, sekcia 14.
+
 ## 12. Databázový podklad a ďalšie odovzdávané moduly
 
 Začni [databázovým prehľadom](databaza.md) a [reportom databázy](report-databaza.md), potom podľa úlohy [originálnym PDF](podklady/databaza.pdf). PDF je konceptuálny model MariaDB so 16 entitami a 21 vzťahmi; nie SQL, migrácia, seed ani dôkaz nasadenia. Názvy v PDF sú slovenské zdrojové identifikátory; mapovanie na anglický kód treba dohodnúť a zdokumentovať. DB F1–F13 nezamieňaj s FE F01–F14.

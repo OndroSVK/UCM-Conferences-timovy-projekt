@@ -177,4 +177,14 @@ Platby a poplatky sú v databázovom návrhu vedome odložené. Naďalej zostáv
 
 Každá dodaná časť dostane vlastný opis v `docs/`, pôvodný podklad v `docs/podklady/`, stav (návrh / implementácia / overené nasadenie), mapu súborov, dáta, rozhrania, obmedzenia a spôsob overenia. Aktuálne sú zdokumentované frontend, editor webu a databázový návrh; backend/nasadzovacie podklady sa doplnia po skutočnom dodaní. Hlavná dokumentácia a obe príručky sa aktualizujú podľa dopadu.
 
+## 14. Backend (Laravel) od 11. novembra 2026
+
+Stav: implementácia prototypu v priečinku `/backend`; podrobnosti, rozhodnutia BR1–BR11 a otvorené otázky BO1–BO19 sú v [backend.md](backend.md). Statický frontend v koreni a jeho GitHub Pages zostávajú nezmenené.
+
+- Architektúra: modulárny Laravel 13 (moduly v `app/Modules`, jedna feature = jedna Action s testom), jedna databáza pre všetky konferencie, každý dopyt obmedzený na aktívnu konferenciu.
+- Roly pracovníkov a poverenie na platby platia iba v konferencii, ku ktorej ich superadmin priradil (BR8). Na to slúži vlastná matica oprávnení namiesto `spatie/laravel-permission` (BO15).
+- Rozhranie: Blade obrazovky so štýlmi prevzatými z prototypu, nie Filament (BO15). Texty sú v angličtine v `lang/en` (BO12).
+- Overenie: 234 automatických testov a ručný prechod hlavných ciest na PHP 8.5 so SQLite. MariaDB, Docker, front e-mailov a skutočné subdomény zatiaľ overené nie sú (BO11, BO14).
+- Testovacie faktúry sú označené TEST INVOICE a krížom; nie sú daňovým dokladom (O29, O32).
+
 Overenie publikácie 1. 11. 2026: aktualizovaný školský prezentačný web, PDF zápisnice a databázové PDF boli nahraté cez existujúce SFTP nastavenie; ich verejné HTTP kópie boli porovnané SHA-256 s lokálnym výstupom. Pôvodný HTML a PDF zápisnice boli pred nahratím zálohované. Stručný prehľad realizovaných prác bol doplnený aj do Google zápisnice a overený exportom.
