@@ -187,4 +187,4 @@ V časti *Submissions* stiahne PDF a zaznamená jednokolové rozhodnutie (prijat
 
 **Superadministrátor**
 
-Vidí všetky konferencie. V časti *Team* priradí existujúci účet ako organizátora alebo člena výboru konkrétnej konferencie a organizátorovi môže pridať poverenie na platby.
+Vidí všetky konferencie. V časti *Team* priradí účet ako organizátora alebo člena výboru konkrétnej konferencie a organizátorovi môže pridať poverenie na platby. Ak účet s daným e-mailom ešte neexistuje, vyplní aj meno a počiatočné heslo a účet sa vytvorí (od 15. 11. 2026). Prvého superadministrátora a konferenciu zakladá správca servera príkazmi opísanými v `backend/README.md`.

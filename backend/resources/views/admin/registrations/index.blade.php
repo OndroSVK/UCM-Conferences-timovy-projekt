@@ -70,6 +70,6 @@
                 </tbody>
             </table>
         </div>
-        <div class="table-footer">{{ $registrations->links() }}</div>
+        <div class="table-footer">{{ $registrations->links('partials.pagination') }}</div>
     </section>
 @endsection

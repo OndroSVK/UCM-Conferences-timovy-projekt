@@ -1,0 +1,32 @@
+{
+    "name": "Applied Natural Sciences 2027",
+    "subdomain": "ans2027",
+    "year": 2027,
+    "venue": "Example Venue, Trnava",
+    "starts_on": "2027-09-15",
+    "ends_on": "2027-09-17",
+    "registration_deadline": "2027-07-15",
+    "payment_deadline": "2027-08-15",
+    "submission_deadline": "2027-06-15",
+    "currency": "EUR",
+    "iban": "SK3112000000198742637541",
+    "bic": "TESTSKBX",
+    "payee_name": "Example Faculty (test)",
+    "issuer_name": "Example Faculty (test)",
+    "issuer_address": "Example Street 1, 917 01 Trnava, Slovakia",
+    "issuer_company_id": "00000000",
+    "issuer_tax_id": "0000000000",
+    "issuer_vat_id": null,
+    "accommodation_url": "https://example.com/accommodation",
+    "privacy_url": "https://example.com/privacy",
+    "categories": [
+        { "code": "speaker", "name": "Speaker", "price": "180.00", "submission_requirement": "abstract" },
+        { "code": "poster_author", "name": "Poster author", "price": "120.00", "submission_requirement": "poster" },
+        { "code": "passive_participant", "name": "Passive participant", "price": "90.00", "submission_requirement": "none" }
+    ],
+    "industries": [
+        { "value": "physics", "label": "Physics" },
+        { "value": "chemistry", "label": "Chemistry" },
+        { "value": "biology", "label": "Biology" }
+    ]
+}

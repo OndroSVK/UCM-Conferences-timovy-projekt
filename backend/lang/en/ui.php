@@ -15,6 +15,13 @@ return [
     'prototype_notice' => 'Prototype with fictional data. Invoices are test documents only.',
     'footer' => 'Science. People. New connections.',
 
+    'pagination' => [
+        'label' => 'Pages',
+        'previous' => 'Previous',
+        'next' => 'Next',
+        'page' => 'Page :current of :last',
+    ],
+
     'login_page' => [
         'title' => 'Welcome back.',
         'intro' => 'One login for participants and conference staff.',
@@ -214,7 +221,11 @@ return [
         'export' => 'Download',
         'team_title' => 'Staff of this conference',
         'team_intro' => 'Roles and delegated permissions are valid only in this conference.',
-        'user_email' => 'E-mail of an existing account',
+        'user_email' => 'E-mail of the account',
+        'new_account' => 'Only for a new account (leave empty for an existing one)',
+        'new_account_name' => 'Name',
+        'new_account_password' => 'Initial password (at least 8 characters)',
+        'account_missing' => 'No account has this e-mail. Fill in the name and an initial password to create it.',
         'role' => 'Role',
         'delegation' => 'Delegated permissions (organizer only)',
         'assign' => 'Assign',

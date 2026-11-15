@@ -31,7 +31,7 @@ class Conference extends Model
         'registration_deadline', 'payment_deadline', 'submission_deadline',
         'currency', 'iban', 'bic', 'payee_name',
         'issuer_name', 'issuer_address', 'issuer_company_id', 'issuer_tax_id', 'issuer_vat_id',
-        'accommodation_url',
+        'accommodation_url', 'privacy_url',
     ];
 
     protected function casts(): array

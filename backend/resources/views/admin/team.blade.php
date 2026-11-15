@@ -51,6 +51,19 @@
             </select>
         </label>
         <fieldset class="full" style="border: 0; padding: 0; margin: 0">
+            <legend>{{ __('ui.admin.new_account') }}</legend>
+            <div class="form-grid" style="margin-top: 8px">
+                <label class="field">
+                    {{ __('ui.admin.new_account_name') }}
+                    <input name="name" value="{{ old('name') }}" maxlength="255">
+                </label>
+                <label class="field">
+                    {{ __('ui.admin.new_account_password') }}
+                    <input type="password" name="password" minlength="8" autocomplete="new-password">
+                </label>
+            </div>
+        </fieldset>
+        <fieldset class="full" style="border: 0; padding: 0; margin: 0">
             <legend>{{ __('ui.admin.delegation') }}</legend>
             <div class="radio-row" style="margin-top: 8px">
                 @foreach (__('ui.admin.permissions') as $value => $label)

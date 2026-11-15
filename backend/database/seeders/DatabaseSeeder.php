@@ -94,6 +94,7 @@ class DatabaseSeeder extends Seeder
             'issuer_company_id' => '00000000',
             'issuer_tax_id' => '0000000000',
             'accommodation_url' => 'https://example.com/accommodation',
+            'privacy_url' => 'https://example.com/privacy',
         ]);
 
         $context->runForConference($conference->id, function () use ($conference) {

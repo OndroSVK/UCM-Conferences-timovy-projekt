@@ -46,6 +46,6 @@
                 </tbody>
             </table>
         </div>
-        <div class="table-footer">{{ $submissions->links() }}</div>
+        <div class="table-footer">{{ $submissions->links('partials.pagination') }}</div>
     </section>
 @endsection

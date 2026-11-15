@@ -213,6 +213,7 @@ Pre backend platí [backend.md](backend.md) ako jediný zdroj rozhodnutí; tvrde
 - Stav sa mení iba cez `Workflow\Actions\ChangeStatus` (`initialize()` pre prvý stav, `byStaff()` pre admina); kontroluje to `tests/CrossCutting/ArchitectureTest.php`.
 - Oprávnenia: `Shared/Auth/Role::permissions()` a `AccessControl`; poverenia pre organizátora iba z `Permission::delegable()`.
 - Overenie: `vendor/bin/pest` musí prejsť pred commitom; pri zmene obrazovky aj `tests/Http`. Testy zámkov bežia iba na MariaDB.
+- Databáza: pripojenie MariaDB a pravidlá pre schému sú v [prepojenie-databazy.md](prepojenie-databazy.md); stav pripojenia overuje `php artisan conferences:db-check`. Existujúce migrácie sa needitujú, zmena je nová migrácia v module.
 - Neznáme pravidlo neriešiť potichu: použiť pracovný návrh, označiť `// PROPOSAL: <otázka>` a zapísať do backend.md, sekcia 14.
 
 ## 12. Databázový podklad a ďalšie odovzdávané moduly

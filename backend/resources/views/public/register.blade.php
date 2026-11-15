@@ -27,7 +27,13 @@
                     <div class="form-grid" style="margin-top: 14px">
                         <label class="field full">
                             {{ __('ui.registration.email') }}
-                            <input type="email" name="email" value="{{ old('email') }}" autocomplete="email" required>
+                            <input type="email" name="email" id="register-email" value="{{ old('email') }}" autocomplete="email" required
+                                   data-check-url="{{ route('register.check-email') }}">
+                            {{-- US-04: shown by the script below when the e-mail already has an account --}}
+                            <span class="field-hint field-error" id="email-exists" hidden>
+                                {{ __('ui.registration.email_exists') }}
+                                <a class="link" href="{{ route('login') }}">{{ __('ui.registration.login_instead') }}</a>
+                            </span>
                             @error('email')
                                 <span class="field-error">{{ $message }}
                                     <a class="link" href="{{ route('login') }}">{{ __('ui.registration.login_instead') }}</a></span>
@@ -110,12 +116,35 @@
 
             <label class="checkbox">
                 <input type="checkbox" name="data_processing_consent" value="1" @checked(old('data_processing_consent')) required>
-                <span>{{ __('ui.registration.consent') }}</span>
+                <span>{{ __('ui.registration.consent') }}
+                    @if ($conference->privacy_url)
+                        <a class="link" href="{{ $conference->privacy_url }}" target="_blank" rel="noopener noreferrer">{{ __('ui.registration.privacy_link') }} ↗</a>
+                    @endif
+                </span>
             </label>
 
             <div class="form-actions">
                 <button type="submit" class="btn primary">{{ __('ui.registration.submit') }}</button>
             </div>
         </form>
+
+        @if (! $user)
+            {{-- Progressive enhancement only: without JavaScript the server reports the same after submit. --}}
+            <script>
+                (function () {
+                    var input = document.getElementById('register-email');
+                    var hint = document.getElementById('email-exists');
+                    if (!input || !hint || !window.fetch) return;
+                    input.addEventListener('change', function () {
+                        hint.hidden = true;
+                        if (!input.value || !input.checkValidity()) return;
+                        fetch(input.dataset.checkUrl + '?email=' + encodeURIComponent(input.value), { headers: { 'Accept': 'application/json' } })
+                            .then(function (response) { return response.ok ? response.json() : null; })
+                            .then(function (data) { hint.hidden = !(data && data.registered === true); })
+                            .catch(function () {});
+                    });
+                })();
+            </script>
+        @endif
     @endif
 @endsection

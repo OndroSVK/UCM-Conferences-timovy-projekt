@@ -159,3 +159,37 @@ it('a participant registered on both conferences sees only own data in the porta
     $this->actingAs($other)->get(route('account.invoices.download', $invoice->id))->assertForbidden();
     expect(Registration::class)->toBeString();
 });
+
+it('paginates long lists with its own pagination view', function () {
+    foreach (range(1, 27) as $i) {
+        registerParticipant($this->ans27, 'passive_participant', ['last_name' => "Bulk{$i}"]);
+    }
+    conferenceContext()->clear();
+
+    $this->actingAs($this->cashier)->get(route('admin.registrations.index'))
+        ->assertOk()
+        ->assertSee('Page 1 of 2')
+        ->assertSee('page=2')
+        ->assertDontSee('<svg class="w-5 h-5"', false); // not the Tailwind default view
+
+    $this->actingAs($this->cashier)->get(route('admin.registrations.index', ['page' => 2]))
+        ->assertOk()
+        ->assertSee('Page 2 of 2')
+        ->assertSee('Searchable'); // the oldest registration is on the last page
+});
+
+it('the superadmin creates a new staff account on the team screen', function () {
+    $admin = superadmin();
+
+    $this->actingAs($admin)->from(route('admin.team.index'))
+        ->post(route('admin.team.store'), ['email' => 'fresh@example.test', 'role' => 'programme_committee'])
+        ->assertSessionHasErrors('email'); // unknown e-mail without name and password
+
+    $this->actingAs($admin)->post(route('admin.team.store'), [
+        'email' => 'fresh@example.test', 'name' => 'Fresh Member', 'password' => 'initial-pass-1', 'role' => 'programme_committee',
+    ])->assertRedirect(route('admin.team.index'));
+
+    $this->post(route('logout'));
+    $this->post('/login', ['email' => 'fresh@example.test', 'password' => 'initial-pass-1'])
+        ->assertRedirect(route('admin.registrations.index'));
+});

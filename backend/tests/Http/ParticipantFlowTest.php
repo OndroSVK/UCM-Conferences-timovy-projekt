@@ -109,3 +109,17 @@ it('updates the profile', function () {
 
     expect($user->fresh()->name)->toBe('Nina Nová');
 });
+
+it('links the privacy information at the consent and wires the e-mail check (US-04)', function () {
+    $this->ans27->update(['privacy_url' => 'https://example.com/privacy-ans']);
+    registerParticipant($this->ans27, 'speaker', ['email' => 'known@example.test']);
+    RateLimiter::clear('email-check:'.sha1('127.0.0.1'));
+
+    $this->get(hostUrl('ans2027', '/register'))
+        ->assertOk()
+        ->assertSee('https://example.com/privacy-ans')
+        ->assertSee('/register/check-email');
+
+    $this->getJson(hostUrl('ans2027', '/register/check-email?email=known@example.test'))->assertExactJson(['registered' => true]);
+    $this->getJson(hostUrl('ans2027', '/register/check-email?email=new@example.test'))->assertExactJson(['registered' => false]);
+});

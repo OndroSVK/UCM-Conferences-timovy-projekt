@@ -479,7 +479,7 @@ Odporúčané poradie: `Shared` → `Conferences` → `Auth` → `Workflow` → 
 | BO11 | **Adresa backendu**: main page na `ans2027.ucm.sk` je statická od IT (R22, R23), ale registrácia a `ResolveConferenceFromHost` potrebujú backend na tej istej subdoméne | Implementované podľa subdomény (`/register` na `ansRRRR.<doména>`); s IT dohodnúť proxy alebo samostatnú adresu a spoločnú doménu session cookie (`SESSION_DOMAIN`) | Tím s IT | Pred nasadením |
 | BO12 | **Jazyk a polia formulára**: backend.md R10 chce web v angličtine, `AGENTS.md` slovenské texty a objednávateľ SK/EN; frontendový prototyp má navyše stravovanie a krajinu, nemá tituly ani odvetvie | Backend: texty v `lang/en`, polia podľa sekcie M3; stravovanie nezavedené (O39) | Tím | Pred odovzdaním |
 | BO13 | VS pri dvoch konferenciách v jednom roku: `RR` + poradie v rámci konferencie by dalo rovnaké symboly | Implementovaný spoločný číselný rad pre rovnaké `RR` (`variable_symbol_sequences`) | A s BO1 | S BO1 |
-| BO14 | Overiť na MariaDB a v Dockeri: migrácie, zámky (`ConcurrencyTest` sa na SQLite preskočí), front `queue:work`, Mailpit | Spustiť `vendor/bin/pest` s `DB_CONNECTION=mariadb`, keď tím dodá prostredie (BR9) | A, M12 | Po dodaní prostredia |
+| BO14 | Overiť na MariaDB a v Dockeri: migrácie, zámky, front `queue:work`, Mailpit | Pripravené 15. 11. 2026: postup v [prepojenie-databazy.md](prepojenie-databazy.md), kontrola `php artisan conferences:db-check` (vrátane zámkov cez druhé spojenie), skript `database/mariadb/create-database.sql`. Samotné overenie na MariaDB ešte neprebehlo | A, M12 | Po dodaní prostredia |
 | BO15 | Potvrdiť náhradu `spatie/laravel-permission` vlastnou maticou a Filamentu Blade obrazovkami (sekcia 2) | Implementované; dôvod: roly viazané na konferenciu (BR8) a jednotný vzhľad s prototypom | Tím | Pred obhajobou |
 | BO16 | Čiastočná úhrada: posielať e-mail? Sekcia 0 hovorí „čiastočnej s e-mailom“, udalosti v sekcii 8 e-mail neuvádzajú | Implementované podľa US-12: e-mail a faktúra až pri `paid` | Tím | Pred odovzdaním |
 | BO17 | E-mail o úhrade pri zlyhaní faktúry | Implementované: e-mail sa pošle bez prílohy (`InvoiceIssueFailed`) | A, C | — |
@@ -525,11 +525,22 @@ Odporúčané poradie: `Shared` → `Conferences` → `Auth` → `Workflow` → 
 - Reálny server (`php artisan serve`, SQLite, synchrónna fronta) prešiel 18 krokov cez HTTP: registrácia, prihlásenia všetkých rolí, US-08, vyhľadanie VS, čiastočná a plná úhrada, stiahnutie faktúry, export, rozhodnutie výboru, automatické potvrdenie účasti a blokovanie po 3 neúspešných prihláseniach. Testovacia faktúra bola skontrolovaná aj vizuálne (kríž cez celú stranu, TEST INVOICE).
 - **Neoverené:** MariaDB, Docker na Debiane 13, `queue:work` s frontou v databáze, doručenie cez Mailpit, správanie na skutočných subdoménach a spoločná session cookie (BO11, BO14).
 
+### 15.2a Doplnenie 15. 11. 2026
+
+- Príkazy pre skutočnú inštaláciu (seed má iba vymyslené údaje): `conferences:create-user` (prvý superadmin a účty pracovníkov, Action `Auth\CreateStaffAccount`), `conferences:create` (konferencia s kategóriami, cenami a zoznamami z JSON súboru, Action `Conferences\CreateConference`, vzor `database/conference.example.json`), `conferences:db-check` (kontrola databázy).
+- Superadmin môže v obrazovke Team vytvoriť nový účet pracovníka (meno a počiatočné heslo), nielen priradiť existujúci.
+- Konferencia má nový stĺpec `privacy_url`; registračný formulár pri súhlase odkazuje na informácie o spracúvaní údajov. Text informácie dodá UCM.
+- Registračný formulár pri zadaní e-mailu upozorní na existujúci účet (`CheckEmailRegistered`, US-04); bez JavaScriptu to rovnako ohlási server po odoslaní.
+- Vlastné stránkovanie zoznamov v admine (predvolená šablóna Laravelu potrebuje Tailwind).
+- Test zámkov na MariaDB bol z Pest sady presunutý do `conferences:db-check`, lebo vnútri testovacej transakcie sa nedá spoľahlivo ukázať.
+- Overenie: 260 testov prešlo na PHP 8.5.12 so SQLite. MariaDB stále neoverená (BO14).
+
 ### 15.3 Štruktúra mimo modulov
 
 | Cesta | Obsah |
 |---|---|
 | `app/Http/Controllers` | Preklad HTTP na Actions, bez obchodnej logiky |
+| `app/Console/Commands` | Príkazy `conferences:*`; volajú iba Actions |
 | `app/Http/Middleware` | Kontext konferencie: subdoména (`conference.host`), vlastník (`conference.owner`), admin (`conference.admin`) |
 | `resources/views` | Blade obrazovky; `public/styles.css` je kópia štýlov statického prototypu, `public/backend.css` doplnky |
 | `lang/en` | Všetky texty pre používateľa (O33) |
