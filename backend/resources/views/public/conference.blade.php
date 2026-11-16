@@ -1,7 +1,7 @@
 @extends('layouts.public', ['title' => $conference->name])
 
 @section('content')
-    <section class="page-heading">
+    <section class="page-heading conference-hero">
         <div>
             <div class="eyebrow">{{ strtoupper($conference->subdomain) }}</div>
             <h1>{{ $conference->name }}</h1>
@@ -21,7 +21,7 @@
             <h2>{{ __('ui.conference.categories') }}</h2>
             <dl class="kv" style="margin-top: 12px">
                 @foreach ($categories as $category)
-                    <dt>{{ __('categories.'.$category['code']) }}</dt>
+                    <dt>{{ $category['name'] }}</dt>
                     <dd><strong>{{ $category['price']->format() }}</strong></dd>
                 @endforeach
             </dl>

@@ -19,13 +19,16 @@ final class RegistrationController extends Controller
     {
         $conference = $request->attributes->get('conference');
         $user = $request->user();
+        $profile = $user === null ? null : $context->runAsOwner($user->id,
+            fn () => ParticipantProfile::query()->where('user_id', $user->id)->first());
 
         $alreadyRegistered = $user !== null
             && Registration::query()->where('user_id', $user->id)->exists(); // scoped to this conference
 
         return view('public.register', $options->handle($conference) + [
             'user' => $user,
-            'hasProfile' => $user !== null && $context->runAsOwner($user->id, fn () => ParticipantProfile::query()->where('user_id', $user->id)->exists()),
+            'hasProfile' => $profile !== null,
+            'profile' => $profile,
             'alreadyRegistered' => $alreadyRegistered,
         ]);
     }

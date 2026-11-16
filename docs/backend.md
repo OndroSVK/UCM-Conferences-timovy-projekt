@@ -509,6 +509,18 @@ Odporúčané poradie: `Shared` → `Conferences` → `Auth` → `Workflow` → 
 
 ---
 
+## 15.0 Prepojené frontendové rozhranie (16. 11. 2026)
+
+Používateľ po revízii [analýzy integrácie](prepojenie-frontendu-backendu.md) zadal úpravu frontendu na kompatibilitu s aktuálnym backendom. Rozhranie sa realizuje v existujúcom Blade, bez ďalšieho frontendového frameworku alebo plošného JSON API. Rozsah doménového prototypu sa tým nerozširuje na recenzie, program, hromadnú komunikáciu, CMS ani samostatnú rolu ekonóma.
+
+- Registrácia má tri klientské kroky nad jedným serverovým formulárom, zhrnutie a návrat existujúceho účtu z loginu na `/register` toho istého hostiteľa. Všetky polia a finálna validácia ostávajú podľa Registration Actions; heslá sa neukladajú do browser storage.
+- Dashboard účastníka zobrazuje tri skutočné stavy, pribudol GET `/account/submissions` s Action `ParticipantPortal/ListMySubmissions`. Filtrovanie na vlastníka je explicitné, nepostačuje iba conference scope.
+- GET `/admin/overview` používa novú read-only Action `Reporting/GetConferenceOverview`. Počty sú za celú aktívnu konferenciu; `awaiting_payment` dostane iba aktér s `registrations.view_finance`.
+- UI skript `public/frontend.js` obsluhuje iba kroky, menu, kopírovanie VS, kontrolu e-mailu a ochranu pred dvojklikom. Exportné formuláre majú `data-download`, aby po stiahnutí nezostali zablokované. Skutočnú idempotenciu ručného zápisu platby existujúci endpoint neposkytuje.
+- Pri uzavretom termíne sa upload formulár nezobrazuje, história a download verzií zostávajú. Ak je Invoicing vypnutý, účastnícke UI neukazuje sekciu faktúr. Faktúry aj naďalej iba TEST INVOICE.
+- Funkčné UI nenačítava `app.js`, vzorové dáta ani IndexedDB editor. Statický prototyp v koreni a GitHub Pages zostávajú oddeleným návrhovým podkladom. EN texty ostávajú v `lang/en`; SK/EN a polia nad backendový kontrakt zostávajú v širšom rozsahu/otázkach.
+- Overenie: PHP 8.5.4, izolovaná SQLite; **271 testov, 662 assertions úspešne**, kompilácia Blade, kontrola syntaxe JS. Safari: kroky/súhrn registrácie, skutočný login, dashboard dvoch konferencií a detail platby/PDF. Mobil, MariaDB, Docker, Mailpit/DB worker a nasadenie neboli v tomto kroku overené; BO11/BO14 zostávajú otvorené.
+
 ## 15. Stav implementácie (11. 11. 2026)
 
 ### 15.1 Čo je hotové

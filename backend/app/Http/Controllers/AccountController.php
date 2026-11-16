@@ -6,6 +6,7 @@ use App\Modules\Invoicing\Actions\DownloadInvoice;
 use App\Modules\Invoicing\Models\Invoice;
 use App\Modules\ParticipantPortal\Actions\GetMyRegistrationDetail;
 use App\Modules\ParticipantPortal\Actions\ListMyConferences;
+use App\Modules\ParticipantPortal\Actions\ListMySubmissions;
 use App\Modules\ParticipantPortal\Actions\UpdateMyProfile;
 use App\Modules\Registration\Models\ParticipantProfile;
 use App\Modules\Submissions\Actions\DownloadSubmissionFile;
@@ -38,6 +39,11 @@ final class AccountController extends Controller
         return view('account.profile', [
             'profile' => ParticipantProfile::query()->where('user_id', $request->user()->id)->first(),
         ]);
+    }
+
+    public function submissions(Request $request, ListMySubmissions $list)
+    {
+        return view('account.submissions', ['submissions' => $list->handle($request->user())]);
     }
 
     public function updateProfile(Request $request, UpdateMyProfile $update)

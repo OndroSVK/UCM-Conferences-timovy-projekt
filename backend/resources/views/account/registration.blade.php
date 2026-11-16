@@ -29,7 +29,7 @@
     </section>
 
     {{-- Payment (R1): personalised instructions or no payment request --}}
-    <section class="panel">
+    <section class="panel" id="payment">
         <div class="panel-head"><h2>{{ __('ui.account.payment') }}</h2></div>
         <div class="panel-body">
             @if ($balance->feeWaived)
@@ -42,7 +42,9 @@
                     <dt>{{ __('ui.account.iban') }}</dt><dd>{{ $payment_instructions['iban'] }}</dd>
                     @if ($payment_instructions['bic'])<dt>{{ __('ui.account.bic') }}</dt><dd>{{ $payment_instructions['bic'] }}</dd>@endif
                     <dt>{{ __('ui.account.payee') }}</dt><dd>{{ $payment_instructions['payee'] }}</dd>
-                    <dt>{{ __('ui.account.variable_symbol') }}</dt><dd><strong>{{ $payment_instructions['variable_symbol'] }}</strong></dd>
+                    <dt>{{ __('ui.account.variable_symbol') }}</dt><dd><strong>{{ $payment_instructions['variable_symbol'] }}</strong>
+                        <button type="button" class="btn flat small" data-copy-value="{{ $payment_instructions['variable_symbol'] }}" data-success="{{ __('ui.flow.copied') }}" data-failure="{{ __('ui.flow.copy_failed') }}" hidden>{{ __('ui.flow.copy') }}</button>
+                        <span data-copy-status role="status" class="field-hint"></span></dd>
                     <dt>{{ __('ui.account.due_date') }}</dt><dd>{{ $payment_instructions['due_date']->format('j. n. Y') }}</dd>
                     <dt>{{ __('ui.account.message') }}</dt><dd>{{ $payment_instructions['message'] }}</dd>
                 </dl>
@@ -55,18 +57,20 @@
                 </dl>
             @endif
 
+            @if (\App\Shared\Modules\Modules::enabled('Invoicing'))
             <h3 style="margin-top: 18px">{{ __('ui.account.invoices') }}</h3>
             @forelse ($invoices as $invoice)
                 <p><a class="link" href="{{ route('account.invoices.download', $invoice->id) }}">{{ $invoice->number }} · {{ $invoice->amount()->format() }}</a></p>
             @empty
                 <p class="muted">{{ __('ui.account.no_invoices') }}</p>
             @endforelse
+            @endif
         </div>
     </section>
 
     {{-- Submission (R14): PDF only, new versions until the deadline (O31) --}}
     @if ($submission && $submission->type)
-        <section class="panel">
+        <section class="panel" id="submission">
             <div class="panel-head">
                 <h2>{{ __('ui.account.your_submission') }}</h2>
                 <small class="muted">{{ __('ui.account.deadline', ['date' => $conference->submission_deadline->format('j. n. Y')]) }}</small>
@@ -74,7 +78,9 @@
             <div class="panel-body stack">
                 @php($maxMb = (int) floor(config('conferences.submissions.max_kilobytes') / 1024))
 
-                @if ($submission->status === \App\Modules\Workflow\Enums\SubmissionStatus::Draft)
+                @if (! $conference->isSubmissionOpen())
+                    <div class="notice"><p>{{ __('ui.flow.upload_closed') }}</p></div>
+                @elseif ($submission->status === \App\Modules\Workflow\Enums\SubmissionStatus::Draft)
                     <form method="post" enctype="multipart/form-data" action="{{ route('account.submissions.submit', $submission->id) }}">
                         @csrf
                         <p>{{ __('ui.account.submission_kind.'.$submission->type->value) }}</p>

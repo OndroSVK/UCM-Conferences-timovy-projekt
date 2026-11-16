@@ -13,7 +13,7 @@
         </a>
         <nav class="public-nav" aria-label="Main">
             @auth
-                <a href="{{ route('home') }}">{{ auth()->user()->name }}</a>
+                <a href="{{ route(\App\Http\Controllers\HomeController::routeFor(app(\App\Modules\Auth\Actions\ResolvePostLoginDestination::class)->handle(auth()->user()))) }}">{{ auth()->user()->name }}</a>
                 <form class="inline-form" method="post" action="{{ route('logout') }}">
                     @csrf
                     <button class="btn flat">{{ __('ui.logout') }}</button>
@@ -31,7 +31,7 @@
     </main>
     <footer class="public-footer">
         <span>{{ __('ui.footer') }}</span>
-        <span>{{ __('ui.prototype_notice') }}</span>
+        <span>{{ __('ui.test_invoice_notice') }}</span>
     </footer>
 </div>
 </body>

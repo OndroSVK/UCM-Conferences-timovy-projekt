@@ -1,10 +1,19 @@
 # Projektová dokumentácia UCM Conferences
 
-Stav dokumentu: dokumentácia aktuálneho frontendového prototypu a hraníc budúceho systému. Aktualizované 1. 11. 2026. Zdrojom implementačných tvrdení je kód v tomto repozitári; požiadavky vychádzajú z lokálnej [analýzy](frontend-analyza.md). Dokument nepredstavuje schválenie otvorených návrhov.
+Aktualizované 16. 11. 2026. Repozitár obsahuje funkčnú Laravel aplikáciu aj oddelený statický návrhový prototyp. Požiadavky a historické opisy nižšie treba čítať podľa označeného rozsahu.
+
+## Aktuálny stav prepojenia — 16. 11. 2026
+
+- Funkčné UI je v `backend/resources/views` (Blade), assets v `backend/public`. Registrácia používa jeden serverový formulár s tromi krokmi a zhrnutím. Účastnícky dashboard, vlastné príspevky, profil, úhrady, verzie PDF, rozhodnutie výboru, exporty a správa tímu pracujú cez backendové routy a Actions.
+- Nové read-only Actions: `ParticipantPortal/ListMySubmissions` s explicitnou kontrolou vlastníka a `Reporting/GetConferenceOverview` s izoláciou aktívnej konferencie a finančných oprávnení. V dashboarde sú tri samostatné stavy, nie simulovaná jedna hodnota.
+- `backend/public/frontend.js` riadi len rozhranie. Nepoužíva `app.js`, vzorové polia z `ui.js`, sessionStorage ani IndexedDB na obchodné dáta. Existujúce databázové záznamy sa nemenili migráciou ani importom z prototypu.
+- Pôvodné HTML stránky a GitHub Pages zostávajú oddeleným dizajnovým podkladom. Funkčné rozhranie ponúka len implementované funkcie backendu; recenzie, program, hromadné správy, samostatný ekonóm, kompletný audit a CMS sú ďalší rozsah. Požiadavky na SK/EN, spoluautorov a stravovanie sa tým nerušia.
+- Overenie v tomto kroku: PHP 8.5.4, SQLite; **271 testov / 662 assertions prešlo**, Blade cache a JS syntax. V Safari overené kroky a zhrnutie registrácie, login, dashboard dvoch konferencií a detail so skutočnými platobnými údajmi/PDF formulárom. Mobile layout a MariaDB/Docker/fronta s Mailpitom v tomto kroku neboli overené; nasadenie sa nerobilo.
+- Pozri [analýzu a implementačný stav](prepojenie-frontendu-backendu.md), [backendové rozhodnutia](backend.md) a [aktuálny používateľský návod](pouzivatelska-prirucka.md).
 
 ## 1. Účel a rozsah
 
-UCM Conferences pripravuje správu vedeckej konferencie, prioritne ANS 2027: registrácie, účastnícke účty, príspevky, recenzovanie, odborné rozhodnutia, manuálnu evidenciu platieb a program. Aktuálnym výstupom je preklikateľný frontend so vzorovými údajmi. Slúži na posúdenie vzhľadu, navigácie a pracovných postupov.
+UCM Conferences pripravuje správu vedeckej konferencie, prioritne ANS 2027: registrácie, účastnícke účty, príspevky, recenzovanie, odborné rozhodnutia, manuálnu evidenciu platieb a program. Funkčný rozsah backendu je uvedený vyššie a v `backend.md`; preklikateľný frontend so vzorovými údajmi sa zachováva ako oddelený návrhový podklad. Nasledujúce historické kapitoly o HTML/CSS/JS opisujú tento podklad, nie funkčnú serverovú aplikáciu.
 
 Dokumentačnú sadu tvoria tri hlavné dokumenty:
 

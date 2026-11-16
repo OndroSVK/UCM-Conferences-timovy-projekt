@@ -1,16 +1,35 @@
 # AI príručka pre úpravy UCM Conferences
 
-Aktualizované 1. 11. 2026. Účel: umožniť AI aj novému vývojárovi začať konkrétnu zmenu bez opätovného skúmania celého projektu. Cesty sú relatívne ku Git koreňu aplikácie. Návod treba overiť proti aktuálnemu kódu a novším pokynom zákazníka.
+Aktualizované 16. 11. 2026. Účel: umožniť AI aj novému vývojárovi začať konkrétnu zmenu bez opätovného skúmania celého projektu. Cesty sú relatívne ku Git koreňu aplikácie. Návod treba overiť proti aktuálnemu kódu a novším pokynom zákazníka.
 
 ## 1. Kontext na prvé načítanie
 
-- Je to statický frontendový prototyp konferenčného systému ANS 2027, čisté HTML/CSS/ES moduly. Žiadny framework, npm build, PHP backend, API, serverová databáza ani autentifikácia tu zatiaľ nie sú.
+- Funkčná aplikácia je Laravel v `backend/`, UI v Blade, údaje cez existujúce Actions a session autentifikáciu. HTML/CSS/ES moduly v koreni sú zachovaný statický návrhový prototyp. Nemiešaj jeho dáta, routy ani storage s funkčnou aplikáciou.
 - Git koreň je lokálne `aplikacia/`, v samostatnom klone priamo koreň repozitára `OndroSVK/UCM-Conferences-timovy-projekt`.
 - Nadradený školský prezentačný web je samostatný projekt mimo tohto Git repozitára. Jeho `build.py`, `dist/` a školský upload nie sú build ani deploy aplikácie.
 - Dokumentácia a používateľské texty sú po slovensky; názvy súborov kódu, premenných a kontraktov po anglicky.
 - Aktuálny prototyp a jeho vzorové pravidlá nie sú schváleným backendovým kontraktom. Požiadavky/návrhy/otázky rozlišuje [analýza](frontend-analyza.md) značkami Z/N/O.
-- Cieľové prostredie podľa analýzy: LXC, Debian 13, PHP 8.5+, MariaDB. Laravel/Filament bol návrh; nezavádzaj ho len preto, že je spomenutý.
+- Cieľové prostredie: LXC, Debian 13, PHP 8.5+, MariaDB; implementovaný Laravel s Blade a vlastnou maticou práv podľa `backend.md`. Filament sa nepoužíva.
 - Používateľ chce tri živé dokumenty v Gite: [projektovú dokumentáciu](projektova-dokumentacia.md), [používateľskú príručku](pouzivatelska-prirucka.md) a tento návod. Zmenu správania dokumentuj v tom istom commite.
+
+## Aktuálne recepty pre funkčné UI
+
+| Zmena | Zdroj / kontrakt |
+|---|---|
+| Registrácia | `backend/resources/views/public/register.blade.php`, `RegistrationController`, existujúce Registration Actions; jeden POST, názvy polí snake_case, ceny z `GetRegistrationFormOptions` |
+| Kroky, copy, menu, submit lock | `backend/public/frontend.js`; žiadny obchodný browser storage; `data-download` vynecháva submit lock pri exporte, pretože download nenaviguje stránku |
+| Účastnícky dashboard | `account/index.blade.php`, `ListMyConferences` eager-loaduje aj vlastné submissions |
+| Vlastné príspevky | GET `account.submissions.index`, `ListMySubmissions`; explicitné filtrovanie registrácie na `user_id` je povinné aj v owner conference scope |
+| Admin dashboard | GET `admin.overview`, `GetConferenceOverview`; nevracať financial counts výboru, počítať celú konferenciu, nie stránku tabuľky |
+| Vzhľad | `backend/public/styles.css` a `backend.css`; `styles.css` v koreni je historická kópia, synchronizácia zo statického prototypu sa už nerobí |
+| Jazyk | `backend/lang/en/*.php`; SK zatiaľ nie je dodaný |
+| Hosting | document root `backend/public`; kontext registrácie podľa hostiteľa; BO11 zostáva otvorené |
+
+Povolený návrat z loginu do registrácie používa iba pevný token `continue=registration` a rovnaký hostiteľ, nie klientsku ľubovoľnú URL. `frontend.js` sa nenahrádza starým `app.js`; všetky mutácie majú CSRF a backendové overenie.
+
+Overenie: `cd backend` a `vendor/bin/pest` (izolovaná testovacia DB), `php artisan view:cache`, `node --check public/frontend.js`. Pribudli testy `ListMySubmissionsTest`, `GetConferenceOverviewTest`, `FrontendIntegrationTest`. K 16. 11. 2026 prešlo 271 testov na PHP 8.5.4/SQLite. MariaDB, Mailpit/databázový worker a mobil sú zatiaľ samostatné neoverené body. Duplicity `* 2.php` sa bezpečne presunuli mimo aplikácie do lokálnej zálohy; nevracaj ich do autoload adresárov.
+
+Nasledujúce kapitoly 2–10 o `app.js`, `routes.js`, IndexedDB a HTML šablónach zostávajú návodom na **statický návrhový prototyp**. Pri funkčnej zmene začni v backende a v [stave integrácie](prepojenie-frontendu-backendu.md).
 
 ## 2. Rýchly začiatok
 

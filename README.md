@@ -1,4 +1,23 @@
-# UCM Conferences – frontend prototyp
+# UCM Conferences
+
+Funkčná aplikácia používa **Laravel v `backend/` a serverové Blade rozhranie**. Údaje registrácií, používateľov, príspevkov, platieb a exportov poskytuje backend. HTML stránky v koreni sú oddelený starší dizajnový prototyp; ich Live Server ani GitHub Pages nespúšťajú funkčnú aplikáciu.
+
+## Spustenie funkčnej aplikácie
+
+V `backend/` nainštaluj závislosti cez `composer install`, priprav lokálny `.env` podľa `.env.example`, nastav databázu a `APP_URL`, vygeneruj chýbajúci `APP_KEY` a spusti `php artisan migrate`. Podrobný postup je v [backend README](backend/README.md) a [manuáli MariaDB](docs/prepojenie-databazy.md).
+
+```sh
+cd backend
+php artisan serve
+```
+
+Login je na `http://localhost:8000/login`, registrácia konkrétnej konferencie napr. na `http://ans2027.localhost:8000/register`. Konferencia musí existovať v DB s príslušnou subdoménou. Pri databázovej fronte treba aj `php artisan queue:work`. Pre testovanie sa používa izolovaná databáza, seed s vymyslenými účtami je voliteľný iba pre vývoj. Testy: `vendor/bin/pest` v `backend/`.
+
+Implementované prepojenie a hranice sú v [analýze a stave integrácie](docs/prepojenie-frontendu-backendu.md). Funkčné UI neobsahuje recenzentský proces, editor programu, hromadné správy ani serverový editor webu; tieto časti makety čakajú na rozšírenie backendu.
+
+## Statický dizajnový prototyp (oddelená ukážka)
+
+Nasledujúci opis a príkaz Python/Live Server sa vzťahujú iba na pôvodné HTML makety. Nepoužívaj ich na skutočné registrácie a platby.
 
 Preklikateľný dizajnový prototyp konferenčného systému pre ANS 2027. Čisté HTML, CSS a JavaScript moduly, bez build kroku a bez aplikačných závislostí.
 
@@ -84,6 +103,6 @@ Príklad: účastnícky profil uprav v `participant/profile.html`, editor progra
 
 Aplikácia je samostatná: písmo a jeho licencia sú v `assets/`, favicon v `favicon.ico`. Repozitár obsahuje aplikáciu, jej dokumentáciu a vybrané zdrojové podklady v `docs/podklady/`. Zdrojový prezentačný web a konfigurácia školského hostingu nie sú jeho súčasťou.
 
-## Budúca implementácia
+## Backend a ďalší rozvoj
 
 Backend je od 11. 11. 2026 v priečinku [`backend/`](backend/README.md): Laravel 13 na PHP 8.5+ a MariaDB (LXC, GNU/Debian 13). Rozhodnutia a stav sú v [backend.md](docs/backend.md). Tento statický prototyp a jeho GitHub Pages sa backendom nemenia. [Analýza obrazoviek](docs/frontend-analyza.md) zostáva podkladom pre ďalšiu revíziu.

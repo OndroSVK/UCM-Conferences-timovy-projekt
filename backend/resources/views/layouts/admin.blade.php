@@ -20,6 +20,7 @@
         </div>
         <nav aria-label="Administration">
             <div class="nav-label">{{ __('ui.admin.nav') }}</div>
+            <a href="{{ route('admin.overview') }}" @class(['active' => request()->routeIs('admin.overview')])>{{ __('ui.dashboard.overview') }}</a>
             <a href="{{ route('admin.registrations.index') }}" @class(['active' => request()->routeIs('admin.registrations.*')])>{{ __('ui.admin.registrations') }}</a>
             @if (in_array('submissions.view', $permissions, true))
                 <a href="{{ route('admin.submissions.index') }}" @class(['active' => request()->routeIs('admin.submissions.*')])>{{ __('ui.admin.submissions') }}</a>

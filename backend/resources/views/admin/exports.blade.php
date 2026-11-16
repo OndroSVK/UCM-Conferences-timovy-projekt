@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <form method="post" action="{{ route('admin.exports.download') }}" class="card stack">
+    <form method="post" action="{{ route('admin.exports.download') }}" class="card stack" data-download>
         @csrf
         <fieldset style="border: 0; padding: 0; margin: 0">
             <legend>{{ __('ui.admin.format') }}</legend>

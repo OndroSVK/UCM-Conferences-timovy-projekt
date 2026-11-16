@@ -24,3 +24,57 @@
   .kv { grid-template-columns: 1fr; }
   .kv dt { margin-top: 8px; }
 }
+
+/* Server-rendered frontend. Shared visual language, no prototype state or role switch. */
+[hidden] { display: none !important; }
+html { scroll-padding-top: 24px; }
+button[aria-disabled="true"] { opacity: .6; cursor: wait; }
+.workspace-body, .workspace-main, .public-content, .conference-card { min-width: 0; }
+.public-content { width: 100%; }
+.workspace-switch { margin-left: auto; }
+.workspace-header .header-left { flex-wrap: wrap; width: 100%; }
+.conference-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.conference-grid > .empty { grid-column: 1 / -1; }
+.conference-card { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.conference-card h2, .conference-card p { margin: 0; overflow-wrap: anywhere; }
+.conference-card .actions { margin-top: auto; flex-wrap: wrap; }
+.status-list { width: 100%; margin: 0; display: grid; gap: 12px; }
+.status-list > div { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+.status-list dt { font-size: 13px; color: var(--muted); }
+.status-list dd { margin: 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 18px; }
+.stats-grid .card + .card, .conference-grid .card + .card { margin-top: 0; }
+.deadline-list { margin: 18px 0 0; }
+.deadline-list > div { padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.deadline-list dt { color: var(--muted); font-size: 13px; }
+.deadline-list dd { margin: 0; font-weight: 600; }
+.conference-hero { border: 2px solid var(--ink); background: var(--blue); color: white; padding: 36px; border-radius: 8px; flex-wrap: wrap; gap: 28px; }
+.conference-hero h1 { max-width: 850px; }
+.conference-hero p, .conference-hero .eyebrow { color: inherit; }
+.registration-form { max-width: 1000px; margin: 0 auto; }
+.registration-progress { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; gap: 12px; padding: 0; margin: 0 0 24px; }
+.registration-progress li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); border-bottom: 3px solid var(--line); padding: 14px 0; }
+.registration-progress li.active { color: var(--ink); border-color: var(--blue); font-weight: 600; }
+.registration-progress li > span { display: grid; place-items: center; min-width: 30px; height: 30px; border: 1px solid currentColor; border-radius: 50%; }
+.registration-progress li.active > span { background: var(--blue); color: white; border-color: var(--blue); }
+.summary-list { margin-top: 24px; }
+.step-actions { justify-content: flex-end; flex-wrap: wrap; }
+.step-actions [data-step-back] { margin-right: auto; }
+.field input[aria-invalid="true"], .field select[aria-invalid="true"] { outline: 2px solid #a1260b; }
+.form-grid .field { min-width: 0; }
+.form-grid input, .form-grid select, .filters input, .filters select { max-width: 100%; }
+.filters { flex-wrap: wrap; }
+.toolbar { gap: 12px; flex-wrap: wrap; }
+.alert, .card, .panel { overflow-wrap: anywhere; }
+.alert:focus { outline: 3px solid var(--blue); outline-offset: 3px; }
+@media (max-width: 800px) {
+    .conference-grid { grid-template-columns: minmax(0, 1fr); }
+    .conference-hero { padding: 24px; }
+    .registration-progress { gap: 8px; }
+    .registration-progress li { flex-direction: column; align-items: flex-start; font-size: 11px; }
+    .workspace-switch { margin-left: 0; }
+    .filters, .filters .search { width: 100%; }
+    .toolbar select { min-width: 0; }
+    .actions { flex-wrap: wrap; }
+    .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

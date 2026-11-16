@@ -2,6 +2,14 @@
 
 Laravel 13, PHP 8.5+, MariaDB. Rozhodnutia, moduly, otvorené otázky a stav sú v [docs/backend.md](../docs/backend.md).
 
+## Funkčný frontend
+
+Rozhranie je serverové Blade v `resources/views`; CSS a UI skript sú v `public/`. Registrácia má tri kroky a zhrnutie, účastník vlastný dashboard a zoznam príspevkov, administrácia databázový prehľad `/admin/overview`. Na údaje ani operácie sa nepoužíva starý `app.js` alebo browser storage. Verejné HTML makety v koreni a GitHub Pages sú samostatný dizajnový podklad.
+
+Document root servera musí byť tento priečinok **`public/`**, nie koreň repozitára alebo Laravel projektu. Všetky údaje a oprávnenia poskytujú existujúce Actions. Recenzie, program, hromadné e-maily a serverový editor webu zatiaľ nemajú funkčné rozhranie. Jazyk je EN.
+
+Lokálne overenie 16. 11. 2026: 271 testov / 662 assertions na PHP 8.5.4 a SQLite, Blade cache a JS syntax, kroky registrácie/login/dashboard/detail v Safari. MariaDB, DB worker/Mailpit a mobil tým nie sú overené. [Detail integrácie](../docs/prepojenie-frontendu-backendu.md).
+
 ## Spustenie lokálne
 
 Docker prostredie (Debian 13, MariaDB, Mailpit) dodá tím (BR9). Dovtedy stačí PHP 8.5 s rozšíreniami `pdo_sqlite`, `mbstring`, `intl`, `gd`, `zip`, `fileinfo` a Composer:

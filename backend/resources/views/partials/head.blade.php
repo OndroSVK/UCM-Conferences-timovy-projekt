@@ -5,3 +5,5 @@
 <link rel="icon" href="{{ asset('favicon.ico') }}">
 <link rel="stylesheet" href="{{ asset('styles.css') }}">
 <link rel="stylesheet" href="{{ asset('backend.css') }}">
+
+<script src="{{ asset('frontend.js') }}" defer></script>

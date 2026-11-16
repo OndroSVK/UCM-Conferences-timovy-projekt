@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\ExportController;
+use App\Http\Controllers\Admin\OverviewController;
 use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationController;
 use App\Http\Controllers\Admin\SubmissionController as AdminSubmissionController;
 use App\Http\Controllers\Admin\TeamController;
@@ -49,6 +50,7 @@ Route::middleware('conference.host')->group(function () {
 // --- User page (M4) -----------------------------------------------------------------
 Route::middleware(['auth', 'conference.owner'])->prefix('account')->name('account.')->group(function () {
     Route::get('/', [AccountController::class, 'index'])->name('index');
+    Route::get('/submissions', [AccountController::class, 'submissions'])->name('submissions.index');
     Route::get('/registrations/{registration}', [AccountController::class, 'show'])->whereNumber('registration')->name('registrations.show');
     Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
     Route::post('/profile', [AccountController::class, 'updateProfile'])->name('profile.update');
@@ -61,6 +63,7 @@ Route::middleware(['auth', 'conference.owner'])->prefix('account')->name('accoun
 // --- Admin (staff of the active conference, BR4) -------------------------------------
 Route::middleware(['auth', 'conference.admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', fn () => redirect()->route('admin.registrations.index'))->name('home');
+    Route::get('/overview', OverviewController::class)->name('overview');
     Route::post('/conference', [AdminRegistrationController::class, 'switchConference'])->name('conference.switch');
 
     Route::get('/registrations', [AdminRegistrationController::class, 'index'])->name('registrations.index');

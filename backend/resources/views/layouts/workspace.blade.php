@@ -31,10 +31,14 @@
             <header class="workspace-header">
                 <div class="header-left">
                     <button class="icon-btn mobile-menu" type="button" aria-label="{{ __('ui.menu') }}" aria-expanded="false"
-                            onclick="this.setAttribute('aria-expanded', document.getElementById('workspace').classList.toggle('menu-open'))">
+                            data-menu-toggle aria-controls="workspace">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
                     </button>
                     @yield('header')
+                    @inject('access', 'App\Shared\Auth\AccessControl')
+                    @if ($access->isStaff(auth()->user()) && $access->isParticipant(auth()->user()))
+                        <a class="btn flat small workspace-switch" href="{{ route('choose') }}">{{ __('ui.flow.switch_workspace') }}</a>
+                    @endif
                 </div>
             </header>
             <main class="workspace-main" id="main" tabindex="-1">

@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Auth;
 /** One login for participants and admins; redirect by role (R11, R17, US-02). */
 final class LoginController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
+        // A fixed same-host destination only; never accept an arbitrary redirect URL.
+        if ($request->query('continue') === 'registration') {
+            $request->session()->put('url.intended', route('register'));
+        }
+
         return view('auth.login');
     }
 

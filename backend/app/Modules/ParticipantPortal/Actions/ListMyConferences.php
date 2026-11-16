@@ -30,7 +30,7 @@ final class ListMyConferences extends Action
             ->join('conferences', 'conferences.id', '=', 'registrations.conference_id')
             ->orderByDesc('conferences.starts_on')
             ->select('registrations.*')
-            ->with(['conference', 'category'])
+            ->with(['conference', 'category', 'submissions'])
             ->get());
     }
 }

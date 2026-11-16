@@ -1,6 +1,27 @@
 # Používateľská príručka UCM Conferences
 
-Verzia príručky: frontendový prototyp, aktualizované 1. 11. 2026. Určené účastníkom, organizátorom, recenzentom, programovému výboru, ekonomickému oddeleniu a správcovi systému.
+Aktualizované 16. 11. 2026. Funkčné rozhranie používa Laravel; starý HTML prototyp je samostatná návrhová ukážka.
+
+## Funkčná aplikácia — aktuálne postupy
+
+Správca poskytne adresu servera aplikácie. Lokálne spustenie je v [README backendu](../backend/README.md). Live Server ani GitHub Pages nie sú funkčnou aplikáciou. Údaje vo funkčnom rozhraní pochádzajú z databázy; skúšobné seed účty existujú len vo vývojovej databáze.
+
+1. **Registrácia:** na hostiteľovi svojej konferencie otvor `/register`. S JavaScriptom má formulár tri kroky: účet/osobné údaje, účasť/fakturácia a záverečné zhrnutie so súhlasom. Pred dokončením sa dá vrátiť späť. Bez JS sa zobrazia všetky polia naraz. Cena a kategórie sú podľa konferencie; registráciu vytvorí až finálne odoslanie. Chyba servera otvorí príslušný krok; heslo sa znova vyplní.
+2. **Existujúci účet:** upozornenie pri e-maile ponúkne prihlásenie a návrat k registrácii tej istej konferencie. Prihlásený používateľ pridá konferenciu k svojmu účtu. Opakovaná registrácia rovnakej konferencie nevznikne.
+3. **Prihlásenie:** `/login` overí účet; účastník dostane svoje konferencie, pracovník administráciu. Používateľ s oboma rolami má výber pracovného rozhrania a odkaz na jeho prepnutie. Odhlásenie ukončí session.
+4. **Môj prehľad:** `/account` ukazuje len vlastné konferencie, najnovšiu prvú. Karty rozlišujú stav registrácie, platby a príspevku. Detail registrácie obsahuje skutočné platobné údaje, zostatok, faktúry, príspevok a históriu. Tlačidlo Copy kopíruje vlastný VS, ak to prehliadač podporuje.
+5. **Profil:** uprav meno, tituly, organizáciu a e-mail. Zmena e-mailu vyžaduje opätovné overenie. Existujúce fakturačné údaje registrácií zostávajú zachované.
+6. **Moje príspevky:** `/account/submissions` zobrazuje vlastné abstrakty/postery naprieč konferenciami, aj tie čakajúce na prvé odovzdanie. Na registráciu je jeden príspevok podľa kategórie; pasívny účastník ho nepotrebuje. Detail umožňuje názov a PDF, verzie a stiahnutie. Nová verzia je možná iba pred termínom a pred rozhodnutím výboru. Po termíne zostávajú staršie verzie dostupné na stiahnutie.
+7. **Organizátor:** Conference overview ukazuje počty za aktívnu konferenciu, dôležité termíny a odkazy na zoznamy. Prepínač ponúkne iba pridelené konferencie. Vyhľadávanie, filtre a stránkovanie pracujú nad databázou.
+8. **Úhrady:** poverený organizátor v detaile registrácie pridáva jednotlivé prijaté platby, dátum a poznámku. Platby sa sčítavajú. Pri prerušení odpovede najprv skontroluj históriu úhrad; opätovné odoslanie môže založiť ďalšiu úhradu. Toto nie je bankový prevod ani bankové API.
+9. **Výbor:** zoznam/detail príspevkov umožňuje jednokolové rozhodnutie s odôvodnením. Výbor nevidí financie a organizátor bez práva rozhodovania nemá rozhodovací formulár. Plné recenzné konanie zatiaľ nie je implementované.
+10. **Export a tím:** export stiahne skutočný XLSX/CSV aktuálnej konferencie, s filtrami stavov a stĺpcami podľa oprávnení. Superadmin spravuje Team aktívnej konferencie. Recenzent a ekonóm nie sú dostupné samostatné pracovné rozhrania.
+
+Automatické e-maily a faktúry sa spracujú podľa serverovej fronty. Úspešné uloženie operácie neznamená úspešné doručenie e-mailu. Faktúry sú testovacie, modul môže správca vypnúť. Hromadné správy, tvorba/schvaľovanie programu, plný audit a serverový editor webu zatiaľ nie sú súčasťou funkčnej navigácie. Jazyk funkčného rozhrania je EN; texty sú pripravené v prekladových súboroch, SK preklad ešte nie je dodaný.
+
+## Pôvodný statický prototyp — referenčný návod
+
+Nasledujúce kapitoly platia iba pre HTML makety v koreni repozitára a GitHub Pages. Opisy simulácií ani lokálneho publikovania editora neplatia pre funkčnú Laravel aplikáciu.
 
 ## 1. Čo práve používate
 
