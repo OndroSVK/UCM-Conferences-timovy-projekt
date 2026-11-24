@@ -16,6 +16,7 @@ Aktualizované 16. 11. 2026. Účel: umožniť AI aj novému vývojárovi zača�
 
 | Zmena | Zdroj / kontrakt |
 |---|---|
+| Verejný úvod | Trasa `/` v `backend/routes/web.php` volá `HomeController`. Hosť na hlavnej doméne dostane `public/home.blade.php`, konferenčný hostiteľ dostane `public/conference.blade.php` a prihlásený používateľ na hlavnej doméne prejde do vlastného rozhrania. |
 | Registrácia | `backend/resources/views/public/register.blade.php`, `RegistrationController`, existujúce Registration Actions; jeden POST, názvy polí snake_case, ceny z `GetRegistrationFormOptions` |
 | Kroky, copy, menu, submit lock | `backend/public/frontend.js`; žiadny obchodný browser storage; `data-download` vynecháva submit lock pri exporte, pretože download nenaviguje stránku |
 | Účastnícky dashboard | `account/index.blade.php`, `ListMyConferences` eager-loaduje aj vlastné submissions |

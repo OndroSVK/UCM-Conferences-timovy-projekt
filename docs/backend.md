@@ -11,6 +11,7 @@
 - Štvorčlenný študentský tím stavia systém na správu vedeckých konferencií podľa vzoru [ans2025.ucm.sk](https://ans2025.ucm.sk/). Repozitár `OndroSVK/UCM-Conferences-timovy-projekt`, jedna vetva `main` (R36).
 - Kód píše Claude. Členovia tímu A, B, C, D vlastnia moduly: zadávajú user stories, kontrolujú, testujú a obhajujú ich.
 - Jeden backend, jeden admin panel a jedna databáza obslúžia všetky konferencie. Každá konferencia má vlastnú statickú main page na subdoméne (napr. `ans2027.ucm.sk`), ktorú nahráva IT univerzity (R22, R23); backend ju neobsluhuje.
+- Hlavná doména Laravel aplikácie sprístupňuje návštevníkom verejný úvod na `/` s odkazom na `/login`. Trasa konferenčného hostiteľa používa údaje príslušnej konferencie.
 - Účastník má účet (e-mail + heslo) a user page (R8). Jedno prihlasovacie okno pre účastníkov aj adminov, presmerovanie podľa roly (R11); kto má obe roly, vyberie si (R17).
 - Všetko v angličtine: kód, databáza, commity, web, e-maily, admin (R10; jazyk e-mailov a faktúr ešte dolaďuje O33). Dokumentácia tímu je v slovenčine.
 

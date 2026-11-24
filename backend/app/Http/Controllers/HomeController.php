@@ -13,7 +13,7 @@ final class HomeController extends Controller
 {
     /**
      * On a conference subdomain: short conference page with the registration entry.
-     * Otherwise: the workspace of a logged-in user, or the login.
+     * Otherwise: the workspace of a logged-in user, or the public landing page.
      * The main page of each conference stays a static site by IT (R22, R23).
      */
     public function __invoke(Request $request, ResolveConferenceFromHost $resolve, GetRegistrationFormOptions $options)
@@ -27,7 +27,7 @@ final class HomeController extends Controller
         }
 
         if ($request->user() === null) {
-            return redirect()->route('login');
+            return view('public.home');
         }
 
         return redirect()->route(self::routeFor(app(ResolvePostLoginDestination::class)->handle($request->user())));
