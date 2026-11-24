@@ -6,6 +6,8 @@ Aktualizované 16. 11. 2026. Funkčné rozhranie používa Laravel; starý HTML 
 
 Správca poskytne adresu servera aplikácie. Lokálne spustenie je v [README backendu](../backend/README.md). Live Server ani GitHub Pages nie sú funkčnou aplikáciou. Údaje vo funkčnom rozhraní pochádzajú z databázy; skúšobné seed účty existujú len vo vývojovej databáze.
 
+Hlavná adresa aplikácie otvorí návštevníkovi verejný úvod. Odkaz **Log in** vedie na prihlásenie. Informácie o konkrétnej konferencii a jej registráciu otvoríte na adrese danej konferencie.
+
 1. **Registrácia:** na hostiteľovi svojej konferencie otvor `/register`. S JavaScriptom má formulár tri kroky: účet/osobné údaje, účasť/fakturácia a záverečné zhrnutie so súhlasom. Pred dokončením sa dá vrátiť späť. Bez JS sa zobrazia všetky polia naraz. Cena a kategórie sú podľa konferencie; registráciu vytvorí až finálne odoslanie. Chyba servera otvorí príslušný krok; heslo sa znova vyplní.
 2. **Existujúci účet:** upozornenie pri e-maile ponúkne prihlásenie a návrat k registrácii tej istej konferencie. Prihlásený používateľ pridá konferenciu k svojmu účtu. Opakovaná registrácia rovnakej konferencie nevznikne.
 3. **Prihlásenie:** `/login` overí účet; účastník dostane svoje konferencie, pracovník administráciu. Používateľ s oboma rolami má výber pracovného rozhrania a odkaz na jeho prepnutie. Odhlásenie ukončí session.

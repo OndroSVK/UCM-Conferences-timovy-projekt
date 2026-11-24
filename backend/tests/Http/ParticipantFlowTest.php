@@ -19,6 +19,22 @@ function hostUrl(string $subdomain, string $path): string
     return "http://{$subdomain}.localhost{$path}";
 }
 
+it('shows a public landing page with a login link to guests on the main host', function () {
+    $this->get(hostUrl('ucm', '/'))
+        ->assertOk()
+        ->assertViewIs('public.home')
+        ->assertSee(__('ui.home.participation'))
+        ->assertSee(route('login'));
+    $this->get(hostUrl('ucm', '/login'))->assertOk()->assertViewIs('auth.login');
+});
+
+it('still opens the workspace for a signed-in participant on the main host', function () {
+    ['user' => $user] = registerParticipant($this->ans27);
+
+    $this->actingAs($user)->get(hostUrl('ucm', '/'))
+        ->assertRedirect(route('account.index'));
+});
+
 it('shows the conference page on its subdomain and 404 on an unknown one', function () {
     $this->get(hostUrl('ans2027', '/'))->assertOk()->assertSee($this->ans27->name)->assertSee('180.00 EUR');
     $this->get(hostUrl('ans1999', '/register'))->assertNotFound();

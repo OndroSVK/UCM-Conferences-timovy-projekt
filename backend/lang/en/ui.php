@@ -16,6 +16,17 @@ return [
     'prototype_notice' => 'Prototype with fictional data. Invoices are test documents only.',
     'footer' => 'Science. People. New connections.',
 
+    'home' => [
+        'title' => 'Home',
+        'university' => 'University of Ss. Cyril and Methodius in Trnava',
+        'heading' => 'Science brings',
+        'heading_highlight' => 'us together.',
+        'intro' => 'UCM Conferences supports academic meetings at the Faculty of Natural Sciences, from participant registration to abstracts and posters.',
+        'participation' => 'How to take part',
+        'registration' => 'Visit the website of your conference for its dates, participation options and registration.',
+        'account' => 'If you already have an account, log in to manage your registrations and submissions.',
+    ],
+
     'flow' => [
         'progress' => 'Registration progress',
         'identity' => 'Your details',
